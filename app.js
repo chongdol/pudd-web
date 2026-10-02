@@ -129,3 +129,17 @@
     }
   }
 })();
+
+/* Film band: starts muted as soon as the page opens and loops forever (only #shot holds it still); the button turns the sound on from the start. */
+(() => {
+  const video = document.querySelector('.film-video');
+  const sound = document.querySelector('.film-sound');
+  if (!video) return;
+  if (location.hash.includes('shot')) { video.autoplay = false; video.pause(); }
+  else { const started = video.play(); if (started) started.catch(() => {}); }
+  if (sound) {
+    video.addEventListener('playing', () => { if (video.muted) sound.hidden = false; });
+    sound.addEventListener('click', () => { video.muted = false; video.currentTime = 0; video.play(); sound.hidden = true; });
+    video.addEventListener('volumechange', () => { if (!video.muted) sound.hidden = true; });
+  }
+})();

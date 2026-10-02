@@ -392,3 +392,14 @@ h1 em,h2 em{font-style:normal;color:var(--sky);background:linear-gradient(110deg
 @media(max-width:380px){
   .brand span{display:none}
 }
+
+/* ───────── Film band: full-bleed promo video directly under the header ───────── */
+.film{position:relative;background:#000;line-height:0;border-bottom:1px solid var(--line-blue)}
+.film-video{display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:calc(100vh - 70px);max-height:calc(100svh - 70px);object-fit:contain;background:#000}
+.film-sound{position:absolute;right:max(18px,3%);top:18px;padding:10px 18px;border:1px solid #ffffff40;border-radius:999px;background:#030918b3;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;font:inherit;font-size:14px;line-height:1.2;cursor:pointer}
+.film-sound:hover{background:#0a1b48e6}
+.film-sound[hidden]{display:none}
+@media(max-width:760px){
+  .film-video{max-height:calc(100svh - 64px)}
+  .film-sound{top:12px;right:12px;padding:8px 14px;font-size:13px}
+}
