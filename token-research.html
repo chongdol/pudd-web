@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#030918">
+<title data-th="พูดไทย แปลอังกฤษ ใช้โทเค็นน้อยลงเท่าไร — PUDD" data-en="Speak Thai, send English: fewer tokens — PUDD">พูดไทย แปลอังกฤษ ใช้โทเค็นน้อยลงเท่าไร — PUDD</title>
+<meta name="description" content="วัดจริง 18 ข้อความ: พูดไทยแล้วให้ PUDD แปลเป็นอังกฤษในเครื่อง ตัวข้อความใช้โทเค็นน้อยลง 56% ใน Claude และ 25% ใน Codex — พร้อมวิธีวัด ข้อจำกัด และคุณภาพการแปล" data-content-th="วัดจริง 18 ข้อความ: พูดไทยแล้วให้ PUDD แปลเป็นอังกฤษในเครื่อง ตัวข้อความใช้โทเค็นน้อยลง 56% ใน Claude และ 25% ใน Codex — พร้อมวิธีวัด ข้อจำกัด และคุณภาพการแปล" data-content-en="Measured on 18 messages: speak Thai, let PUDD translate it on your Mac, and the message itself costs 56% fewer tokens in Claude and 25% fewer in Codex — with method, limits and translation quality.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PUDD">
+<meta property="og:url" content="https://chongdol.github.io/pudd-web/token-research.html">
+<meta property="og:title" content="พูดไทย แปลอังกฤษ ใช้โทเค็นน้อยลงเท่าไร — PUDD">
+<meta property="og:description" content="วัดจริง 18 ข้อความ: พูดไทยแล้วให้ PUDD แปลเป็นอังกฤษในเครื่อง ตัวข้อความใช้โทเค็นน้อยลง 56% ใน Claude และ 25% ใน Codex — พร้อมวิธีวัด ข้อจำกัด และคุณภาพการแปล">
+<meta property="og:image" content="https://chongdol.github.io/pudd-web/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chongdol.github.io/pudd-web/assets/og.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="motion.css">
+<link rel="stylesheet" href="doc.css">
+<style>
+/* หน้าวิจัยโทเค็น — ส่วนเสริมเฉพาะหน้านี้ (ใช้ตัวแปรสีจาก style.css) */
+.tr-main{max-width:980px;margin:0 auto}
+.tr-main.doc-content>section{padding-bottom:54px;margin-bottom:54px}
+.tr-kpis{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;gap:14px;margin:46px 0 0}
+.tr-kpi{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 20px 18px}
+.tr-kpi .who{display:block;font:600 11px Manrope,Plex,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.tr-kpi .v{display:block;font:600 clamp(30px,3.4vw,44px)/1.1 Manrope,Plex,sans-serif;letter-spacing:-.04em;color:var(--text)}
+.tr-kpi .v em{font-style:normal;color:var(--sky)}
+.tr-kpi .v small{font-size:.5em;letter-spacing:0;color:var(--muted);font-weight:500}
+.tr-kpi .k{display:block;margin-top:10px;font-size:14px;line-height:1.65;color:var(--muted)}
+.tr-kpi.hero-kpi{border-color:var(--line-blue);background:linear-gradient(145deg,#0f2250,#060d24)}
+.tr-kpi.hero-kpi .v{font-size:clamp(44px,5.4vw,68px)}
+.tr-honest{margin:22px 0 0;max-width:900px;font-size:14.5px;line-height:1.8;color:var(--muted)}
+.tr-honest b{color:var(--soft);font-weight:600}
+.tr-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.doc-content .tr-cta a{text-decoration:none}
+.doc-content .tr-cta a.primary{color:#fff}
+.tr-two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chart{margin:18px 0 0;padding:20px 20px 12px;border:1px solid var(--line);border-radius:18px;background:#ffffff05}
+.chart-title{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px;align-items:baseline;margin-bottom:14px}
+.chart-title h3{margin:0!important;font-size:17px!important}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.sw-th{background:#946bfa} .sw-en{background:linear-gradient(90deg,#1a5cff,#6bb3ff)} .sw-base{background:#ffffff26}
+.bar-row{display:grid;grid-template-columns:118px minmax(0,1fr) 66px;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.bar-label{font-size:14px;color:var(--soft);line-height:1.4}
+.bar-lines{display:grid;gap:5px}
+.bar-line{display:flex;align-items:center;gap:8px;min-width:0}
+.bar-line .fill{display:block;height:13px;border-radius:4px;min-width:3px}
+.bar-line .fill.th{background:#946bfa}
+.bar-line .fill.en{background:linear-gradient(90deg,#1a5cff,#6bb3ff)}
+.bar-line b{font:600 12.5px Manrope,sans-serif;color:var(--soft);white-space:nowrap}
+.bar-delta{text-align:right;font:600 15px Manrope,sans-serif;color:var(--sky)}
+.chart-note{font-size:13px!important;color:var(--dim)!important;margin:10px 0 0!important;line-height:1.7!important}
+.tr-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:8px}
+.tr-fact{border:1px solid var(--line);border-radius:16px;padding:18px;background:#ffffff05}
+.tr-fact b.big{display:block;font:600 30px/1.15 Manrope,Plex,sans-serif;letter-spacing:-.03em;color:var(--sky);margin-bottom:8px}
+.tr-fact p{margin:0!important;font-size:15px!important;line-height:1.75!important;color:var(--muted)!important}
+.stack-row{padding:12px 0;border-top:1px solid var(--line)}
+.stack-row .lbl{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;font-size:14px;color:var(--soft);margin-bottom:7px}
+.stack-row .lbl b{font:600 13px Manrope,sans-serif;color:var(--text);white-space:nowrap}
+.stack{display:flex;height:16px;border-radius:5px;overflow:hidden;background:#ffffff08}
+.stack .seg{display:block;height:100%}
+.stack .base{background:repeating-linear-gradient(135deg,#ffffff1f 0 6px,#ffffff12 6px 12px)}
+.stack .th{background:#946bfa} .stack .en{background:#6bb3ff}
+.doc-content td b{color:var(--text);font-weight:600}
+.doc-content td[lang]{min-width:170px}
+.tr-more{border:1px solid var(--line);border-radius:18px;background:#ffffff04;padding:0 22px}
+.tr-more>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;font-size:18px;line-height:1.6;color:var(--text)}
+.tr-more>summary::-webkit-details-marker{display:none}
+.tr-more>summary::after{content:"+";font:300 26px/1 Manrope,sans-serif;color:var(--sky);flex-shrink:0}
+.tr-more[open]>summary::after{content:"−"}
+.tr-more[open]>summary{border-bottom:1px solid var(--line);margin-bottom:22px}
+.tr-more .inner{padding-bottom:22px}
+.tr-more h3{margin-top:34px}
+.tr-more h3:first-child{margin-top:0}
+@media(max-width:1000px){.tr-kpis{grid-template-columns:1fr 1fr}.tr-two{grid-template-columns:1fr}}
+@media(max-width:700px){.tr-facts{grid-template-columns:1fr}}
+@media(max-width:560px){
+  .tr-kpis{gap:10px}
+  .tr-kpi{padding:15px 14px}
+  .tr-kpi.hero-kpi,.tr-kpi:last-child{grid-column:1/-1}
+  .bar-row{grid-template-columns:minmax(0,1fr) 64px;gap:6px 10px}
+  .bar-label{grid-column:1/-1}
+  .chart{padding:16px 14px 10px}
+  .tr-more{padding:0 14px}
+  .tr-more>summary{font-size:16px}
+  .tr-cta a{flex:1 1 100%;justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body class="doc">
+<a class="skip" href="#content" data-th="ข้ามไปเนื้อหา" data-en="Skip to content">ข้ามไปเนื้อหา</a>
+
+<header class="site-header">
+  <a class="brand" href="index.html" data-page="index.html" aria-label="PUDD">
+    <img src="assets/icon-96.png" alt="" width="34" height="34">
+    <svg viewBox="-30 -30 1320 260" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"><path d="M0,0 H185 A50,50 0 0 1 185,100 H40 A40,40 0 0 0 0,140 V200"/><path d="M340,0 V78 A122.5,122.5 0 0 0 585,78 V0"/><path d="M685,0 H830 A100,100 0 0 1 830,200 H685"/><path d="M1015,0 H1160 A100,100 0 0 1 1160,200 H1015"/></g></svg>
+    <span data-th="พูดแทนพิมพ์" data-en="Speak instead of typing">พูดแทนพิมพ์</span>
+  </a>
+  <nav class="site-nav" aria-label="เมนูหลัก" data-label-th="เมนูหลัก" data-label-en="Main menu">
+    <a href="index.html" data-page="index.html" data-th="หน้าหลัก" data-en="Home">หน้าหลัก</a>
+    <a href="privacy.html" data-page="privacy.html" data-th="ความเป็นส่วนตัว" data-en="Privacy">ความเป็นส่วนตัว</a>
+    <a href="support.html" data-page="support.html" data-th="ช่วยเหลือ" data-en="Support">ช่วยเหลือ</a>
+  </nav>
+  <button id="language" type="button" aria-label="Switch to English">EN <span aria-hidden="true">↗</span></button>
+</header>
+
+<main id="content" class="doc-wrap">
+  <div class="doc-head" id="top">
+    <p class="eyebrow"><span class="dot"></span><span data-th="วัดจริง 2 ต.ค. 2569 · 18 ข้อความ" data-en="Measured 2 Oct 2026 · 18 messages">วัดจริง 2 ต.ค. 2569 · 18 ข้อความ</span></p>
+    <h1 data-th="พูดไทย PUDD แปลเป็นอังกฤษให้ &lt;em&gt;ข้อความใช้โทเค็น&lt;span class=&#x27;nw&#x27;&gt;น้อยลง 56%&lt;/span&gt; ใน Claude&lt;/em&gt;" data-en="Speak Thai, PUDD sends English. &lt;em&gt;56% fewer tokens in Claude.&lt;/em&gt;">พูดไทย PUDD แปลเป็นอังกฤษให้ <em>ข้อความใช้โทเค็น<span class='nw'>น้อยลง 56%</span> ใน Claude</em></h1>
+    <p class="doc-lead" data-th="ภาษาไทยกินโทเค็นต่อตัวอักษรมากกว่าอังกฤษ เราเลยวัดให้ดู: คำสั่งงานภาษาไทย 18 ข้อความ ให้ PUDD แปลเป็นอังกฤษในเครื่อง แล้วนับโทเค็นด้วย Claude และ Codex ของจริง ข้อความเดียวกันใช้โทเค็น&lt;strong&gt;น้อยลง 55.6% ใน Claude&lt;/strong&gt; และ&lt;strong&gt;น้อยลง 25.2% ใน Codex&lt;/strong&gt;" data-en="Thai costs more tokens per character than English, so we measured it: 18 Thai work requests, translated to English on device by PUDD, then counted with the real Claude and Codex. The same messages cost &lt;strong&gt;55.6% fewer tokens in Claude&lt;/strong&gt; and &lt;strong&gt;25.2% fewer in Codex&lt;/strong&gt;.">ภาษาไทยกินโทเค็นต่อตัวอักษรมากกว่าอังกฤษ เราเลยวัดให้ดู: คำสั่งงานภาษาไทย 18 ข้อความ ให้ PUDD แปลเป็นอังกฤษในเครื่อง แล้วนับโทเค็นด้วย Claude และ Codex ของจริง ข้อความเดียวกันใช้โทเค็น<strong>น้อยลง 55.6% ใน Claude</strong> และ<strong>น้อยลง 25.2% ใน Codex</strong></p>
+
+    <div class="tr-kpis">
+      <div class="tr-kpi hero-kpi"><span class="who">Claude</span><span class="v">−<em>56%</em></span><span class="k" data-th="&lt;b&gt;15,804 → 7,019 โทเค็น&lt;/b&gt; รวม 18 ข้อความ (−55.6%)" data-en="&lt;b&gt;15,804 → 7,019 tokens&lt;/b&gt; across 18 messages (−55.6%)"><b>15,804 → 7,019 โทเค็น</b> รวม 18 ข้อความ (−55.6%)</span></div>
+      <div class="tr-kpi"><span class="who">Codex</span><span class="v">−<em>25%</em></span><span class="k" data-th="&lt;b&gt;6,761 → 5,058 โทเค็น&lt;/b&gt; (−25.2% · รายข้อความ 11%–38%)" data-en="&lt;b&gt;6,761 → 5,058 tokens&lt;/b&gt; (−25.2% · per message 11%–38%)"><b>6,761 → 5,058 โทเค็น</b> (−25.2% · รายข้อความ 11%–38%)</span></div>
+      <div class="tr-kpi"><span class="who" data-th="ข้อความยาว ~2,900 ตัวอักษร" data-en="A ~2,900-character message">ข้อความยาว ~2,900 ตัวอักษร</span><span class="v">−1,456</span><span class="k" data-th="โทเค็นต่อครั้งใน Claude · −296 ใน Codex" data-en="tokens each time in Claude · −296 in Codex">โทเค็นต่อครั้งใน Claude · −296 ใน Codex</span></div>
+      <div class="tr-kpi"><span class="who" data-th="แปลในเครื่อง" data-en="On-device translation">แปลในเครื่อง</span><span class="v">&lt; 0.4 <small data-th="วิ" data-en="s">วิ</small></span><span class="k" data-th="ต่อช่วงที่พูด · ไม่ส่งข้อความออกนอกเครื่อง" data-en="per spoken part · nothing leaves your Mac">ต่อช่วงที่พูด · ไม่ส่งข้อความออกนอกเครื่อง</span></div>
+    </div>
+
+    <p class="tr-honest" data-th="&lt;b&gt;อ่านเลขนี้ให้ถูก:&lt;/b&gt; นับเฉพาะตัวข้อความที่พูด · วัดจริง 18 ข้อความ · ทั้งคำขอ (รวมคำสั่งระบบและเครื่องมือที่ AI ส่งไปเองทุกครั้ง) ลดน้อยกว่านี้มาก — รายละเอียดอยู่ท้ายหน้า · &lt;b&gt;งานสำคัญอ่านคำแปลก่อนส่ง&lt;/b&gt; · โหมดแปลต้องใช้ macOS 26 ขึ้นไป" data-en="&lt;b&gt;Read these numbers correctly:&lt;/b&gt; they count only the message you speak · measured on 18 messages · the whole request (with the system prompt and tools the AI sends every time) shrinks far less — details at the end of the page · &lt;b&gt;read the translation before sending important work&lt;/b&gt; · translation needs macOS 26 or later."><b>อ่านเลขนี้ให้ถูก:</b> นับเฉพาะตัวข้อความที่พูด · วัดจริง 18 ข้อความ · ทั้งคำขอ (รวมคำสั่งระบบและเครื่องมือที่ AI ส่งไปเองทุกครั้ง) ลดน้อยกว่านี้มาก — รายละเอียดอยู่ท้ายหน้า · <b>งานสำคัญอ่านคำแปลก่อนส่ง</b> · โหมดแปลต้องใช้ macOS 26 ขึ้นไป</p>
+
+    <div class="tr-cta">
+      <a class="primary" href="index.html" data-page="index.html"><span data-th="ดู PUDD ที่หน้าหลัก" data-en="See PUDD on the home page">ดู PUDD ที่หน้าหลัก</span> <span aria-hidden="true">→</span></a>
+      <a class="ghost" href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer" data-th="ทัก LINE · chongdol" data-en="Chat on LINE · chongdol">ทัก LINE · chongdol</a>
+    </div>
+  </div>
+
+  <div class="doc-content tr-main" style="margin-top:60px;padding-top:54px;border-top:1px solid var(--line)">
+    <section id="message">
+      <span class="doc-no">01</span>
+      <h2 data-th="ข้อความเดียวกัน ไทย เทียบ อังกฤษ" data-en="The same message, Thai versus English">ข้อความเดียวกัน ไทย เทียบ อังกฤษ</h2>
+      <p data-th="โทเค็นคือหน่วยที่ AI ใช้นับข้อความ ภาษาไทยถูกหั่นเป็นชิ้นเล็กกว่าอังกฤษมาก ใน Claude &lt;strong&gt;ภาษาไทยใช้โทเค็นต่อตัวอักษรมากกว่าอังกฤษราว 3.2 เท่า&lt;/strong&gt; (ใน Codex ราว 1.9 เท่า) และข้อความไทยชุดเดียวกันใช้โทเค็นใน Claude มากกว่าใน Codex ราว 2.3 เท่า แปลเป็นอังกฤษแล้วตัวอักษรเพิ่มขึ้น แต่โทเค็นลดลง" data-en="Tokens are how an AI counts text, and Thai is cut into much smaller pieces than English. In Claude, &lt;strong&gt;Thai uses about 3.2× more tokens per character than English&lt;/strong&gt; (about 1.9× in Codex), and the same Thai messages cost about 2.3× more tokens in Claude than in Codex. The English version has more characters but fewer tokens.">โทเค็นคือหน่วยที่ AI ใช้นับข้อความ ภาษาไทยถูกหั่นเป็นชิ้นเล็กกว่าอังกฤษมาก ใน Claude <strong>ภาษาไทยใช้โทเค็นต่อตัวอักษรมากกว่าอังกฤษราว 3.2 เท่า</strong> (ใน Codex ราว 1.9 เท่า) และข้อความไทยชุดเดียวกันใช้โทเค็นใน Claude มากกว่าใน Codex ราว 2.3 เท่า แปลเป็นอังกฤษแล้วตัวอักษรเพิ่มขึ้น แต่โทเค็นลดลง</p>
+      <div class="tr-two">
+        <div class="chart" role="img" aria-label="Claude tokens Thai vs English by length">
+          <div class="chart-title"><h3 data-th="Claude — โทเค็นเฉลี่ยต่อข้อความ" data-en="Claude — average tokens per message">Claude — โทเค็นเฉลี่ยต่อข้อความ</h3><div class="legend"><span><i class="sw-th"></i><span data-th="ไทย" data-en="Thai">ไทย</span></span><span><i class="sw-en"></i><span data-th="อังกฤษ (PUDD แปล)" data-en="English (PUDD)">อังกฤษ (PUDD แปล)</span></span></div></div>
+          <div class="bar-row">
+  <div class="bar-label" data-th="~100 ตัวอักษร" data-en="~100 characters">~100 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:3.56%"></i><b>93</b></div>
+    <div class="bar-line"><i class="fill en" style="width:1.77%"></i><b>46</b></div>
+  </div>
+  <div class="bar-delta">−50.1%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label" data-th="~300 ตัวอักษร" data-en="~300 characters">~300 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:10.35%"></i><b>271</b></div>
+    <div class="bar-line"><i class="fill en" style="width:4.65%"></i><b>122</b></div>
+  </div>
+  <div class="bar-delta">−55.1%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label" data-th="~700 ตัวอักษร" data-en="~700 characters">~700 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:25.04%"></i><b>656</b></div>
+    <div class="bar-line"><i class="fill en" style="width:11.44%"></i><b>300</b></div>
+  </div>
+  <div class="bar-delta">−54.3%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label" data-th="~1,400 ตัวอักษร" data-en="~1,400 characters">~1,400 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:49.10%"></i><b>1,287</b></div>
+    <div class="bar-line"><i class="fill en" style="width:21.05%"></i><b>552</b></div>
+  </div>
+  <div class="bar-delta">−57.1%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label" data-th="~2,900 ตัวอักษร" data-en="~2,900 characters">~2,900 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:100.00%"></i><b>2,620</b></div>
+    <div class="bar-line"><i class="fill en" style="width:44.42%"></i><b>1,164</b></div>
+  </div>
+  <div class="bar-delta">−55.6%</div>
+</div>
+        </div>
+        <div class="chart" role="img" aria-label="Codex tokens Thai vs English by length">
+          <div class="chart-title"><h3 data-th="Codex — โทเค็นเฉลี่ยต่อข้อความ" data-en="Codex — average tokens per message">Codex — โทเค็นเฉลี่ยต่อข้อความ</h3><div class="legend"><span><i class="sw-th"></i><span data-th="ไทย" data-en="Thai">ไทย</span></span><span><i class="sw-en"></i><span data-th="อังกฤษ (PUDD แปล)" data-en="English (PUDD)">อังกฤษ (PUDD แปล)</span></span></div></div>
+          <div class="bar-row">
+  <div class="bar-label" data-th="~100 ตัวอักษร" data-en="~100 characters">~100 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:3.35%"></i><b>38</b></div>
+    <div class="bar-line"><i class="fill en" style="width:2.42%"></i><b>27</b></div>
+  </div>
+  <div class="bar-delta">−27.8%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label" data-th="~300 ตัวอักษร" data-en="~300 characters">~300 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:10.97%"></i><b>124</b></div>
+    <div class="bar-line"><i class="fill en" style="width:8.20%"></i><b>92</b></div>
+  </div>
+  <div class="bar-delta">−25.3%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label" data-th="~700 ตัวอักษร" data-en="~700 characters">~700 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:24.25%"></i><b>274</b></div>
+    <div class="bar-line"><i class="fill en" style="width:19.22%"></i><b>217</b></div>
+  </div>
+  <div class="bar-delta">−20.7%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label" data-th="~1,400 ตัวอักษร" data-en="~1,400 characters">~1,400 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:48.42%"></i><b>546</b></div>
+    <div class="bar-line"><i class="fill en" style="width:36.00%"></i><b>406</b></div>
+  </div>
+  <div class="bar-delta">−25.6%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label" data-th="~2,900 ตัวอักษร" data-en="~2,900 characters">~2,900 ตัวอักษร</div>
+  <div class="bar-lines">
+    <div class="bar-line"><i class="fill th" style="width:100.00%"></i><b>1,128</b></div>
+    <div class="bar-line"><i class="fill en" style="width:73.72%"></i><b>831</b></div>
+  </div>
+  <div class="bar-delta">−26.3%</div>
+</div>
+        </div>
+      </div>
+      <p class="chart-note" data-th="แต่ละกราฟใช้สเกลของตัวเอง · ตัวเลขท้ายแท่งคือโทเค็นเฉลี่ยของข้อความในกลุ่มความยาวนั้น · Claude = Sonnet 5 · Codex = Codex CLI (GPT)" data-en="Each chart has its own scale. Numbers are average tokens per message in that length group. Claude = Sonnet 5 · Codex = Codex CLI (GPT).">แต่ละกราฟใช้สเกลของตัวเอง · ตัวเลขท้ายแท่งคือโทเค็นเฉลี่ยของข้อความในกลุ่มความยาวนั้น · Claude = Sonnet 5 · Codex = Codex CLI (GPT)</p>
+    </section>
+
+    <section id="longer">
+      <span class="doc-no">02</span>
+      <h2 data-th="ยิ่งสั่งยาว ยิ่งคุยหลายรอบ ยิ่งเห็นผล" data-en="Longer messages, more turns, bigger effect">ยิ่งสั่งยาว ยิ่งคุยหลายรอบ ยิ่งเห็นผล</h2>
+      <p data-th="ส่วนที่ประหยัดโตตามความยาวของสิ่งที่พูด และ AI ส่งประวัติการคุยทั้งหมดซ้ำทุกรอบ ข้อความที่พูดไปแล้วจึงถูกนับอีกในรอบถัด ๆ ไป ส่วนต่างเลยสะสมตามจำนวนรอบ" data-en="The saving grows with how much you say. And because an AI re-sends the whole conversation every turn, each message you spoke is counted again on later turns — so the difference accumulates.">ส่วนที่ประหยัดโตตามความยาวของสิ่งที่พูด และ AI ส่งประวัติการคุยทั้งหมดซ้ำทุกรอบ ข้อความที่พูดไปแล้วจึงถูกนับอีกในรอบถัด ๆ ไป ส่วนต่างเลยสะสมตามจำนวนรอบ</p>
+      <div class="doc-table"><table>
+        <thead><tr><th data-th="ความยาวที่พูด" data-en="What you speak">ความยาวที่พูด</th><th data-th="โทเค็นที่ประหยัดต่อข้อความ · Claude" data-en="Tokens saved per message · Claude">โทเค็นที่ประหยัดต่อข้อความ · Claude</th><th data-th="Codex" data-en="Codex">Codex</th></tr></thead>
+        <tbody>
+<tr><td data-th="~100 ตัวอักษร" data-en="~100 characters">~100 ตัวอักษร</td><td><b>47</b></td><td>10</td></tr>
+<tr><td data-th="~300 ตัวอักษร" data-en="~300 characters">~300 ตัวอักษร</td><td><b>150</b></td><td>31</td></tr>
+<tr><td data-th="~700 ตัวอักษร" data-en="~700 characters">~700 ตัวอักษร</td><td><b>356</b></td><td>57</td></tr>
+<tr><td data-th="~1,400 ตัวอักษร" data-en="~1,400 characters">~1,400 ตัวอักษร</td><td><b>735</b></td><td>140</td></tr>
+<tr><td data-th="~2,900 ตัวอักษร" data-en="~2,900 characters">~2,900 ตัวอักษร</td><td><b>1,456</b></td><td>296</td></tr>
+        </tbody></table></div>
+      <div class="tr-facts">
+        <div class="tr-fact"><b class="big">−1,456</b><p data-th="โทเค็นต่อครั้งใน Claude เมื่อสั่งงานยาว ~2,900 ตัวอักษร (2,620 → 1,164) · ใน Codex −296" data-en="tokens each time in Claude for a ~2,900-character request (2,620 → 1,164) · −296 in Codex">โทเค็นต่อครั้งใน Claude เมื่อสั่งงานยาว ~2,900 ตัวอักษร (2,620 → 1,164) · ใน Codex −296</p></div>
+        <div class="tr-fact"><b class="big">&lt; 0.4 <span data-th="วิ" data-en="s">วิ</span></b><p data-th="ตัวแปลในเครื่องของ macOS ใช้เวลาไม่เกิน 0.39 วินาทีต่อช่วงที่พูด (วัด 128 ช่วง) ไม่ต้องใช้เน็ต ไม่ส่งข้อความออกไปไหน" data-en="The macOS on-device translator took at most 0.39 s per spoken part (128 parts measured). No network, nothing sent anywhere.">ตัวแปลในเครื่องของ macOS ใช้เวลาไม่เกิน 0.39 วินาทีต่อช่วงที่พูด (วัด 128 ช่วง) ไม่ต้องใช้เน็ต ไม่ส่งข้อความออกไปไหน</p></div>
+        <div class="tr-fact"><b class="big">API · commit</b><p data-th="ศัพท์อังกฤษที่พูดปนมา (API, commit, push, EXIF, PostgreSQL) ผ่านมาครบทุกจุดในการทดสอบ" data-en="English terms spoken mid-sentence (API, commit, push, EXIF, PostgreSQL) came through every time in our tests.">ศัพท์อังกฤษที่พูดปนมา (API, commit, push, EXIF, PostgreSQL) ผ่านมาครบทุกจุดในการทดสอบ</p></div>
+      </div>
+      <p class="note" data-th="เหมาะที่สุดกับ: บรีฟงานยาว ๆ · อธิบายบั๊กละเอียด · ส่งเอกสารไทยยาวให้ AI อ่าน · คุยงานต่อเนื่องหลายรอบ — คำสั่งสั้น ๆ ประโยคเดียวแทบไม่ต่าง" data-en="Best for: long briefs, detailed bug reports, long Thai documents, many-turn working sessions. A one-line command barely changes.">เหมาะที่สุดกับ: บรีฟงานยาว ๆ · อธิบายบั๊กละเอียด · ส่งเอกสารไทยยาวให้ AI อ่าน · คุยงานต่อเนื่องหลายรอบ — คำสั่งสั้น ๆ ประโยคเดียวแทบไม่ต่าง</p>
+      <div class="tr-cta">
+        <a class="primary" href="index.html" data-page="index.html"><span data-th="กลับหน้าหลัก PUDD" data-en="Back to PUDD home">กลับหน้าหลัก PUDD</span> <span aria-hidden="true">→</span></a>
+        <a class="ghost" href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer" data-th="ทัก LINE · chongdol" data-en="Chat on LINE · chongdol">ทัก LINE · chongdol</a>
+      </div>
+    </section>
+
+    <section id="details">
+      <details class="tr-more">
+        <summary data-th="วิธีวัด · ข้อจำกัด · คุณภาพการแปล" data-en="Method · limits · translation quality">วิธีวัด · ข้อจำกัด · คุณภาพการแปล</summary>
+        <div class="inner">
+        <h3 data-th="ทั้งคำขอลดน้อยกว่าตัวข้อความมาก" data-en="The whole request shrinks far less than the message">ทั้งคำขอลดน้อยกว่าตัวข้อความมาก</h3>
+        <p data-th="ทุกครั้งที่ส่งข้อความ AI ส่งคำสั่งระบบ คำอธิบายเครื่องมือ และข้อมูลสภาพแวดล้อมไปด้วย แชตใหม่ของ Claude Code มีส่วนคงที่นี้ราว &lt;strong&gt;68,108 โทเค็น&lt;/strong&gt; (วัดในวันเดียวกัน ไม่ได้วัดซ้ำรอบนี้) · Codex CLI วัดได้ &lt;strong&gt;17,676 โทเค็น&lt;/strong&gt; (ตั้งค่าเปล่า ของจริงมากกว่านี้) ข้อความแรกจึงลดทั้งคำขอได้เพียง 0.07%–2.06% ใน Claude Code และ 0.06%–1.58% ใน Codex" data-en="Every request also carries the system prompt, tool definitions and environment context. A fresh Claude Code chat has about &lt;strong&gt;68,108 tokens&lt;/strong&gt; of that (measured the same day, not repeated here); Codex CLI measured &lt;strong&gt;17,676 tokens&lt;/strong&gt; (bare config — real setups have more). So a first message cuts the whole request by only 0.07%–2.06% in Claude Code and 0.06%–1.58% in Codex.">ทุกครั้งที่ส่งข้อความ AI ส่งคำสั่งระบบ คำอธิบายเครื่องมือ และข้อมูลสภาพแวดล้อมไปด้วย แชตใหม่ของ Claude Code มีส่วนคงที่นี้ราว <strong>68,108 โทเค็น</strong> (วัดในวันเดียวกัน ไม่ได้วัดซ้ำรอบนี้) · Codex CLI วัดได้ <strong>17,676 โทเค็น</strong> (ตั้งค่าเปล่า ของจริงมากกว่านี้) ข้อความแรกจึงลดทั้งคำขอได้เพียง 0.07%–2.06% ใน Claude Code และ 0.06%–1.58% ใน Codex</p>
+        <div class="chart" role="img" aria-label="Whole request: fixed part vs message">
+          <div class="chart-title"><h3 data-th="ข้อความ ~2,900 ตัวอักษร ในทั้งคำขอแรก" data-en="A ~2,900-character message inside the whole first request">ข้อความ ~2,900 ตัวอักษร ในทั้งคำขอแรก</h3><div class="legend"><span><i class="sw-base"></i><span data-th="ส่วนคงที่" data-en="Fixed part">ส่วนคงที่</span></span><span><i class="sw-th"></i><span data-th="ไทย" data-en="Thai">ไทย</span></span><span><i class="sw-en"></i><span data-th="อังกฤษ" data-en="English">อังกฤษ</span></span></div></div>
+          <div class="stack-row"><div class="lbl"><span data-th="Claude Code · ไทย" data-en="Claude Code · Thai">Claude Code · ไทย</span><b>68,108 + 2,620 = 70,728</b></div><div class="stack"><i class="seg base" style="width:96.30%"></i><i class="seg th" style="width:3.70%"></i></div></div>
+          <div class="stack-row"><div class="lbl"><span data-th="Claude Code · อังกฤษ (−2.06%)" data-en="Claude Code · English (−2.06%)">Claude Code · อังกฤษ (−2.06%)</span><b>68,108 + 1,164 = 69,272</b></div><div class="stack"><i class="seg base" style="width:96.30%"></i><i class="seg en" style="width:1.65%"></i></div></div>
+          <div class="stack-row"><div class="lbl"><span data-th="Codex · ไทย" data-en="Codex · Thai">Codex · ไทย</span><b>17,676 + 1,128 = 18,804</b></div><div class="stack"><i class="seg base" style="width:94.00%"></i><i class="seg th" style="width:6.00%"></i></div></div>
+          <div class="stack-row"><div class="lbl"><span data-th="Codex · อังกฤษ (−1.58%)" data-en="Codex · English (−1.58%)">Codex · อังกฤษ (−1.58%)</span><b>17,676 + 831 = 18,507</b></div><div class="stack"><i class="seg base" style="width:94.00%"></i><i class="seg en" style="width:4.42%"></i></div></div>
+        </div>
+        <div class="doc-table" style="margin-top:18px"><table>
+          <thead><tr><th data-th="ความยาว" data-en="Length">ความยาว</th><th data-th="Claude ไทย → อังกฤษ" data-en="Claude Thai → English">Claude ไทย → อังกฤษ</th><th data-th="ข้อความ" data-en="Message">ข้อความ</th><th data-th="ทั้งคำขอ (Claude Code)" data-en="Whole request (Claude Code)">ทั้งคำขอ (Claude Code)</th><th data-th="Codex ไทย → อังกฤษ" data-en="Codex Thai → English">Codex ไทย → อังกฤษ</th><th data-th="ข้อความ" data-en="Message">ข้อความ</th><th data-th="ทั้งคำขอ (Codex)" data-en="Whole request (Codex)">ทั้งคำขอ (Codex)</th></tr></thead>
+          <tbody>
+<tr><td data-th="~100 ตัวอักษร" data-en="~100 characters">~100 ตัวอักษร</td><td>93 → 46</td><td>−50.1%</td><td><b>−0.07%</b></td><td>38 → 27</td><td>−27.8%</td><td><b>−0.06%</b></td></tr>
+<tr><td data-th="~300 ตัวอักษร" data-en="~300 characters">~300 ตัวอักษร</td><td>271 → 122</td><td>−55.1%</td><td><b>−0.22%</b></td><td>124 → 92</td><td>−25.3%</td><td><b>−0.18%</b></td></tr>
+<tr><td data-th="~700 ตัวอักษร" data-en="~700 characters">~700 ตัวอักษร</td><td>656 → 300</td><td>−54.3%</td><td><b>−0.52%</b></td><td>274 → 217</td><td>−20.7%</td><td><b>−0.32%</b></td></tr>
+<tr><td data-th="~1,400 ตัวอักษร" data-en="~1,400 characters">~1,400 ตัวอักษร</td><td>1,287 → 552</td><td>−57.1%</td><td><b>−1.06%</b></td><td>546 → 406</td><td>−25.6%</td><td><b>−0.77%</b></td></tr>
+<tr><td data-th="~2,900 ตัวอักษร" data-en="~2,900 characters">~2,900 ตัวอักษร</td><td>2,620 → 1,164</td><td>−55.6%</td><td><b>−2.06%</b></td><td>1,128 → 831</td><td>−26.3%</td><td><b>−1.58%</b></td></tr>
+          </tbody></table></div>
+
+        <h3 data-th="เซสชัน 20 รอบ (คำนวณ ไม่ใช่เซสชันจริง)" data-en="A 20-turn session (calculated, not recorded)">เซสชัน 20 รอบ (คำนวณ ไม่ใช่เซสชันจริง)</h3>
+        <p data-th="คำนวณกับ Codex: ทุกรอบพูดข้อความยาวเท่ากัน ส่วนคงที่ 17,676 โทเค็น และมี “ของอื่น” (คำตอบของ AI + ผลจากเครื่องมือ เช่นเนื้อไฟล์) เพิ่มเข้าประวัติรอบละ 500 / 3,000 / 10,000 โทเค็น ซึ่งเป็น&lt;strong&gt;สมมติฐาน&lt;/strong&gt; ไม่ได้วัด · งานที่ AI อ่านไฟล์เยอะจะอยู่ฝั่ง 10,000 และการแปลไม่ได้ช่วยส่วนนั้น · ไม่ได้คำนวณฝั่ง Claude" data-en="Calculated for Codex: the same-length message every turn, a fixed part of 17,676 tokens, and 500 / 3,000 / 10,000 tokens of “other” content (AI replies + tool output such as file contents) added per turn — an &lt;strong&gt;assumption&lt;/strong&gt;, not measured. File-heavy agent work sits near 10,000, and translation doesn&#x27;t touch that part. Not calculated for Claude.">คำนวณกับ Codex: ทุกรอบพูดข้อความยาวเท่ากัน ส่วนคงที่ 17,676 โทเค็น และมี “ของอื่น” (คำตอบของ AI + ผลจากเครื่องมือ เช่นเนื้อไฟล์) เพิ่มเข้าประวัติรอบละ 500 / 3,000 / 10,000 โทเค็น ซึ่งเป็น<strong>สมมติฐาน</strong> ไม่ได้วัด · งานที่ AI อ่านไฟล์เยอะจะอยู่ฝั่ง 10,000 และการแปลไม่ได้ช่วยส่วนนั้น · ไม่ได้คำนวณฝั่ง Claude</p>
+        <div class="doc-table"><table>
+          <thead><tr><th data-th="ข้อความต่อรอบ" data-en="Message per turn">ข้อความต่อรอบ</th><th data-th="ของอื่น/รอบ" data-en="Other / turn">ของอื่น/รอบ</th><th data-th="โทเค็นขาเข้ารวม ไทย → อังกฤษ" data-en="Total input, Thai → English">โทเค็นขาเข้ารวม ไทย → อังกฤษ</th><th data-th="ลดลง (รวม)" data-en="Saved (total)">ลดลง (รวม)</th><th data-th="ลดลง (เฉพาะส่วนใหม่ ไม่นับแคช)" data-en="Saved (new, uncached part)">ลดลง (เฉพาะส่วนใหม่ ไม่นับแคช)</th></tr></thead>
+          <tbody>
+<tr><td data-th="~300 ตัวอักษร" data-en="~300 characters">~300 ตัวอักษร</td><td>500</td><td>474,508 → 467,945</td><td><b>−1.38%</b></td><td>−2.11%</td></tr>
+<tr><td data-th="~300 ตัวอักษร" data-en="~300 characters">~300 ตัวอักษร</td><td>3,000</td><td>949,508 → 942,945</td><td><b>−0.69%</b></td><td>−0.81%</td></tr>
+<tr><td data-th="~300 ตัวอักษร" data-en="~300 characters">~300 ตัวอักษร</td><td>10,000</td><td>2,279,508 → 2,272,945</td><td><b>−0.29%</b></td><td>−0.30%</td></tr>
+<tr><td data-th="~1,400 ตัวอักษร" data-en="~1,400 characters">~1,400 ตัวอักษร</td><td>500</td><td>563,180 → 533,780</td><td><b>−5.22%</b></td><td>−7.35%</td></tr>
+<tr><td data-th="~1,400 ตัวอักษร" data-en="~1,400 characters">~1,400 ตัวอักษร</td><td>3,000</td><td>1,038,180 → 1,008,780</td><td><b>−2.83%</b></td><td>−3.27%</td></tr>
+<tr><td data-th="~1,400 ตัวอักษร" data-en="~1,400 characters">~1,400 ตัวอักษร</td><td>10,000</td><td>2,368,180 → 2,338,780</td><td><b>−1.24%</b></td><td>−1.28%</td></tr>
+<tr><td data-th="~2,900 ตัวอักษร" data-en="~2,900 characters">~2,900 ตัวอักษร</td><td>500</td><td>685,330 → 623,100</td><td><b>−9.08%</b></td><td>−11.92%</td></tr>
+<tr><td data-th="~2,900 ตัวอักษร" data-en="~2,900 characters">~2,900 ตัวอักษร</td><td>3,000</td><td>1,160,330 → 1,098,100</td><td><b>−5.36%</b></td><td>−6.10%</td></tr>
+<tr><td data-th="~2,900 ตัวอักษร" data-en="~2,900 characters">~2,900 ตัวอักษร</td><td>10,000</td><td>2,490,330 → 2,428,100</td><td><b>−2.50%</b></td><td>−2.57%</td></tr>
+          </tbody></table></div>
+        <p class="note" data-th="ส่วนที่ซ้ำจากรอบก่อนมักมาจากแคช (Codex รายงานว่า 11,008–17,152 โทเค็นของส่วนคงที่มาจากแคช) · เราไม่ได้วัดว่าแพ็กเกจนับโควตาอย่างไร จึงไม่แปลงเป็นเงิน" data-en="The repeated part usually comes from cache (Codex reported 11,008–17,152 cached tokens of the fixed part). We didn&#x27;t measure how plans count quota, so we give no money figures.">ส่วนที่ซ้ำจากรอบก่อนมักมาจากแคช (Codex รายงานว่า 11,008–17,152 โทเค็นของส่วนคงที่มาจากแคช) · เราไม่ได้วัดว่าแพ็กเกจนับโควตาอย่างไร จึงไม่แปลงเป็นเงิน</p>
+
+        <h3 data-th="คุณภาพการแปล" data-en="Translation quality">คุณภาพการแปล</h3>
+        <p data-th="อ่านเทียบไทย–อังกฤษครบ 128 ช่วง: ส่วนใหญ่อ่านรู้เรื่อง แต่พบผิด&lt;strong&gt;ร้ายแรง 12 ช่วง&lt;/strong&gt; (เวลาผิด หรือความหมายกลับด้าน — AI ทำตามแล้วจะผิด) และ&lt;strong&gt;ปานกลาง 17 ช่วง&lt;/strong&gt; (ความหมายเปลี่ยนหรือตกหล่น แต่พอเดาจากบริบท) · “ห้าทุ่ม” ถูกแปลผิด 3 ครั้งจาก 3 ครั้ง และประโยคที่มี “กัน / ไม่ได้ / ต้องไม่” กลับด้านหลายครั้ง" data-en="We read all 128 Thai–English parts side by side. Most read fine, but &lt;strong&gt;12 had serious errors&lt;/strong&gt; (a wrong time or reversed meaning — an AI acting on it would do the wrong thing) and &lt;strong&gt;17 had moderate ones&lt;/strong&gt; (meaning shifted or dropped, still guessable). “ห้าทุ่ม” (11 p.m.) was mistranslated 3 times out of 3, and sentences with “prevent / not / must not” flipped several times.">อ่านเทียบไทย–อังกฤษครบ 128 ช่วง: ส่วนใหญ่อ่านรู้เรื่อง แต่พบผิด<strong>ร้ายแรง 12 ช่วง</strong> (เวลาผิด หรือความหมายกลับด้าน — AI ทำตามแล้วจะผิด) และ<strong>ปานกลาง 17 ช่วง</strong> (ความหมายเปลี่ยนหรือตกหล่น แต่พอเดาจากบริบท) · “ห้าทุ่ม” ถูกแปลผิด 3 ครั้งจาก 3 ครั้ง และประโยคที่มี “กัน / ไม่ได้ / ต้องไม่” กลับด้านหลายครั้ง</p>
+        <div class="doc-table"><table>
+          <thead><tr><th data-th="ช่วง" data-en="Part">ช่วง</th><th data-th="ไทยที่พูด" data-en="Thai spoken">ไทยที่พูด</th><th data-th="อังกฤษที่ได้" data-en="English produced">อังกฤษที่ได้</th><th data-th="ปัญหา" data-en="Problem">ปัญหา</th></tr></thead>
+          <tbody>
+<tr><td>S3.0</td><td lang="th">ตั้งแต่ห้าทุ่มถึงตีสอง</td><td lang="en">from 8 p.m. to 2 a.m.</td><td data-th="ห้าทุ่ม = 11 p.m. (เวลาผิด)" data-en="ห้าทุ่ม = 11 p.m. (wrong time)">ห้าทุ่ม = 11 p.m. (เวลาผิด)</td></tr>
+<tr><td>L3.3</td><td lang="th">ตั้งแต่ห้าทุ่มครึ่ง</td><td lang="en">from 8:30 p.m.</td><td data-th="ควรเป็น 11:30 p.m. (เวลาผิด)" data-en="should be 11:30 p.m. (wrong time)">ควรเป็น 11:30 p.m. (เวลาผิด)</td></tr>
+<tr><td>XX2.3</td><td lang="th">เปิดตั้งแต่ตีห้าถึงห้าทุ่ม</td><td lang="en">open from 5 a.m. to 9 p.m.</td><td data-th="ควรเป็น 11 p.m. (เวลาผิด)" data-en="should be 11 p.m. (wrong time)">ควรเป็น 11 p.m. (เวลาผิด)</td></tr>
+<tr><td>X1.0</td><td lang="th">งานนี้คือทำหน้าจองคลาสออนไลน์ให้สตูดิโอโยคะ</td><td lang="en">This job is to book an online class for a small yoga studio</td><td data-th="ควรเป็น build an online class-booking page — งานทั้งชิ้นเปลี่ยนความหมาย" data-en="should be “build an online class-booking page” — the whole task changes meaning">ควรเป็น build an online class-booking page — งานทั้งชิ้นเปลี่ยนความหมาย</td></tr>
+<tr><td>X1.6</td><td lang="th">ช่วยอธิบายด้วยว่าจะกันเรื่องนี้ยังไงในระดับฐานข้อมูล</td><td lang="en">Please explain how to do this at the database level</td><td data-th="ควรเป็น how to prevent this (การจองเกิน) — กลับด้าน" data-en="should be “how to prevent this” (overbooking) — reversed">ควรเป็น how to prevent this (การจองเกิน) — กลับด้าน</td></tr>
+<tr><td>X2.4</td><td lang="th">ไล่ดูว่าโค้ดส่งอีเมลมีการกันส่งซ้ำไหม … เสนอวิธีใส่รหัสกันซ้ำ</td><td lang="en">see if our email code is duplicated … suggest a way to duplicate the code</td><td data-th="ควรเป็น check for duplicate-send protection / add a dedup key — กลับด้าน (และ &amp;#x27;อยากให้ช่วย&amp;#x27; กลายเป็น &amp;#x27;I would like to help you&amp;#x27;)" data-en="should be “check for duplicate-send protection / add a dedup key” — reversed">ควรเป็น check for duplicate-send protection / add a dedup key — กลับด้าน (และ &#x27;อยากให้ช่วย&#x27; กลายเป็น &#x27;I would like to help you&#x27;)</td></tr>
+<tr><td>XX1.5</td><td lang="th">หมดอายุหลังจากไม่ได้ใช้หนึ่งปี</td><td lang="en">expire after one year of use</td><td data-th="ควรเป็น after one year of inactivity — กลับด้าน" data-en="should be “after one year of inactivity” — reversed">ควรเป็น after one year of inactivity — กลับด้าน</td></tr>
+<tr><td>XX1.14</td><td lang="th">ให้บอกตรง ๆ เลย ดีกว่ามารู้ทีหลังตอนทำไปครึ่งทางแล้ว</td><td lang="en">It&#x27;s better to find out later when you&#x27;re halfway through</td><td data-th="กลับด้าน (ควรเป็น better than finding out halfway through)" data-en="reversed (should be “better than finding out halfway through”)">กลับด้าน (ควรเป็น better than finding out halfway through)</td></tr>
+<tr><td>XX1.17</td><td lang="th">โปรโมชันต้องไม่ซ้อนกันจนลดราคาเกินจริง</td><td lang="en">must not be stacked until the price is overpriced</td><td data-th="ควรเป็น over-discounted — กลับด้าน" data-en="should be “over-discounted” — reversed">ควรเป็น over-discounted — กลับด้าน</td></tr>
+<tr><td>XX2.15</td><td lang="th">ต้องไม่ให้แอปเวอร์ชันเก่าที่ลูกค้ายังไม่ได้อัปเดตใช้งานไม่ได้</td><td lang="en">the old version of the app that the customer has not updated cannot be used</td><td data-th="ข้อกำหนด &amp;#x27;แอปเก่าต้องยังใช้ได้&amp;#x27; กลายเป็นคำบอกว่าใช้ไม่ได้" data-en="the requirement “old app versions must keep working” became a statement that they don&amp;#x27;t">ข้อกำหนด &#x27;แอปเก่าต้องยังใช้ได้&#x27; กลายเป็นคำบอกว่าใช้ไม่ได้</td></tr>
+<tr><td>XX3.6</td><td lang="th">โค้ดที่ได้ต้องผ่านการรีวิวโดยคนก่อนรวมเข้าระบบหลัก</td><td lang="en">the code must be reviewed by the previous person</td><td data-th="ควรเป็น reviewed by a human before merging" data-en="should be “reviewed by a human before merging”">ควรเป็น reviewed by a human before merging</td></tr>
+<tr><td>XX3.7</td><td lang="th">ต้องปิดบัญชีทุกระบบภายในวันทำงานสุดท้าย</td><td lang="en">all systems must be closed within the last working day</td><td data-th="ควรเป็น close the person&amp;#x27;s accounts on every system" data-en="should be “close the person&amp;#x27;s accounts on every system”">ควรเป็น close the person&#x27;s accounts on every system</td></tr>
+          </tbody></table></div>
+        <h3 data-th="ใช้ให้ปลอดภัย" data-en="Using it safely">ใช้ให้ปลอดภัย</h3>
+        <ul>
+          <li data-th="งานสำคัญ (ลบข้อมูล ย้ายระบบ นโยบาย เงิน) — อ่านคำแปลก่อนกดส่งทุกครั้ง" data-en="Important work (deleting data, migrations, policies, money) — read the translation before sending, every time.">งานสำคัญ (ลบข้อมูล ย้ายระบบ นโยบาย เงิน) — อ่านคำแปลก่อนกดส่งทุกครั้ง</li>
+          <li data-th="เวลาและตัวเลข — พูดเป็นตัวเลขชัด ๆ เช่น “23:00” แทน “ห้าทุ่ม”" data-en="Times and numbers — say them as digits, e.g. “23:00” instead of “ห้าทุ่ม”.">เวลาและตัวเลข — พูดเป็นตัวเลขชัด ๆ เช่น “23:00” แทน “ห้าทุ่ม”</li>
+          <li data-th="ประโยคที่มี “ห้าม / ไม่ / ต้องไม่ / กัน…” — ตรวจว่าความหมายไม่กลับด้าน" data-en="Sentences with “don&#x27;t / not / must not / prevent” — check the meaning didn&#x27;t flip.">ประโยคที่มี “ห้าม / ไม่ / ต้องไม่ / กัน…” — ตรวจว่าความหมายไม่กลับด้าน</li>
+          <li data-th="&lt;strong&gt;พูดยาวมากให้แบ่งเป็นช่วง:&lt;/strong&gt; ตัวแปลในเครื่องรับได้ดีทีละช่วงสั้น ๆ ถ้าส่งข้อความไทยยาวเกินราว 700 ตัวอักษรรวดเดียว คำแปลท้าย ๆ จะหายไป (ได้อังกฤษกลับมาแค่ ~905–950 ตัวอักษร โดยไม่มีข้อความเตือน) · ตัวเลขในหน้านี้ทั้งหมดมาจากการแปลทีละช่วงที่ครบแล้ว" data-en="&lt;strong&gt;Speak long dictation in parts:&lt;/strong&gt; the on-device translator works well on short parts. Sending more than about 700 Thai characters in one go drops the end of the translation (only ~905–950 English characters come back, with no warning). Every number on this page comes from complete, part-by-part translations."><strong>พูดยาวมากให้แบ่งเป็นช่วง:</strong> ตัวแปลในเครื่องรับได้ดีทีละช่วงสั้น ๆ ถ้าส่งข้อความไทยยาวเกินราว 700 ตัวอักษรรวดเดียว คำแปลท้าย ๆ จะหายไป (ได้อังกฤษกลับมาแค่ ~905–950 ตัวอักษร โดยไม่มีข้อความเตือน) · ตัวเลขในหน้านี้ทั้งหมดมาจากการแปลทีละช่วงที่ครบแล้ว</li>
+          <li data-th="ชื่อไฟล์ ชื่อฟังก์ชัน ชื่อคำสั่ง — พูดเป็นภาษาอังกฤษตามจริง · ชื่อเฉพาะภาษาไทยจะถูกแปลไปด้วย ถ้าต้องการชื่อเดิมให้ปิดโหมดแปลชั่วคราว (ข้อนี้ไม่ได้ทดสอบแยก)" data-en="File, function and command names — say them in English as they are. Thai proper names get translated too; switch translation off for those (not separately tested).">ชื่อไฟล์ ชื่อฟังก์ชัน ชื่อคำสั่ง — พูดเป็นภาษาอังกฤษตามจริง · ชื่อเฉพาะภาษาไทยจะถูกแปลไปด้วย ถ้าต้องการชื่อเดิมให้ปิดโหมดแปลชั่วคราว (ข้อนี้ไม่ได้ทดสอบแยก)</li>
+        </ul>
+
+        <h3 data-th="วิธีวัด" data-en="Method">วิธีวัด</h3>
+        <ol>
+          <li data-th="เขียนคำสั่งงานภาษาไทยขึ้นใหม่ 18 ข้อความ 5 กลุ่มความยาว (สั่งแก้โค้ด อธิบายบั๊ก ร่างอีเมล สรุปงาน รีวิวโค้ด สเปก แผนย้ายระบบ เอกสารนโยบาย) ชื่อในข้อความเป็นของสมมติทั้งหมด" data-en="Wrote 18 new Thai work requests in 5 length groups (fix code, explain a bug, draft email, summarise, code review, spec, migration plan, policy document). All names are fictional.">เขียนคำสั่งงานภาษาไทยขึ้นใหม่ 18 ข้อความ 5 กลุ่มความยาว (สั่งแก้โค้ด อธิบายบั๊ก ร่างอีเมล สรุปงาน รีวิวโค้ด สเปก แผนย้ายระบบ เอกสารนโยบาย) ชื่อในข้อความเป็นของสมมติทั้งหมด</li>
+          <li data-th="แปลด้วยตัวแปลจริงของ PUDD v1.0.70 (&lt;code&gt;PUDD --translate&lt;/code&gt; = Translation.framework ของ macOS ในเครื่อง) ทีละช่วง ไม่เกิน ~200 ตัวอักษร · แปลซ้ำได้ผลเหมือนเดิมทุกช่วง" data-en="Translated with PUDD v1.0.70&#x27;s real translator (&lt;code&gt;PUDD --translate&lt;/code&gt; = macOS Translation.framework, on device), part by part, ≤ ~200 characters each. Re-translating gave identical output for every part.">แปลด้วยตัวแปลจริงของ PUDD v1.0.70 (<code>PUDD --translate</code> = Translation.framework ของ macOS ในเครื่อง) ทีละช่วง ไม่เกิน ~200 ตัวอักษร · แปลซ้ำได้ผลเหมือนเดิมทุกช่วง</li>
+          <li data-th="Claude: &lt;code&gt;claude -p --model sonnet&lt;/code&gt; (Sonnet 5) ไม่มีเครื่องมือ system prompt สั้นคงที่ (คำขอเปล่า 322 โทเค็น) รวมข้อความในกลุ่มความยาวเดียวกันต่อการเรียก — 11 การเรียก · การวัดก่อนหน้าวันเดียวกัน (ข้อความจริง 955 ตัวอักษร) ได้ 822 → 256 โทเค็น" data-en="Claude: &lt;code&gt;claude -p --model sonnet&lt;/code&gt; (Sonnet 5), no tools, short fixed system prompt (empty request 322 tokens), one call per length group and language — 11 calls. An earlier test the same day (a real 955-character message) gave 822 → 256 tokens.">Claude: <code>claude -p --model sonnet</code> (Sonnet 5) ไม่มีเครื่องมือ system prompt สั้นคงที่ (คำขอเปล่า 322 โทเค็น) รวมข้อความในกลุ่มความยาวเดียวกันต่อการเรียก — 11 การเรียก · การวัดก่อนหน้าวันเดียวกัน (ข้อความจริง 955 ตัวอักษร) ได้ 822 → 256 โทเค็น</li>
+          <li data-th="Codex: &lt;code&gt;codex exec --ignore-user-config --ephemeral -s read-only --json&lt;/code&gt; ในโฟลเดอร์ว่าง สั่งให้ตอบแค่ OK แล้วอ่าน &lt;code&gt;input_tokens&lt;/code&gt; จริง · โทเค็นของข้อความ = คำขอที่มีข้อความ − คำขอเปล่า (17,676) — 62 การเรียก (สำเร็จ 54) · รุ่น gpt-6-luna, gpt-6-sol, gpt-5.5" data-en="Codex: &lt;code&gt;codex exec --ignore-user-config --ephemeral -s read-only --json&lt;/code&gt; in an empty folder, asked to reply “OK” only, reading the real &lt;code&gt;input_tokens&lt;/code&gt;. Message tokens = request with message − empty request (17,676) — 62 calls (54 succeeded) · models gpt-6-luna, gpt-6-sol, gpt-5.5.">Codex: <code>codex exec --ignore-user-config --ephemeral -s read-only --json</code> ในโฟลเดอร์ว่าง สั่งให้ตอบแค่ OK แล้วอ่าน <code>input_tokens</code> จริง · โทเค็นของข้อความ = คำขอที่มีข้อความ − คำขอเปล่า (17,676) — 62 การเรียก (สำเร็จ 54) · รุ่น gpt-6-luna, gpt-6-sol, gpt-5.5</li>
+          <li data-th="ตรวจไขว้: ข้อความยาวสุดได้โทเค็นเท่ากันทุกรุ่นของ Codex — gpt-6-luna: ไทย 1,216 / อังกฤษ 914 · gpt-6-sol: ไทย 1,216 / อังกฤษ 914 · gpt-5.5: ไทย 1,216 / อังกฤษ 914" data-en="Cross-check: the longest text tokenised identically on every Codex model — gpt-6-luna: Thai 1,216 / English 914 · gpt-6-sol: Thai 1,216 / English 914 · gpt-5.5: Thai 1,216 / English 914">ตรวจไขว้: ข้อความยาวสุดได้โทเค็นเท่ากันทุกรุ่นของ Codex — gpt-6-luna: ไทย 1,216 / อังกฤษ 914 · gpt-6-sol: ไทย 1,216 / อังกฤษ 914 · gpt-5.5: ไทย 1,216 / อังกฤษ 914</li>
+          <li data-th="สัญญาณรบกวน: วัดซ้ำ 3 ข้อความเต็มได้เท่ากันทุกโทเค็น แต่ 3 จาก 36 การเรียกรอบแรกอ่านได้สูงเกิน +53 โทเค็น และคำขอเปล่า 1 ใน 3 ครั้งได้ 21,901 (สูงกว่าปกติ 4,225) โดยไม่รู้สาเหตุ — วัดซ้ำแล้วใช้ค่าต่ำสุดของแต่ละรายการ" data-en="Noise: 3 full texts repeated to the exact token, but 3 of 36 first-round calls read +53 tokens too high and 1 of 3 empty requests read 21,901 (4,225 above normal), cause unknown — we re-measured and use the minimum per item.">สัญญาณรบกวน: วัดซ้ำ 3 ข้อความเต็มได้เท่ากันทุกโทเค็น แต่ 3 จาก 36 การเรียกรอบแรกอ่านได้สูงเกิน +53 โทเค็น และคำขอเปล่า 1 ใน 3 ครั้งได้ 21,901 (สูงกว่าปกติ 4,225) โดยไม่รู้สาเหตุ — วัดซ้ำแล้วใช้ค่าต่ำสุดของแต่ละรายการ</li>
+        </ol>
+        <h3 data-th="ทั้ง 18 ข้อความ (Codex — วัดรายข้อความ)" data-en="All 18 messages (Codex — measured per message)">ทั้ง 18 ข้อความ (Codex — วัดรายข้อความ)</h3>
+        <div class="doc-table"><table>
+          <thead><tr><th data-th="#" data-en="#">#</th><th data-th="ประเภท" data-en="Type">ประเภท</th><th data-th="ตัวอักษรไทย" data-en="Thai chars">ตัวอักษรไทย</th><th data-th="โทเค็นไทย" data-en="Thai tokens">โทเค็นไทย</th><th data-th="โทเค็นอังกฤษ" data-en="English tokens">โทเค็นอังกฤษ</th><th data-th="ลดลง" data-en="Saved">ลดลง</th></tr></thead>
+          <tbody>
+<tr><td>S1</td><td data-th="สั่งแก้โค้ด" data-en="Fix code">สั่งแก้โค้ด</td><td>101</td><td>35</td><td>27</td><td><b>−22.9%</b></td></tr>
+<tr><td>S2</td><td data-th="ปนศัพท์อังกฤษ" data-en="Mixed English terms">ปนศัพท์อังกฤษ</td><td>101</td><td>29</td><td>22</td><td><b>−24.1%</b></td></tr>
+<tr><td>S3</td><td data-th="ร่างอีเมล" data-en="Draft email">ร่างอีเมล</td><td>105</td><td>48</td><td>36</td><td><b>−25.0%</b></td></tr>
+<tr><td>S4</td><td data-th="สรุปงาน" data-en="Summarise work">สรุปงาน</td><td>97</td><td>39</td><td>24</td><td><b>−38.5%</b></td></tr>
+<tr><td>M1</td><td data-th="อธิบายบั๊ก" data-en="Explain a bug">อธิบายบั๊ก</td><td>302</td><td>116</td><td>103</td><td><b>−11.2%</b></td></tr>
+<tr><td>M2</td><td data-th="สั่งแก้โค้ด" data-en="Fix code">สั่งแก้โค้ด</td><td>305</td><td>128</td><td>87</td><td><b>−32.0%</b></td></tr>
+<tr><td>M3</td><td data-th="ร่างอีเมล" data-en="Draft email">ร่างอีเมล</td><td>281</td><td>124</td><td>84</td><td><b>−32.3%</b></td></tr>
+<tr><td>M4</td><td data-th="สรุปงาน" data-en="Summarise work">สรุปงาน</td><td>303</td><td>127</td><td>96</td><td><b>−24.4%</b></td></tr>
+<tr><td>L1</td><td data-th="สเปกฟีเจอร์" data-en="Feature spec">สเปกฟีเจอร์</td><td>741</td><td>276</td><td>228</td><td><b>−17.4%</b></td></tr>
+<tr><td>L2</td><td data-th="อธิบายบั๊ก" data-en="Explain a bug">อธิบายบั๊ก</td><td>781</td><td>311</td><td>233</td><td><b>−25.1%</b></td></tr>
+<tr><td>L3</td><td data-th="ร่างอีเมล" data-en="Draft email">ร่างอีเมล</td><td>669</td><td>264</td><td>205</td><td><b>−22.3%</b></td></tr>
+<tr><td>L4</td><td data-th="รีวิวโค้ด" data-en="Code review">รีวิวโค้ด</td><td>653</td><td>243</td><td>201</td><td><b>−17.3%</b></td></tr>
+<tr><td>X1</td><td data-th="สเปกฟีเจอร์" data-en="Feature spec">สเปกฟีเจอร์</td><td>1,472</td><td>585</td><td>442</td><td><b>−24.4%</b></td></tr>
+<tr><td>X2</td><td data-th="อธิบายบั๊ก" data-en="Explain a bug">อธิบายบั๊ก</td><td>1,383</td><td>519</td><td>384</td><td><b>−26.0%</b></td></tr>
+<tr><td>X3</td><td data-th="สรุปงาน" data-en="Summarise work">สรุปงาน</td><td>1,373</td><td>534</td><td>392</td><td><b>−26.6%</b></td></tr>
+<tr><td>XX1</td><td data-th="บรีฟโปรเจกต์ยาว" data-en="Long project brief">บรีฟโปรเจกต์ยาว</td><td>3,063</td><td>1,216</td><td>914</td><td><b>−24.8%</b></td></tr>
+<tr><td>XX2</td><td data-th="แผนย้ายระบบ" data-en="Migration plan">แผนย้ายระบบ</td><td>2,829</td><td>1,074</td><td>836</td><td><b>−22.2%</b></td></tr>
+<tr><td>XX3</td><td data-th="เอกสารไทยยาว" data-en="Long Thai document">เอกสารไทยยาว</td><td>2,831</td><td>1,093</td><td>744</td><td><b>−31.9%</b></td></tr>
+          </tbody></table></div>
+
+        <h3 data-th="ข้อจำกัด" data-en="Limits">ข้อจำกัด</h3>
+        <ul>
+          <li data-th="Claude วัดเป็นกลุ่มความยาว ไม่ใช่รายข้อความ · ส่วนคงที่ของ Claude Code เป็นเลขจากการวัดก่อนหน้า" data-en="Claude was measured per length group, not per message. Claude Code&#x27;s fixed part is from an earlier measurement.">Claude วัดเป็นกลุ่มความยาว ไม่ใช่รายข้อความ · ส่วนคงที่ของ Claude Code เป็นเลขจากการวัดก่อนหน้า</li>
+          <li data-th="ส่วนคงที่ของ Codex วัดแบบตั้งค่าเปล่า ของจริงที่มี AGENTS.md ปลั๊กอิน หรือ MCP จะใหญ่กว่า → % ต่อทั้งคำขอจะน้อยกว่าที่แสดง" data-en="Codex&#x27;s fixed part was measured with a bare config; real setups with AGENTS.md, plugins or MCP are bigger → the whole-request % would be smaller than shown.">ส่วนคงที่ของ Codex วัดแบบตั้งค่าเปล่า ของจริงที่มี AGENTS.md ปลั๊กอิน หรือ MCP จะใหญ่กว่า → % ต่อทั้งคำขอจะน้อยกว่าที่แสดง</li>
+          <li data-th="ไม่ได้วัดโทเค็นขาออก (คำตอบของ AI) · ไม่ได้วัดเซสชันจริง · ไม่ได้ตรวจด้วยตัวนับโทเค็นแบบออฟไลน์" data-en="Output tokens (the AI&#x27;s reply) were not measured, no real session was recorded, and no offline tokenizer cross-check was done.">ไม่ได้วัดโทเค็นขาออก (คำตอบของ AI) · ไม่ได้วัดเซสชันจริง · ไม่ได้ตรวจด้วยตัวนับโทเค็นแบบออฟไลน์</li>
+          <li data-th="ข้อความทดสอบเป็นข้อความที่เราเขียน ไม่ใช่เสียงพูดจริง · คุณภาพการแปลตรวจโดยผู้ตรวจ 1 คน" data-en="Test messages were written, not real speech. Translation quality was judged by one reviewer.">ข้อความทดสอบเป็นข้อความที่เราเขียน ไม่ใช่เสียงพูดจริง · คุณภาพการแปลตรวจโดยผู้ตรวจ 1 คน</li>
+        </ul>
+        </div>
+      </details>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p data-th="PUDD (พูดแทนพิมพ์) · แอปแถบเมนูสำหรับ Mac ชิป Apple Silicon" data-en="PUDD · a menu bar app for Macs with Apple silicon.">PUDD (พูดแทนพิมพ์) · แอปแถบเมนูสำหรับ Mac ชิป Apple Silicon</p>
+  <div class="footer-links">
+    <a href="index.html" data-page="index.html" data-th="หน้าหลัก" data-en="Home">หน้าหลัก</a>
+    <a href="privacy.html" data-page="privacy.html" data-th="นโยบายความเป็นส่วนตัว" data-en="Privacy policy">นโยบายความเป็นส่วนตัว</a>
+    <a href="support.html" data-page="support.html" data-th="ช่วยเหลือ" data-en="Support">ช่วยเหลือ</a>
+    <a href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer">LINE · chongdol</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Chongdol</span>
+    <span class="tag">YOUR VOICE CAN CONTROL</span>
+    <a href="#top" data-th="กลับด้านบน ↑" data-en="Back to top ↑">กลับด้านบน ↑</a>
+  </div>
+  <p class="legal" data-th="Claude เป็นเครื่องหมายการค้าของ Anthropic · Codex และ ChatGPT เป็นเครื่องหมายการค้าของ OpenAI · Mac และ macOS เป็นเครื่องหมายการค้าของ Apple Inc. · หน้านี้ไม่ได้เกี่ยวข้องหรือได้รับการรับรองจากบริษัทเหล่านั้น" data-en="Claude is a trademark of Anthropic · Codex and ChatGPT are trademarks of OpenAI · Mac and macOS are trademarks of Apple Inc. · This page is not affiliated with or endorsed by those companies.">Claude เป็นเครื่องหมายการค้าของ Anthropic · Codex และ ChatGPT เป็นเครื่องหมายการค้าของ OpenAI · Mac และ macOS เป็นเครื่องหมายการค้าของ Apple Inc. · หน้านี้ไม่ได้เกี่ยวข้องหรือได้รับการรับรองจากบริษัทเหล่านั้น</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
