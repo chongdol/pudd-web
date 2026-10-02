@@ -395,12 +395,12 @@ h1 em,h2 em{font-style:normal;color:var(--sky);background:linear-gradient(110deg
 
 /* ───────── Film band: full-bleed promo video directly under the header ───────── */
 .film{position:relative;background:#000;line-height:0;border-bottom:1px solid var(--line-blue)}
-.film-video{display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:calc(100vh - 70px);max-height:calc(100svh - 70px);object-fit:contain;background:#000}
+.film-video{display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:calc(100vh - 134px);max-height:calc(100svh - 134px);object-fit:contain;background:#000}
 .film-sound{position:absolute;right:max(18px,3%);top:18px;padding:10px 18px;border:1px solid #ffffff40;border-radius:999px;background:#030918b3;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;font:inherit;font-size:14px;line-height:1.2;cursor:pointer}
 .film-sound:hover{background:#0a1b48e6}
 .film-sound[hidden]{display:none}
 @media(max-width:760px){
-  .film-video{max-height:calc(100svh - 64px)}
+  .film-video{max-height:calc(100svh - 190px)}
   .film-sound{top:12px;right:12px;padding:8px 14px;font-size:13px}
 }
 
@@ -417,4 +417,19 @@ h1 em,h2 em{font-style:normal;color:var(--sky);background:linear-gradient(110deg
   .install-steps{grid-template-columns:1fr;margin-top:26px}
   .install-what{margin-top:32px}
   .install-what-list{grid-template-columns:1fr}
+}
+
+/* ───────── Download bar: the very first thing under the header ───────── */
+.download-bar{display:flex;align-items:center;justify-content:space-between;gap:14px 28px;flex-wrap:wrap;min-height:64px;padding:10px 6%;background:linear-gradient(90deg,#0a1b48,#081330 60%,#150f3a);border-bottom:1px solid var(--line-blue)}
+.download-bar>p{margin:0;font-size:14px;line-height:1.6;color:var(--soft)}
+.download-bar>p b{font-weight:600;color:#fff}
+.download-bar-actions{display:flex;align-items:center;gap:22px}
+.download-bar-button{display:inline-flex;align-items:center;gap:12px;padding:10px 22px;border-radius:999px;background:linear-gradient(120deg,#1A5CFF 0,#4a8bff 60%,#946BFA 140%);color:#fff;font-size:15px;font-weight:500;line-height:1.5;white-space:nowrap}
+.download-bar-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#dce9ff;text-decoration:underline;text-underline-offset:5px;white-space:nowrap}
+#install{scroll-margin-top:70px}
+@media(max-width:760px){
+  .download-bar{padding:12px 5.5%;justify-content:center;text-align:center}
+  .download-bar>p{font-size:13px;width:100%}
+  .download-bar-actions{width:100%;justify-content:center;gap:18px}
+  #install{scroll-margin-top:64px}
 }
