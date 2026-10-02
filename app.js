@@ -53,39 +53,30 @@
     }
   }
 
-  /* ── Frame demo: eight real frames, three beats ── */
+  /* ── Demo film: real working clips (LINE / Claude / Facebook), three beats ── */
   const demo = document.getElementById('demo');
-  if (demo) {
-    const frames = [...demo.querySelectorAll('.demo-frame img')];
-    const captions = [...demo.querySelectorAll('.demo-caption > span')];
+  const film = document.getElementById('demo-video');
+  if (demo && film) {
+    const picks = [...demo.querySelectorAll('.demo-pick button')];
     const steps = [...demo.querySelectorAll('.demo-steps button')];
-    const count = document.getElementById('demo-count');
-    const progress = document.getElementById('demo-progress');
-    const replay = document.getElementById('demo-replay');
-    const beats = [[0, 1], [2, 3, 4, 5], [6, 7]];
-    const hold = [900, 1100, 800, 800, 800, 1500, 1900, 1600];
-    const rest = [1, 5, 6]; /* the frame each beat settles on when motion is off */
-    let current = 5, timer = 0;
-
-    function show(index) {
-      current = index;
-      frames.forEach((img, i) => img.classList.toggle('active', i === index));
-      captions.forEach((span, i) => span.classList.toggle('active', i === index));
-      count.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(frames.length).padStart(2, '0');
-      progress.style.width = ((index + 1) / frames.length * 100) + '%';
-      const beat = beats.findIndex(list => list.includes(index));
+    let beats = picks[0].dataset.beats.split(',').map(Number);
+    const mark = () => {
+      const t = film.currentTime;
+      const beat = t >= beats[2] ? 2 : t >= beats[1] ? 1 : 0;
       steps.forEach((step, i) => { step.setAttribute('aria-selected', String(i === beat)); step.tabIndex = i === beat ? 0 : -1; });
-    }
-    function play(list) {
-      clearTimeout(timer);
-      let i = 0;
-      (function next() {
-        show(list[i]);
-        if (++i < list.length) timer = setTimeout(next, hold[list[i - 1]]);
-      })();
-    }
+    };
+    const run = () => { const started = film.play(); if (started) started.catch(() => {}); };
+    film.addEventListener('timeupdate', mark);
+    if (still) film.controls = true;
+    picks.forEach(pick => pick.addEventListener('click', () => {
+      picks.forEach(p => p.setAttribute('aria-pressed', String(p === pick)));
+      beats = pick.dataset.beats.split(',').map(Number);
+      film.poster = 'assets/demo-' + pick.dataset.clip + '-v1.jpg';
+      film.src = 'assets/demo-' + pick.dataset.clip + '-v1.mp4';
+      if (!still) run();
+    }));
     steps.forEach((step, i) => {
-      step.addEventListener('click', () => { if (still) { clearTimeout(timer); show(rest[i]); } else play(beats[i]); });
+      step.addEventListener('click', () => { film.currentTime = beats[i]; mark(); if (!still) run(); });
       step.addEventListener('keydown', e => {
         if (!['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) return;
         e.preventDefault();
@@ -93,19 +84,10 @@
         steps[to].focus(); steps[to].click();
       });
     });
-    if (still) { replay.dataset.th = 'เฟรมถัดไป →'; replay.dataset.en = 'Next frame →'; }
-    replay.addEventListener('click', () => {
-      if (still) show((current + 1) % frames.length); else play(frames.map((_, i) => i));
-    });
-    show(current);
-    /* Play once, the first time the demo scrolls into view. */
+    mark();
+    /* Plays while it is on screen, rests when it is not. */
     if (!still && 'IntersectionObserver' in window) {
-      const once = new IntersectionObserver(entries => {
-        if (!entries[0].isIntersecting) return;
-        once.disconnect();
-        play(frames.map((_, i) => i));
-      }, { threshold: .55 });
-      once.observe(demo.querySelector('.demo-frame'));
+      new IntersectionObserver(entries => { if (entries[0].isIntersecting) run(); else film.pause(); }, { threshold: .4 }).observe(film);
     }
   }
 

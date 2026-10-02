@@ -111,48 +111,28 @@
   </div>
 
   <div class="demo" id="demo">
-    <figure class="demo-stage">
-      <div class="demo-frame" id="demo-frame" role="img" aria-label="ภาพจำลองการใช้งาน PUDD ทีละจังหวะ" data-label-th="ภาพจำลองการใช้งาน PUDD ทีละจังหวะ" data-label-en="Simulated PUDD usage, beat by beat">
-        <img src="assets/story-0-th.webp" data-src-th="assets/story-0-th.webp" data-src-en="assets/story-0-en.webp" alt="" width="1432" height="844">
-        <img src="assets/story-1-th.webp" data-src-th="assets/story-1-th.webp" data-src-en="assets/story-1-en.webp" alt="" width="1432" height="844">
-        <img src="assets/story-2-th.webp" data-src-th="assets/story-2-th.webp" data-src-en="assets/story-2-en.webp" alt="" width="1432" height="844">
-        <img src="assets/story-3-th.webp" data-src-th="assets/story-3-th.webp" data-src-en="assets/story-3-en.webp" alt="" width="1432" height="844">
-        <img src="assets/story-4-th.webp" data-src-th="assets/story-4-th.webp" data-src-en="assets/story-4-en.webp" alt="" width="1432" height="844">
-        <img class="active" src="assets/story-5-th.webp" data-src-th="assets/story-5-th.webp" data-src-en="assets/story-5-en.webp" alt="" width="1432" height="844">
-        <img src="assets/story-6-th.webp" data-src-th="assets/story-6-th.webp" data-src-en="assets/story-6-en.webp" alt="" width="1432" height="844" data-focus="left">
-        <img src="assets/story-7-th.webp" data-src-th="assets/story-7-th.webp" data-src-en="assets/story-7-en.webp" alt="" width="1432" height="844" data-focus="right">
+    <figure class="demo-stage demo-film">
+      <div class="demo-pick" role="group" aria-label="เลือกตัวอย่าง" data-label-th="เลือกตัวอย่าง" data-label-en="Choose an example">
+        <button type="button" data-clip="line" data-beats="0.3,1.4,5.2" aria-pressed="true" data-th="แชต LINE" data-en="LINE chat">แชต LINE</button>
+        <button type="button" data-clip="claude" data-beats="0.3,1.25,4.9" aria-pressed="false" data-th="ถาม Claude" data-en="Asking Claude">ถาม Claude</button>
+        <button type="button" data-clip="facebook" data-beats="0.3,1.4,5.15" aria-pressed="false" data-th="โพสต์ Facebook" data-en="Facebook post">โพสต์ Facebook</button>
       </div>
-      <div class="demo-bar">
-        <p class="demo-caption" aria-live="polite">
-          <span data-th="ทำงานตามปกติ บนจอไม่มีอะไรของ PUDD" data-en="Working as usual. Nothing from PUDD on screen.">ทำงานตามปกติ บนจอไม่มีอะไรของ PUDD</span>
-          <span data-th="กด ⌥ Option ขวาค้าง แคปซูลขึ้นที่กลางล่างของจอ" data-en="Hold right ⌥ Option. The capsule appears at the bottom centre.">กด ⌥ Option ขวาค้าง แคปซูลขึ้นที่กลางล่างของจอ</span>
-          <span data-th="เริ่มพูด เส้นคลื่นขยับตามเสียง" data-en="Start speaking. The line follows your voice.">เริ่มพูด เส้นคลื่นขยับตามเสียง</span>
-          <span data-th="ตัวหนังสือขึ้นตามที่พูด" data-en="Text appears as you speak.">ตัวหนังสือขึ้นตามที่พูด</span>
-          <span data-th="พูดต่อได้เรื่อย ๆ" data-en="Keep going.">พูดต่อได้เรื่อย ๆ</span>
-          <span class="active" data-th="พูดจบ ปิดท้ายด้วย &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; หรือแค่ปล่อยปุ่ม" data-en="Finish with &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt;, or simply let go.">พูดจบ ปิดท้ายด้วย <span class="nw">“ส่งเลย”</span> หรือแค่ปล่อยปุ่ม</span>
-          <span data-th="ข้อความลงช่องพิมพ์ แล้วกด Enter ให้" data-en="The text lands in the field, then Enter is pressed.">ข้อความลงช่องพิมพ์ แล้วกด Enter ให้</span>
-          <span data-th="แคปซูลหายไปเอง เหลือแต่ข้อความของคุณ" data-en="The capsule leaves. Only your message remains.">แคปซูลหายไปเอง เหลือแต่ข้อความของคุณ</span>
-        </p>
-        <div class="demo-tools">
-          <div class="demo-counter"><span id="demo-count">06 / 08</span><div><i id="demo-progress" style="width:75%"></i></div></div>
-          <button id="demo-replay" type="button" data-th="เล่นอีกครั้ง ↻" data-en="Play again ↻">เล่นอีกครั้ง ↻</button>
-        </div>
-      </div>
-      <figcaption class="image-note" data-th="ภาพจำลองการใช้งาน วาดจากหน้าจอจริงของแอป" data-en="Simulated usage, drawn from the app&#x27;s real screens.">ภาพจำลองการใช้งาน วาดจากหน้าจอจริงของแอป</figcaption>
+      <video class="demo-video" id="demo-video" muted loop playsinline preload="metadata" width="1920" height="1080" poster="assets/demo-line-v1.jpg" src="assets/demo-line-v1.mp4" aria-label="วิดีโอการทำงานของ PUDD: กดค้าง พูด ปล่อย ข้อความลงช่องพิมพ์" data-label-th="วิดีโอการทำงานของ PUDD: กดค้าง พูด ปล่อย ข้อความลงช่องพิมพ์" data-label-en="PUDD at work: hold, speak, release — the text lands in the field"></video>
+      <figcaption class="image-note" data-th="ภาพจำลองการใช้งาน แคปซูลเป็นภาพจากแอปจริง · PUDD ไม่ได้เป็นพันธมิตรหรือได้รับการรับรองจาก LINE, Anthropic หรือ Meta" data-en="Simulated usage; the capsule is taken from the real app. PUDD is not affiliated with or endorsed by LINE, Anthropic or Meta.">ภาพจำลองการใช้งาน แคปซูลเป็นภาพจากแอปจริง · PUDD ไม่ได้เป็นพันธมิตรหรือได้รับการรับรองจาก LINE, Anthropic หรือ Meta</figcaption>
     </figure>
 
     <div class="demo-steps" role="tablist" aria-label="สามจังหวะ" data-label-th="สามจังหวะ" data-label-en="Three beats">
-      <button type="button" role="tab" aria-selected="false" aria-controls="demo-frame" tabindex="-1">
+      <button type="button" role="tab" aria-selected="false" aria-controls="demo-video" tabindex="-1">
         <span class="no">01</span>
         <b data-th="กดค้าง" data-en="Hold">กดค้าง</b>
         <span class="copy" data-th="คลิกช่องที่อยากพิมพ์ แล้วกด ⌥ Option ขวาค้างไว้ แคปซูลเล็ก ๆ ขึ้นที่กลางล่างของจอ" data-en="Click where you want to type, then hold the right ⌥ Option key. A small capsule appears at the bottom centre of the screen.">คลิกช่องที่อยากพิมพ์ แล้วกด ⌥ Option ขวาค้างไว้ แคปซูลเล็ก ๆ ขึ้นที่กลางล่างของจอ</span>
       </button>
-      <button type="button" role="tab" aria-selected="true" aria-controls="demo-frame" tabindex="0">
+      <button type="button" role="tab" aria-selected="true" aria-controls="demo-video" tabindex="0">
         <span class="no">02</span>
         <b data-th="พูด" data-en="Speak">พูด</b>
         <span class="copy" data-th="พูดตามปกติ เส้นคลื่นขยับตามเสียง ตัวหนังสือขึ้นให้เห็นระหว่างพูด" data-en="Talk as you normally do. The line follows your voice and the text appears while you speak.">พูดตามปกติ เส้นคลื่นขยับตามเสียง ตัวหนังสือขึ้นให้เห็นระหว่างพูด</span>
       </button>
-      <button type="button" role="tab" aria-selected="false" aria-controls="demo-frame" tabindex="-1">
+      <button type="button" role="tab" aria-selected="false" aria-controls="demo-video" tabindex="-1">
         <span class="no">03</span>
         <b data-th="ปล่อย" data-en="Release">ปล่อย</b>
         <span class="copy" data-th="ปล่อยปุ่ม ข้อความลงช่องที่เคอร์เซอร์อยู่ ปิดท้ายด้วยคำว่า &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; PUDD กด Enter ให้ด้วย" data-en="Let go and the text lands where your cursor is. End with &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; and PUDD presses Enter as well.">ปล่อยปุ่ม ข้อความลงช่องที่เคอร์เซอร์อยู่ ปิดท้ายด้วยคำว่า <span class="nw">“ส่งเลย”</span> PUDD กด Enter ให้ด้วย</span>

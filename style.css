@@ -433,3 +433,18 @@ h1 em,h2 em{font-style:normal;color:var(--sky);background:linear-gradient(110deg
   .download-bar-actions{width:100%;justify-content:center;gap:18px}
   #install{scroll-margin-top:64px}
 }
+
+/* ───────── Demo film: working clips in the How-it-works stage ───────── */
+.demo-film{padding:18px 18px 14px}
+.demo-pick{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.demo-pick button{min-height:40px;padding:0 18px;border:1px solid #6bb3ff4d;border-radius:999px;background:#6bb3ff0d;color:#dce9ff;font-size:14px}
+.demo-pick button:hover{border-color:var(--sky);background:#6bb3ff1f}
+.demo-pick button[aria-pressed=true]{border-color:var(--sky);background:#1a5cff;color:#fff}
+.demo-video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:16px;background:#000}
+.demo-film .image-note{margin-top:12px}
+@media(max-width:760px){
+  .demo-film{padding:12px 12px 10px}
+  .demo-pick{gap:8px;margin-bottom:12px}
+  .demo-pick button{padding:0 14px;font-size:13px}
+  .demo-video{border-radius:12px}
+}
