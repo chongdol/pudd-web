@@ -403,3 +403,13 @@ h1 em,h2 em{font-style:normal;color:var(--sky);background:linear-gradient(110deg
   .film-video{max-height:calc(100svh - 64px)}
   .film-sound{top:12px;right:12px;padding:8px 14px;font-size:13px}
 }
+
+/* ───────── Install guide: download button + 6 steps (reuses .buy-steps rows) ───────── */
+.install-download{max-width:460px;margin-top:44px}
+.install-steps{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(32px,5vw,72px);margin-top:36px}
+.install-help{margin:26px 0 0;border-top:1px solid #ffffff26;padding-top:22px;font-size:14px;line-height:1.8;color:var(--muted)}
+.install-help a{color:#dce9ff;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+@media(max-width:760px){
+  .install-download{margin-top:30px}
+  .install-steps{grid-template-columns:1fr;margin-top:26px}
+}
