@@ -100,7 +100,7 @@
 <tr><td>คำศัพท์ของฉัน (<code>คำศัพท์.txt</code>) และชื่อเรียก (<code>ชื่อเรียก.txt</code>)</td><td>ไฟล์ข้อความที่คุณแก้เอง ใช้เป็นข้อมูลป้อนให้ตัวถอดเสียง</td><td>จนกว่าคุณจะลบ</td></tr>
 <tr><td>การตั้งค่าของแอป</td><td>สวิตช์/ปุ่มที่เลือก รวมถึง "ภาษาที่พูด" และ "ภาษาที่แปลเป็น" เก็บในค่ากำหนดของระบบ (UserDefaults)</td><td>จนกว่าคุณจะลบแอป/ล้างค่า</td></tr>
 <tr><td>ไฟล์โมเดลเสียง (<code>models/</code>)</td><td>ไฟล์โมเดลถอดเสียงที่ดาวน์โหลดครั้งแรก (574 MB) เป็นข้อมูลของโมเดลล้วน ไม่มีข้อมูลของคุณ</td><td>จนกว่าคุณจะลบ</td></tr>
-<tr><td>สถานะทดลองใช้ และรหัสเปิดใช้</td><td>วันเริ่มทดลอง/วันล่าสุดที่เปิดแอป (ใช้นับ 7 วัน) และรหัสเปิดใช้ที่คุณวาง เก็บในเครื่องหลายตำแหน่ง (ในโฟลเดอร์ของแอปและค่ากำหนดของระบบ) · "รหัสเครื่อง" คำนวณสดจากหมายเลขประจำเครื่อง Mac แล้วย่อด้วยการแฮช (ย้อนกลับเป็นหมายเลขเดิมไม่ได้) ไม่มีชื่อ อีเมล หรือข้อมูลติดต่อ</td><td>จนกว่าคุณจะลบ</td></tr>
+<tr><td>สถานะทดลองใช้ และรหัสเปิดใช้</td><td>วันเริ่มทดลอง/วันล่าสุดที่เปิดแอป (ใช้นับ 3 วัน) และรหัสเปิดใช้ที่คุณวาง เก็บในเครื่องหลายตำแหน่ง (ในโฟลเดอร์ของแอปและค่ากำหนดของระบบ) · "รหัสเครื่อง" คำนวณสดจากหมายเลขประจำเครื่อง Mac แล้วย่อด้วยการแฮช (ย้อนกลับเป็นหมายเลขเดิมไม่ได้) ไม่มีชื่อ อีเมล หรือข้อมูลติดต่อ</td><td>จนกว่าคุณจะลบ</td></tr>
 </tbody></table></div>
 <p>ตำแหน่งไฟล์: โฟลเดอร์ <code>Application Support/PudSang/</code> ของแอป</p>
 <p class="note">* ผู้พัฒนายังไม่ได้ตรวจยืนยันว่าตัวถอดเสียงเขียนไฟล์ชั่วคราวเองหรือไม่</p>
@@ -145,7 +145,7 @@
 <ul>
 <li><strong>ซื้อตรงกับผู้พัฒนา:</strong> สั่งซื้อทาง LINE · ผู้พัฒนาเห็นข้อมูลที่คุณส่งในแชต LINE (เช่น ชื่อบัญชี LINE และหลักฐานการชำระเงินที่คุณส่ง) และใช้เพื่อขายและออกรหัสเปิดใช้เท่านั้น · การสนทนาใน LINE อยู่ภายใต้นโยบายของ LINE ด้วย</li>
 <li><strong>รหัสเปิดใช้:</strong> คุณคัดลอก "รหัสเครื่อง" (รูป <code>xxxx-xxxx-xxxx</code> คำนวณจากหมายเลขประจำเครื่องแล้วแฮช) จากแผงตั้งค่าส่งให้ผู้พัฒนาเอง ผู้พัฒนาส่งรหัสเปิดใช้ (ขึ้นต้น <code>PUDD-</code>) กลับ · แอปตรวจรหัสในเครื่องด้วยลายเซ็นดิจิทัล <strong>ไม่ส่งข้อมูลไปตรวจออนไลน์</strong></li>
-<li><strong>ทดลองใช้ 7 วัน:</strong> แอปจดวันที่เปิดครั้งแรกไว้ในเครื่อง (ข้อ 3) เพื่อนับวัน ไม่ส่งออกไป</li>
+<li><strong>ทดลองใช้ 3 วัน:</strong> แอปจดวันที่เปิดครั้งแรกไว้ในเครื่อง (ข้อ 3) เพื่อนับวัน ไม่ส่งออกไป</li>
 <li><strong>Mac App Store:</strong> กำลังเตรียม ยังไม่เปิด · เมื่อเปิดแล้ว การชำระเงินบนสโตร์จัดการโดย Apple ผู้พัฒนาไม่เห็นข้อมูลบัตรหรือบัญชีของคุณ และนโยบายนี้จะปรับให้ตรงกับรุ่นสโตร์</li>
 </ul>
 </section>
@@ -224,7 +224,7 @@
 <tr><td>My Words (<code>คำศัพท์.txt</code>) and wake names (<code>ชื่อเรียก.txt</code>)</td><td>Text files you edit yourself, used as input hints for the speech engine.</td><td>Until you delete them</td></tr>
 <tr><td>App settings</td><td>Your switches and choices, including the spoken language and the translation language, stored in macOS preferences (UserDefaults).</td><td>Until you delete the app or reset preferences</td></tr>
 <tr><td>Speech model file (<code>models/</code>)</td><td>The speech model downloaded on first use (574 MB). Model data only; it contains nothing about you.</td><td>Until you delete it</td></tr>
-<tr><td>Trial status and activation code</td><td>The trial start date and the last date the app was opened (to count the 7 days), and the activation code you pasted, stored in several places on your Mac (the app's folder and macOS preferences). The “machine code” is computed on the fly from your Mac's hardware identifier and hashed (it cannot be turned back into the original identifier); it contains no name, email or contact details.</td><td>Until you delete them</td></tr>
+<tr><td>Trial status and activation code</td><td>The trial start date and the last date the app was opened (to count the 3 days), and the activation code you pasted, stored in several places on your Mac (the app's folder and macOS preferences). The “machine code” is computed on the fly from your Mac's hardware identifier and hashed (it cannot be turned back into the original identifier); it contains no name, email or contact details.</td><td>Until you delete them</td></tr>
 </tbody></table></div>
 <p>File location: the app's <code>Application Support/PudSang/</code> folder.</p>
 <p class="note">* The developer has not yet verified whether the speech engine itself writes temporary files.</p>
@@ -269,7 +269,7 @@
 <ul>
 <li><strong>Buying directly from the developer:</strong> you order on LINE. The developer sees what you send in the LINE chat (such as your LINE display name and any payment proof you send) and uses it only to complete the sale and issue your activation code. LINE conversations are also subject to LINE's policies.</li>
 <li><strong>Activation code:</strong> you copy the “machine code” (like <code>xxxx-xxxx-xxxx</code>, derived from your Mac's hardware identifier and hashed) from the panel and send it to the developer yourself; the developer sends back an activation code starting with <code>PUDD-</code>. The app checks the code on your Mac with a digital signature; <strong>nothing is sent online to verify it</strong>.</li>
-<li><strong>7-day trial:</strong> the app records the first-launch date on your Mac (section 3) to count the days. It is not sent anywhere.</li>
+<li><strong>3-day trial:</strong> the app records the first-launch date on your Mac (section 3) to count the days. It is not sent anywhere.</li>
 <li><strong>Mac App Store:</strong> being prepared, not live yet. Once it is, payment on the store is handled by Apple, the developer does not see your card or account details, and this policy will be updated for the store version.</li>
 </ul>
 </section>
