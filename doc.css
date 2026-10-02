@@ -1,0 +1,55 @@
+/* PUDD — document pages (privacy.html, support.html).
+   Comes after style.css + motion.css: same header, footer, type and palette; adds a reading column. */
+
+.doc-wrap{max-width:1280px;margin:auto;padding:74px 6% 110px}
+body.doc .doc-head h1{font-size:clamp(42px,5.8vw,76px);margin:26px 0 26px}
+.doc-lead{font-size:19px;line-height:1.85;color:var(--soft);max-width:680px;margin:0}
+.doc-meta{font-size:13px;color:var(--dim);margin:20px 0 0}
+
+.doc-body{display:grid;grid-template-columns:230px minmax(0,720px);gap:8%;margin-top:60px;padding-top:54px;border-top:1px solid var(--line)}
+.doc-toc{position:sticky;top:100px;align-self:start;font-size:14px}
+.doc-toc-title{display:block;font:600 10px Manrope,Plex,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.doc-toc a{display:block;padding:10px 0;line-height:1.6;color:var(--muted);border-top:1px solid var(--line)}
+.doc-toc a:hover{color:#fff}
+.site-nav a[aria-current=page]{color:#fff}
+
+.doc-content section{position:relative;padding:0 0 44px;margin-bottom:44px;border-bottom:1px solid var(--line);scroll-margin-top:100px}
+.doc-content section:last-child{border-bottom:0;margin-bottom:0}
+.doc-no{display:block;font:600 11px Manrope,sans-serif;letter-spacing:.14em;color:var(--sky);margin-bottom:8px}
+body.doc .doc-content h2{font-size:clamp(25px,2.7vw,33px);font-weight:500;letter-spacing:-.025em;line-height:1.5;margin:0 0 14px;text-wrap:balance}
+.doc-content h3{font-size:19px;font-weight:600;letter-spacing:-.01em;margin:30px 0 8px}
+.doc-content p,.doc-content li{font-size:17px;line-height:1.95;color:var(--soft)}
+.doc-content p{margin:0 0 16px}
+.doc-content ul,.doc-content ol{padding-left:24px;margin:0 0 18px}
+.doc-content li{margin:6px 0;padding-left:4px}
+.doc-content li::marker{color:var(--dim)}
+.doc-content strong,.doc-content b{color:var(--text);font-weight:600}
+.doc-content a:not(.ghost){color:#b9d6ff;text-decoration:underline;text-decoration-color:#6bb3ff66;text-underline-offset:5px}
+.doc-content a:not(.ghost):hover{color:#fff}
+.doc-content code{font:14px ui-monospace,SFMono-Regular,Menlo,monospace;padding:2px 7px;border-radius:7px;background:#ffffff12;color:#dce9ff;overflow-wrap:anywhere}
+.doc-content table{width:100%;border-collapse:collapse;margin:8px 0 22px;font-size:15px;line-height:1.8}
+.doc-content th,.doc-content td{text-align:left;vertical-align:top;padding:13px 16px 13px 0;border-bottom:1px solid var(--line);color:var(--soft)}
+.doc-content th{font-weight:600;color:var(--text);border-bottom-color:#ffffff38}
+.doc-content .note{font-size:15px;color:var(--muted);border-left:2px solid #6bb3ff59;padding-left:16px;margin:20px 0}
+/* Both languages live in the HTML. Without JS both show (Thai first); app.js adds html.js and hides the other one. */
+.doc-lang+.doc-lang{margin-top:70px}
+html.js[lang=th] .doc-lang[data-lang=en],html.js[lang=en] .doc-lang[data-lang=th]{display:none}
+html.js .doc-lang+.doc-lang{margin-top:0}
+.doc-lang[data-lang=en] .doc-toc-title{font-size:10px;letter-spacing:.2em}
+.doc-lang[data-lang=th] .doc-toc-title{font-size:12px;letter-spacing:.04em}
+.doc-table{overflow-x:auto;margin:8px 0 22px}
+.doc-table table{margin:0;min-width:520px}
+.doc-content td:first-child{color:var(--text);min-width:132px}
+.doc-content h3+ul,.doc-content h3+ol,.doc-content h3+p{margin-top:0}
+
+@media(max-width:860px){
+  .doc-wrap{padding:50px 5.5% 80px}
+  body.doc .doc-head h1{font-size:clamp(38px,10.6vw,52px)}
+  .doc-lead{font-size:17px}
+  .doc-body{grid-template-columns:1fr;gap:34px;margin-top:40px;padding-top:34px}
+  .doc-toc{position:static}
+  .doc-toc a:last-child{border-bottom:1px solid var(--line)}
+  .doc-content p,.doc-content li{font-size:16px}
+  .doc-content section{padding-bottom:34px;margin-bottom:34px}
+}
+

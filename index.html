@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#030918">
+<title data-th="PUDD — พูดแทนพิมพ์ บน Mac" data-en="PUDD — Speak instead of typing, on Mac">PUDD — พูดแทนพิมพ์ บน Mac</title>
+<meta name="description" content="PUDD (พูดแทนพิมพ์) แอปแถบเมนูบน Mac กดปุ่มค้าง พูด แล้วปล่อย ข้อความลงช่องที่เคอร์เซอร์อยู่ ถอดเสียงในเครื่อง เลือกภาษาที่พูดได้ 5 ภาษา ราคา ฿390 ช่วงเปิดตัว จ่ายครั้งเดียว ทดลองใช้ 7 วัน" data-content-th="PUDD (พูดแทนพิมพ์) แอปแถบเมนูบน Mac กดปุ่มค้าง พูด แล้วปล่อย ข้อความลงช่องที่เคอร์เซอร์อยู่ ถอดเสียงในเครื่อง เลือกภาษาที่พูดได้ 5 ภาษา ราคา ฿390 ช่วงเปิดตัว จ่ายครั้งเดียว ทดลองใช้ 7 วัน" data-content-en="PUDD is a menu bar app for Mac. Hold a key, speak, let go — your words land where your cursor is. Transcribed on device. Five spoken languages. ฿390 launch price, pay once, 7-day trial.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chongdol.github.io/pudd-web/">
+<link rel="canonical" href="https://chongdol.github.io/pudd-web/">
+<meta property="og:site_name" content="PUDD">
+<meta property="og:title" content="PUDD — พูดแทนพิมพ์ บน Mac">
+<meta property="og:description" content="กดปุ่มค้าง พูด แล้วปล่อย ข้อความลงช่องที่เคอร์เซอร์อยู่ ถอดเสียงในเครื่อง เลือกภาษาที่พูดได้ 5 ภาษา ราคา ฿390 ช่วงเปิดตัว จ่ายครั้งเดียว ทดลองใช้ 7 วัน">
+<meta property="og:image" content="https://chongdol.github.io/pudd-web/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="th_TH">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PUDD — พูดแทนพิมพ์ บน Mac">
+<meta name="twitter:description" content="กดปุ่มค้าง พูด แล้วปล่อย ข้อความลงช่องที่เคอร์เซอร์อยู่ ถอดเสียงในเครื่อง เลือกภาษาที่พูดได้ 5 ภาษา">
+<meta name="twitter:image" content="https://chongdol.github.io/pudd-web/assets/og.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="motion.css">
+</head>
+<body>
+<a class="skip" href="#how" data-th="ข้ามไปวิธีใช้" data-en="Skip to how it works">ข้ามไปวิธีใช้</a>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="PUDD">
+    <img src="assets/icon-96.png" alt="" width="34" height="34">
+    <svg viewBox="-30 -30 1320 260" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"><path d="M0,0 H185 A50,50 0 0 1 185,100 H40 A40,40 0 0 0 0,140 V200"/><path d="M340,0 V78 A122.5,122.5 0 0 0 585,78 V0"/><path d="M685,0 H830 A100,100 0 0 1 830,200 H685"/><path d="M1015,0 H1160 A100,100 0 0 1 1160,200 H1015"/></g></svg>
+    <span data-th="พูดแทนพิมพ์" data-en="Speak instead of typing">พูดแทนพิมพ์</span>
+  </a>
+  <nav class="site-nav" aria-label="เมนูหลัก" data-label-th="เมนูหลัก" data-label-en="Main menu">
+    <a href="#how" data-th="วิธีใช้" data-en="How it works">วิธีใช้</a>
+    <a href="#features" data-th="จุดเด่น" data-en="Features">จุดเด่น</a>
+    <a href="#privacy" data-th="ความเป็นส่วนตัว" data-en="Privacy">ความเป็นส่วนตัว</a>
+    <a href="#panel" data-th="แผงตั้งค่า" data-en="Panel">แผงตั้งค่า</a>
+    <a href="#buy" data-th="ราคา" data-en="Pricing">ราคา</a>
+    <a href="#faq" data-th="คำถาม" data-en="FAQ">คำถาม</a>
+    <a href="#contact" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
+  </nav>
+  <button id="language" type="button" aria-label="Switch to English">EN <span aria-hidden="true">↗</span></button>
+</header>
+
+<main id="top">
+
+<!-- ═════════ HERO ═════════ -->
+<div class="backdrop backdrop-a">
+<section class="hero">
+  <div class="eyebrow"><span class="dot"></span> PUDD / YOUR VOICE CAN CONTROL</div>
+  <h1 data-th="พูดแทนพิมพ์.&lt;br&gt;&lt;em&gt;ข้อความลงให้เอง.&lt;/em&gt;" data-en="Speak it.&lt;br&gt;&lt;em&gt;See it typed.&lt;/em&gt;">พูดแทนพิมพ์.<br><em>ข้อความลงให้เอง.</em></h1>
+  <div class="hero-bottom">
+    <p data-th="กดปุ่มค้าง พูด แล้วปล่อย&lt;br&gt;PUDD ถอดเสียงในเครื่อง แล้ววางข้อความลงช่องที่เคอร์เซอร์อยู่" data-en="Hold a key. Speak. Let go.&lt;br&gt;PUDD transcribes on your Mac and places the text where your cursor is.">กดปุ่มค้าง พูด แล้วปล่อย<br>PUDD ถอดเสียงในเครื่อง แล้ววางข้อความลงช่องที่เคอร์เซอร์อยู่</p>
+    <a class="round-link" href="#how"><span data-th="ดูวิธีใช้" data-en="See how it works">ดูวิธีใช้</span><b aria-hidden="true">↓</b></a>
+  </div>
+  <ul class="deal-strip" aria-label="สรุปราคา" data-label-th="สรุปราคา" data-label-en="Price at a glance">
+    <li><b>฿390</b> <span data-th="ช่วงเปิดตัว" data-en="launch price">ช่วงเปิดตัว</span></li>
+    <li data-th="ทดลองใช้ 7 วัน" data-en="7-day trial">ทดลองใช้ 7 วัน</li>
+    <li data-th="รหัส 1 เครื่อง" data-en="1 code, 1 Mac">รหัส 1 เครื่อง</li>
+  </ul>
+  <div class="hero-actions">
+    <!-- BUY: ขายตรงทาง LINE (ยังไม่มีลิงก์ดาวน์โหลดสาธารณะ — ไฟล์ยังไม่ผ่าน notarize) · เมื่อขึ้น Mac App Store ค่อยเพิ่มปุ่มสโตร์ (ดู README) -->
+    <a class="primary" href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer" data-buy><span data-th="ซื้อ ฿390 · ทัก LINE" data-en="Buy ฿390 · Message on LINE">ซื้อ ฿390 · ทัก LINE</span><b aria-hidden="true">↗</b></a>
+    <a class="ghost" href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer" data-trial><span data-th="ขอรุ่นทดลอง 7 วัน" data-en="Ask for the 7-day trial">ขอรุ่นทดลอง 7 วัน</span><b aria-hidden="true">↗</b></a>
+  </div>
+  <p class="hero-note" data-price data-th="ราคาช่วงเปิดตัว · จ่ายครั้งเดียว · อัปเดตฟรี" data-en="Launch price · one-time · free updates">ราคาช่วงเปิดตัว · จ่ายครั้งเดียว · อัปเดตฟรี</p>
+
+  <figure class="product-stage">
+    <picture>
+      <source media="(max-width:760px)" srcset="assets/hero-strip-m-th.webp" data-srcset-th="assets/hero-strip-m-th.webp" data-srcset-en="assets/hero-strip-m-en.webp" width="900" height="316">
+      <img class="stage-shot" src="assets/hero-strip-th.webp" data-src-th="assets/hero-strip-th.webp" data-src-en="assets/hero-strip-en.webp" width="1432" height="356" alt="แคปซูลของ PUDD ที่กลางล่างของจอ กำลังขึ้นข้อความตามเสียงพูด เหนือช่องพิมพ์ของแอปแชต" data-alt-th="แคปซูลของ PUDD ที่กลางล่างของจอ กำลังขึ้นข้อความตามเสียงพูด เหนือช่องพิมพ์ของแอปแชต" data-alt-en="The PUDD capsule at the bottom centre of the screen, showing text as it is spoken, above a chat app&#x27;s text field">
+    </picture>
+    <figcaption class="image-note" data-th="ภาพจำลองการใช้งาน วาดจากหน้าจอจริงของแอป" data-en="Simulated usage, drawn from the app&#x27;s real screens.">ภาพจำลองการใช้งาน วาดจากหน้าจอจริงของแอป</figcaption>
+  </figure>
+
+  <div class="chapter-index" aria-hidden="true"><span>01 — HOLD</span><span>02 — SPEAK</span><span>03 — RELEASE</span></div>
+</section>
+</div>
+
+<!-- ═════════ HOW IT WORKS ═════════ -->
+<section class="section" id="how">
+  <div class="section-heading">
+    <span class="eyebrow"><span class="dot"></span> HOW IT WORKS</span>
+    <h2 data-th="กดค้าง. พูด.&lt;br&gt;&lt;em&gt;ปล่อย.&lt;/em&gt;" data-en="Hold. Speak.&lt;br&gt;&lt;em&gt;Release.&lt;/em&gt;">กดค้าง. พูด.<br><em>ปล่อย.</em></h2>
+    <p data-th="สามจังหวะ ปุ่มเดียว ไม่ต้องสลับหน้าต่าง มือยังอยู่กับงานที่ทำ" data-en="Three beats, one key. No window switching. Your hands stay on your work.">สามจังหวะ ปุ่มเดียว ไม่ต้องสลับหน้าต่าง มือยังอยู่กับงานที่ทำ</p>
+  </div>
+
+  <div class="demo" id="demo">
+    <figure class="demo-stage">
+      <div class="demo-frame" id="demo-frame" role="img" aria-label="ภาพจำลองการใช้งาน PUDD ทีละจังหวะ" data-label-th="ภาพจำลองการใช้งาน PUDD ทีละจังหวะ" data-label-en="Simulated PUDD usage, beat by beat">
+        <img src="assets/story-0-th.webp" data-src-th="assets/story-0-th.webp" data-src-en="assets/story-0-en.webp" alt="" width="1432" height="844">
+        <img src="assets/story-1-th.webp" data-src-th="assets/story-1-th.webp" data-src-en="assets/story-1-en.webp" alt="" width="1432" height="844">
+        <img src="assets/story-2-th.webp" data-src-th="assets/story-2-th.webp" data-src-en="assets/story-2-en.webp" alt="" width="1432" height="844">
+        <img src="assets/story-3-th.webp" data-src-th="assets/story-3-th.webp" data-src-en="assets/story-3-en.webp" alt="" width="1432" height="844">
+        <img src="assets/story-4-th.webp" data-src-th="assets/story-4-th.webp" data-src-en="assets/story-4-en.webp" alt="" width="1432" height="844">
+        <img class="active" src="assets/story-5-th.webp" data-src-th="assets/story-5-th.webp" data-src-en="assets/story-5-en.webp" alt="" width="1432" height="844">
+        <img src="assets/story-6-th.webp" data-src-th="assets/story-6-th.webp" data-src-en="assets/story-6-en.webp" alt="" width="1432" height="844" data-focus="left">
+        <img src="assets/story-7-th.webp" data-src-th="assets/story-7-th.webp" data-src-en="assets/story-7-en.webp" alt="" width="1432" height="844" data-focus="right">
+      </div>
+      <div class="demo-bar">
+        <p class="demo-caption" aria-live="polite">
+          <span data-th="ทำงานตามปกติ บนจอไม่มีอะไรของ PUDD" data-en="Working as usual. Nothing from PUDD on screen.">ทำงานตามปกติ บนจอไม่มีอะไรของ PUDD</span>
+          <span data-th="กด ⌥ Option ขวาค้าง แคปซูลขึ้นที่กลางล่างของจอ" data-en="Hold right ⌥ Option. The capsule appears at the bottom centre.">กด ⌥ Option ขวาค้าง แคปซูลขึ้นที่กลางล่างของจอ</span>
+          <span data-th="เริ่มพูด เส้นคลื่นขยับตามเสียง" data-en="Start speaking. The line follows your voice.">เริ่มพูด เส้นคลื่นขยับตามเสียง</span>
+          <span data-th="ตัวหนังสือขึ้นตามที่พูด" data-en="Text appears as you speak.">ตัวหนังสือขึ้นตามที่พูด</span>
+          <span data-th="พูดต่อได้เรื่อย ๆ" data-en="Keep going.">พูดต่อได้เรื่อย ๆ</span>
+          <span class="active" data-th="พูดจบ ปิดท้ายด้วย &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; หรือแค่ปล่อยปุ่ม" data-en="Finish with &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt;, or simply let go.">พูดจบ ปิดท้ายด้วย <span class="nw">“ส่งเลย”</span> หรือแค่ปล่อยปุ่ม</span>
+          <span data-th="ข้อความลงช่องพิมพ์ แล้วกด Enter ให้" data-en="The text lands in the field, then Enter is pressed.">ข้อความลงช่องพิมพ์ แล้วกด Enter ให้</span>
+          <span data-th="แคปซูลหายไปเอง เหลือแต่ข้อความของคุณ" data-en="The capsule leaves. Only your message remains.">แคปซูลหายไปเอง เหลือแต่ข้อความของคุณ</span>
+        </p>
+        <div class="demo-tools">
+          <div class="demo-counter"><span id="demo-count">06 / 08</span><div><i id="demo-progress" style="width:75%"></i></div></div>
+          <button id="demo-replay" type="button" data-th="เล่นอีกครั้ง ↻" data-en="Play again ↻">เล่นอีกครั้ง ↻</button>
+        </div>
+      </div>
+      <figcaption class="image-note" data-th="ภาพจำลองการใช้งาน วาดจากหน้าจอจริงของแอป" data-en="Simulated usage, drawn from the app&#x27;s real screens.">ภาพจำลองการใช้งาน วาดจากหน้าจอจริงของแอป</figcaption>
+    </figure>
+
+    <div class="demo-steps" role="tablist" aria-label="สามจังหวะ" data-label-th="สามจังหวะ" data-label-en="Three beats">
+      <button type="button" role="tab" aria-selected="false" aria-controls="demo-frame" tabindex="-1">
+        <span class="no">01</span>
+        <b data-th="กดค้าง" data-en="Hold">กดค้าง</b>
+        <span class="copy" data-th="คลิกช่องที่อยากพิมพ์ แล้วกด ⌥ Option ขวาค้างไว้ แคปซูลเล็ก ๆ ขึ้นที่กลางล่างของจอ" data-en="Click where you want to type, then hold the right ⌥ Option key. A small capsule appears at the bottom centre of the screen.">คลิกช่องที่อยากพิมพ์ แล้วกด ⌥ Option ขวาค้างไว้ แคปซูลเล็ก ๆ ขึ้นที่กลางล่างของจอ</span>
+      </button>
+      <button type="button" role="tab" aria-selected="true" aria-controls="demo-frame" tabindex="0">
+        <span class="no">02</span>
+        <b data-th="พูด" data-en="Speak">พูด</b>
+        <span class="copy" data-th="พูดตามปกติ เส้นคลื่นขยับตามเสียง ตัวหนังสือขึ้นให้เห็นระหว่างพูด" data-en="Talk as you normally do. The line follows your voice and the text appears while you speak.">พูดตามปกติ เส้นคลื่นขยับตามเสียง ตัวหนังสือขึ้นให้เห็นระหว่างพูด</span>
+      </button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="demo-frame" tabindex="-1">
+        <span class="no">03</span>
+        <b data-th="ปล่อย" data-en="Release">ปล่อย</b>
+        <span class="copy" data-th="ปล่อยปุ่ม ข้อความลงช่องที่เคอร์เซอร์อยู่ ปิดท้ายด้วยคำว่า &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; PUDD กด Enter ให้ด้วย" data-en="Let go and the text lands where your cursor is. End with &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; and PUDD presses Enter as well.">ปล่อยปุ่ม ข้อความลงช่องที่เคอร์เซอร์อยู่ ปิดท้ายด้วยคำว่า <span class="nw">“ส่งเลย”</span> PUDD กด Enter ให้ด้วย</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ FEATURES ═════════ -->
+<section class="section ruled" id="features">
+  <div class="section-heading">
+    <span class="eyebrow"><span class="dot"></span> EXPLORE PUDD</span>
+    <h2 data-th="ทำได้แปดอย่าง.&lt;br&gt;&lt;em&gt;บอกตรง ๆ ทุกข้อ.&lt;/em&gt;" data-en="Eight things it does.&lt;br&gt;&lt;em&gt;Each stated plainly.&lt;/em&gt;">ทำได้แปดอย่าง.<br><em>บอกตรง ๆ ทุกข้อ.</em></h2>
+    <p data-th="จุดเด่นแบ่งเป็น 8 หมวด เปิดแต่ละข้อเพื่อดูวิธีใช้และข้อจำกัด" data-en="Eight categories. Open each one for how to use it, and where its limits are.">จุดเด่นแบ่งเป็น 8 หมวด เปิดแต่ละข้อเพื่อดูวิธีใช้และข้อจำกัด</p>
+  </div>
+
+  <div class="feature-grid">
+    <article class="feature-card" id="feature-type">
+      <div class="feature-top"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="19" height="11" rx="3.5"/><path d="M8 9.8v4.4"/></svg></span><span>01</span></div>
+      <p class="feature-label" data-th="พูดแทนพิมพ์" data-en="Speak to type">พูดแทนพิมพ์</p>
+      <h3 data-th="เคอร์เซอร์อยู่ไหน ข้อความลงตรงนั้น" data-en="Your cursor. Your words.">เคอร์เซอร์อยู่ไหน ข้อความลงตรงนั้น</h3>
+      <p class="feature-description" data-th="ข้อความลงช่องที่เคอร์เซอร์อยู่ ไม่ต้องก๊อป ไม่ต้องวางเอง" data-en="Text lands in the field where your cursor is. No copying, no pasting.">ข้อความลงช่องที่เคอร์เซอร์อยู่ ไม่ต้องก๊อป ไม่ต้องวางเอง</p>
+      <details>
+        <summary><span data-th="วิธีใช้งาน" data-en="How to use">วิธีใช้งาน</span><span aria-hidden="true">＋</span></summary>
+        <ol>
+          <li data-th="คลิกช่องที่อยากพิมพ์" data-en="Click the field you want to type in.">คลิกช่องที่อยากพิมพ์</li>
+          <li data-th="กด &lt;kbd&gt;⌥ Option ขวา&lt;/kbd&gt; ค้าง แล้วพูด" data-en="Hold &lt;kbd&gt;right ⌥ Option&lt;/kbd&gt; and speak.">กด <kbd>⌥ Option ขวา</kbd> ค้าง แล้วพูด</li>
+          <li data-th="ปล่อยปุ่ม ข้อความลงช่อง" data-en="Let go. The text lands in the field.">ปล่อยปุ่ม ข้อความลงช่อง</li>
+        </ol>
+        <p class="feature-note" data-th="ทดสอบแล้วกับ Chrome, LINE และ TextEdit · ช่องรหัสผ่าน และแอปที่ปิดการวาง อาจใช้ไม่ได้" data-en="Tested with Chrome, LINE and TextEdit. Password fields and apps that block pasting may not work.">ทดสอบแล้วกับ Chrome, LINE และ TextEdit · ช่องรหัสผ่าน และแอปที่ปิดการวาง อาจใช้ไม่ได้</p>
+      </details>
+    </article>
+
+    <article class="feature-card" id="feature-send">
+      <div class="feature-top"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 6v5a3 3 0 0 1-3 3H6"/><path d="M9.5 10.5 6 14l3.5 3.5"/></svg></span><span>02</span></div>
+      <p class="feature-label" data-th="สั่งส่งด้วยเสียง" data-en="Send by voice">สั่งส่งด้วยเสียง</p>
+      <h3 data-th="พูด &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; PUDD กด Enter ให้" data-en="Say &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt;. PUDD presses Enter.">พูด <span class="nw">“ส่งเลย”</span> PUDD กด Enter ให้</h3>
+      <p class="feature-description" data-th="ปิดท้ายประโยคด้วยคำว่า &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; คำนั้นถูกตัดออก แล้ว PUDD กด Enter แทนคุณ" data-en="End your sentence with &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; (Thai for “send now”). The phrase is removed and PUDD presses Enter for you.">ปิดท้ายประโยคด้วยคำว่า <span class="nw">“ส่งเลย”</span> คำนั้นถูกตัดออก แล้ว PUDD กด Enter แทนคุณ</p>
+      <details>
+        <summary><span data-th="วิธีใช้งาน" data-en="How to use">วิธีใช้งาน</span><span aria-hidden="true">＋</span></summary>
+        <ol>
+          <li data-th="พูดประโยคตามปกติ" data-en="Say your sentence as usual.">พูดประโยคตามปกติ</li>
+          <li data-th="ปิดท้ายด้วย &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; จะเติม ครับ หรือ ค่ะ ก็ได้" data-en="End with &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt;. A polite ครับ or ค่ะ after it is fine.">ปิดท้ายด้วย <span class="nw">“ส่งเลย”</span> จะเติม ครับ หรือ ค่ะ ก็ได้</li>
+          <li data-th="ข้อความลงช่อง แล้วกด Enter" data-en="The text lands, then Enter is pressed.">ข้อความลงช่อง แล้วกด Enter</li>
+        </ol>
+        <p class="feature-note" data-th="สวิตช์นี้เปิดไว้เป็นค่าเริ่มต้น ปิดได้ในแผง · ถ้าอยากให้กด Enter ทุกครั้งโดยไม่ต้องพูด เปิดได้ในแผง" data-en="On by default; you can turn it off in the panel. To have Enter pressed every time without saying it, switch that on in the panel.">สวิตช์นี้เปิดไว้เป็นค่าเริ่มต้น ปิดได้ในแผง · ถ้าอยากให้กด Enter ทุกครั้งโดยไม่ต้องพูด เปิดได้ในแผง</p>
+      </details>
+    </article>
+
+    <article class="feature-card" id="feature-long">
+      <div class="feature-top"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12c.8-3 1.7-3 2.5 0s1.7 3 2.5 0"/><path d="M9.5 12c.8-5 1.7-5 2.5 0s1.7 5 2.5 0"/><path d="M17 12c.8-3 1.7-3 2.5 0s1.7 3 2.5 0"/></svg></span><span>03</span></div>
+      <p class="feature-label" data-th="พูดยาว" data-en="Long dictation">พูดยาว</p>
+      <h3 data-th="พูดยาวได้ ถอดเป็นท่อน" data-en="Speak at length. In passages.">พูดยาวได้ ถอดเป็นท่อน</h3>
+      <p class="feature-description" data-th="พูดต่อเนื่องได้ PUDD ตัดเสียงเป็นท่อนตามจังหวะที่คุณเว้น แล้วต่อกลับเป็นข้อความเดียวตอนจบ" data-en="Keep talking. PUDD splits your speech at your pauses, then joins it back into one text at the end.">พูดต่อเนื่องได้ PUDD ตัดเสียงเป็นท่อนตามจังหวะที่คุณเว้น แล้วต่อกลับเป็นข้อความเดียวตอนจบ</p>
+      <details>
+        <summary><span data-th="วิธีใช้งาน" data-en="How to use">วิธีใช้งาน</span><span aria-hidden="true">＋</span></summary>
+        <ol>
+          <li data-th="แตะปุ่มพูดสั้น ๆ เพื่อล็อก มือว่างได้เลย" data-en="Tap the talk key briefly to lock. Your hands are free.">แตะปุ่มพูดสั้น ๆ เพื่อล็อก มือว่างได้เลย</li>
+          <li data-th="พูดไปเรื่อย ๆ เว้นจังหวะตามปกติ" data-en="Keep speaking, pausing as you naturally do.">พูดไปเรื่อย ๆ เว้นจังหวะตามปกติ</li>
+          <li data-th="จบด้วย &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; หรือแตะปุ่มอีกครั้ง · กด &lt;kbd&gt;Esc&lt;/kbd&gt; เพื่อยกเลิก" data-en="Finish with &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; or tap the key again. Press &lt;kbd&gt;Esc&lt;/kbd&gt; to cancel.">จบด้วย <span class="nw">“ส่งเลย”</span> หรือแตะปุ่มอีกครั้ง · กด <kbd>Esc</kbd> เพื่อยกเลิก</li>
+        </ol>
+        <p class="feature-note" data-th="โหมดล็อกหยุดเองเมื่อครบ 20 นาที" data-en="Locked mode stops by itself at 20 minutes.">โหมดล็อกหยุดเองเมื่อครบ 20 นาที</p>
+      </details>
+    </article>
+
+    <article class="feature-card" id="feature-language">
+      <div class="feature-top"><span class="feature-icon" aria-hidden="true">ก A</span><span>04</span></div>
+      <p class="feature-label" data-th="ภาษาที่พูด" data-en="Spoken language">ภาษาที่พูด</p>
+      <h3 data-th="เลือกภาษาที่พูดได้ 5 ภาษา" data-en="Choose from 5 spoken languages.">เลือกภาษาที่พูดได้ 5 ภาษา</h3>
+      <p class="feature-description" data-th="ไทย อังกฤษ ญี่ปุ่น จีน เกาหลี เลือกได้ในแผง ค่าเริ่มต้นเป็นไทย และพูดอังกฤษชัด ๆ ก็ออกเป็นอังกฤษให้" data-en="Thai, English, Japanese, Chinese and Korean, picked in the panel. Thai is the default, and clear English comes out as English.">ไทย อังกฤษ ญี่ปุ่น จีน เกาหลี เลือกได้ในแผง ค่าเริ่มต้นเป็นไทย และพูดอังกฤษชัด ๆ ก็ออกเป็นอังกฤษให้</p>
+      <details>
+        <summary><span data-th="รายละเอียด" data-en="Details">รายละเอียด</span><span aria-hidden="true">＋</span></summary>
+        <ul>
+          <li data-th="เลือกในแผงตั้งค่า แถว “ภาษาที่พูด”" data-en="Pick it in the panel, in the spoken-language row.">เลือกในแผงตั้งค่า แถว “ภาษาที่พูด”</li>
+          <li data-th="สั่งด้วยเสียงก็ได้ เช่น “โหมดภาษาญี่ปุ่น” · กลับไทยพูด “Thai mode”" data-en="You can also say it, for example “Japanese mode”. Say “Thai mode” to switch back.">สั่งด้วยเสียงก็ได้ เช่น “โหมดภาษาญี่ปุ่น” · กลับไทยพูด “Thai mode”</li>
+          <li data-th="“คำศัพท์ของฉัน” ใช้กับโหมดภาษาไทย" data-en="“My words” applies in Thai mode.">“คำศัพท์ของฉัน” ใช้กับโหมดภาษาไทย</li>
+          <li data-th="ในโหมดภาษาอื่นที่ไม่ใช่ไทย คำว่า &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; ใช้ไม่ได้ ให้พูด “send it” แทน" data-en="Outside Thai mode, &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; does not work; say “send it” instead.">ในโหมดภาษาอื่นที่ไม่ใช่ไทย คำว่า <span class="nw">“ส่งเลย”</span> ใช้ไม่ได้ ให้พูด “send it” แทน</li>
+        </ul>
+        <p class="feature-note" data-th="ไทยและอังกฤษทดสอบมากที่สุด ภาษาจีนและเกาหลียังไม่ได้ทดสอบกับเสียงจริงมากเท่าไทยและอังกฤษ · ภาษาของหน้าตาแอปตั้งแยกได้ (หมวด 08)" data-en="Thai and English are the most tested; Chinese and Korean have not been tested with real voices as much. The app’s own language is a separate setting (08).">ไทยและอังกฤษทดสอบมากที่สุด ภาษาจีนและเกาหลียังไม่ได้ทดสอบกับเสียงจริงมากเท่าไทยและอังกฤษ · ภาษาของหน้าตาแอปตั้งแยกได้ (หมวด 08)</p>
+      </details>
+    </article>
+
+    <article class="feature-card" id="feature-clean">
+      <div class="feature-top"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12h5.500M16 12h5.5"/><path d="M10 9.500l4 5M14 9.500l-4 5"/></svg></span><span>05</span></div>
+      <p class="feature-label" data-th="ตัดคำติดปาก" data-en="Filler removal">ตัดคำติดปาก</p>
+      <h3 data-th="ตัด อืม เอ่อ ออกให้" data-en="“Um” and “uh”, removed.">ตัด อืม เอ่อ ออกให้</h3>
+      <p class="feature-description" data-th="คำติดปากที่ยืนเดี่ยว ๆ อย่าง อืม เอ่อ um uh ถูกตัดออกก่อนวางข้อความ" data-en="Standalone fillers such as อืม, เอ่อ, um and uh are taken out before the text is placed.">คำติดปากที่ยืนเดี่ยว ๆ อย่าง อืม เอ่อ um uh ถูกตัดออกก่อนวางข้อความ</p>
+      <details>
+        <summary><span data-th="รายละเอียด" data-en="Details">รายละเอียด</span><span aria-hidden="true">＋</span></summary>
+        <ul>
+          <li data-th="เปิดไว้เป็นค่าเริ่มต้น" data-en="On by default.">เปิดไว้เป็นค่าเริ่มต้น</li>
+          <li data-th="ตัดเฉพาะคำที่ยืนเดี่ยว ไม่แตะคำอื่นในประโยค" data-en="Only standalone fillers are removed. The rest of the sentence is untouched.">ตัดเฉพาะคำที่ยืนเดี่ยว ไม่แตะคำอื่นในประโยค</li>
+          <li data-th="ปิดได้ในแผง เช่น ตอนเขียนบทที่อยากเก็บทุกคำ" data-en="Turn it off in the panel, for example when writing a script and you want every word kept.">ปิดได้ในแผง เช่น ตอนเขียนบทที่อยากเก็บทุกคำ</li>
+        </ul>
+        <p class="feature-note" data-th="ทำงานตามรายการคำที่กำหนดไว้ ไม่ได้เรียบเรียงประโยคใหม่ให้" data-en="It works from a fixed word list. It does not rewrite your sentences.">ทำงานตามรายการคำที่กำหนดไว้ ไม่ได้เรียบเรียงประโยคใหม่ให้</p>
+      </details>
+    </article>
+
+    <article class="feature-card" id="feature-start">
+      <div class="feature-top"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M8 9.500h2.300l3.4 5H16M13.8 9.500H16"/></svg></span><span>06</span></div>
+      <p class="feature-label" data-th="วิธีเริ่มพูด" data-en="Ways to start">วิธีเริ่มพูด</p>
+      <h3 data-th="เริ่มพูดได้สี่แบบ" data-en="Four ways to begin.">เริ่มพูดได้สี่แบบ</h3>
+      <p class="feature-description" data-th="กดค้างคือค่าเริ่มต้น อีกสามแบบมีไว้ให้เลือกตามถนัด" data-en="Hold-to-talk is the default. Three more are there when you prefer them.">กดค้างคือค่าเริ่มต้น อีกสามแบบมีไว้ให้เลือกตามถนัด</p>
+      <details>
+        <summary><span data-th="รายละเอียด" data-en="Details">รายละเอียด</span><span aria-hidden="true">＋</span></summary>
+        <ul>
+          <li data-th="&lt;b&gt;กดค้าง&lt;/b&gt; — กด &lt;kbd&gt;⌥ Option ขวา&lt;/kbd&gt; ค้าง พูด แล้วปล่อย เปลี่ยนเป็น &lt;kbd&gt;⌘ Command ขวา&lt;/kbd&gt; ได้ในแผง" data-en="&lt;b&gt;Hold&lt;/b&gt; — hold &lt;kbd&gt;right ⌥ Option&lt;/kbd&gt;, speak, let go. Switch to &lt;kbd&gt;right ⌘ Command&lt;/kbd&gt; in the panel."><b>กดค้าง</b> — กด <kbd>⌥ Option ขวา</kbd> ค้าง พูด แล้วปล่อย เปลี่ยนเป็น <kbd>⌘ Command ขวา</kbd> ได้ในแผง</li>
+          <li data-th="&lt;b&gt;แตะล็อก&lt;/b&gt; — แตะปุ่มพูดสั้น ๆ แล้วพูดยาวได้มือว่าง" data-en="&lt;b&gt;Tap to lock&lt;/b&gt; — tap the talk key briefly, then speak hands-free."><b>แตะล็อก</b> — แตะปุ่มพูดสั้น ๆ แล้วพูดยาวได้มือว่าง</li>
+          <li data-th="&lt;b&gt;แตะ &lt;kbd&gt;⌃ Control ซ้าย&lt;/kbd&gt; 1 ที&lt;/b&gt; — พูดได้เลย หยุดพูดสักครู่ข้อความลงให้เอง · เปิดได้ในแผง" data-en="&lt;b&gt;Tap &lt;kbd&gt;left ⌃ Control&lt;/kbd&gt; once&lt;/b&gt; — just speak; pause briefly and the text is placed. Switch it on in the panel."><b>แตะ <kbd>⌃ Control ซ้าย</kbd> 1 ที</b> — พูดได้เลย หยุดพูดสักครู่ข้อความลงให้เอง · เปิดได้ในแผง</li>
+          <li data-th="&lt;b&gt;เรียกชื่อ “พูด”&lt;/b&gt; — ไม่ต้องกดปุ่ม · เปิดได้ในแผง" data-en="&lt;b&gt;Call its name, “พูด”&lt;/b&gt; — no key needed. Switch it on in the panel."><b>เรียกชื่อ “พูด”</b> — ไม่ต้องกดปุ่ม · เปิดได้ในแผง</li>
+        </ul>
+        <p class="feature-note" data-th="เมื่อเปิดเรียกชื่อ ไมโครโฟนจะฟังตลอดเวลา และแบบนี้ยังไม่นิ่งเท่าการกดปุ่ม" data-en="With name-calling on, the microphone listens continuously, and it is not yet as consistent as using a key.">เมื่อเปิดเรียกชื่อ ไมโครโฟนจะฟังตลอดเวลา และแบบนี้ยังไม่นิ่งเท่าการกดปุ่ม</p>
+      </details>
+    </article>
+    <article class="feature-card" id="feature-translate">
+      <div class="feature-top"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 7.5h8M7.5 5v2.5M5 7.5c.6 3 2.5 5 5 6"/><path d="M10 7.5c-.5 3-2.4 5.4-5.5 6.5"/><path d="M13 19l3.5-8.5L20 19M14.2 16.2h4.6"/></svg></span><span>07</span></div>
+      <div class="feature-body">
+        <div>
+          <p class="feature-label"><span data-th="แปลก่อนวาง" data-en="Translate before pasting">แปลก่อนวาง</span><span class="feature-tag" data-th="ตัวเลือก · ต้อง macOS 26 ขึ้นไป" data-en="Optional · needs macOS 26 or later">ตัวเลือก · ต้อง macOS 26 ขึ้นไป</span></p>
+          <h3 data-th="พูดไทย วางเป็นภาษาอื่น" data-en="Speak Thai. Paste another language.">พูดไทย วางเป็นภาษาอื่น</h3>
+          <p class="feature-description" data-th="พูดไทย วางเป็นอังกฤษ จีน ญี่ปุ่น หรือเกาหลีได้ · พูดอังกฤษ วางเป็นไทยได้ แปลหลังพูดจบ ในเครื่องด้วยตัวแปลของ macOS" data-en="Speak Thai, paste English. Also Chinese, Japanese, Korean. Speak English, paste Thai. It translates after you finish speaking, on your Mac, with the translator built into macOS.">พูดไทย วางเป็นอังกฤษ จีน ญี่ปุ่น หรือเกาหลีได้ · พูดอังกฤษ วางเป็นไทยได้ แปลหลังพูดจบ ในเครื่องด้วยตัวแปลของ macOS</p>
+        </div>
+        <details>
+          <summary><span data-th="วิธีใช้งาน" data-en="How to use">วิธีใช้งาน</span><span aria-hidden="true">＋</span></summary>
+          <ol>
+            <li data-th="ในแผงตั้งค่า แถว “แปลก่อนวาง เป็นภาษา” เลือกภาษาปลายทาง (ค่าเริ่มต้นคือ “ไม่แปล”)" data-en="In the panel, choose a target in the “translate before pasting” row. It is off by default.">ในแผงตั้งค่า แถว “แปลก่อนวาง เป็นภาษา” เลือกภาษาปลายทาง (ค่าเริ่มต้นคือ “ไม่แปล”)</li>
+            <li data-th="ครั้งแรก macOS จะขอติดตั้งชุดภาษาของคู่นั้น กดยืนยันครั้งเดียว (ต้องต่อเน็ตตอนนั้น)" data-en="The first time, macOS asks to install the language pack for that pair. Confirm once; it needs an internet connection then.">ครั้งแรก macOS จะขอติดตั้งชุดภาษาของคู่นั้น กดยืนยันครั้งเดียว (ต้องต่อเน็ตตอนนั้น)</li>
+            <li data-th="พูดตามปกติแล้วปล่อยปุ่ม ข้อความที่แปลแล้วลงช่อง" data-en="Speak as usual and let go. The translated text lands in the field.">พูดตามปกติแล้วปล่อยปุ่ม ข้อความที่แปลแล้วลงช่อง</li>
+          </ol>
+          <p class="feature-note" data-th="แปลไม่สำเร็จ PUDD จะวางข้อความเดิมให้และไม่กด Enter · คุณภาพการแปลขึ้นกับตัวแปลของ Apple ควรอ่านทวนก่อนส่งเรื่องสำคัญ · จีนเป็นแบบตัวย่อ · บน macOS 13–25 ใช้พูดแทนพิมพ์ได้ตามปกติ แต่ไม่มีแปล" data-en="If translation fails, PUDD pastes your original text and does not press Enter. Quality depends on Apple’s translator, so read it back before sending anything important. Chinese is Simplified. On macOS 13–25 dictation works as usual, without translation.">แปลไม่สำเร็จ PUDD จะวางข้อความเดิมให้และไม่กด Enter · คุณภาพการแปลขึ้นกับตัวแปลของ Apple ควรอ่านทวนก่อนส่งเรื่องสำคัญ · จีนเป็นแบบตัวย่อ · บน macOS 13–25 ใช้พูดแทนพิมพ์ได้ตามปกติ แต่ไม่มีแปล</p>
+        </details>
+      </div>
+    </article>
+    <article class="feature-card" id="feature-app-language">
+      <div class="feature-top"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M3 9h18"/><path d="M7.5 13.5h4M7.5 16h7"/></svg></span><span>08</span></div>
+      <p class="feature-label" data-th="ภาษาแอป" data-en="App language">ภาษาแอป</p>
+      <h3 data-th="ไทย หรืออังกฤษ เลือกได้" data-en="Thai or English, your pick.">ไทย หรืออังกฤษ เลือกได้</h3>
+      <p class="feature-description" data-th="หน้าตาแอปมี 2 ภาษา ไทยและอังกฤษ — สลับในแผงตั้งค่า ค่าเริ่มต้นตามภาษาเครื่อง" data-en="The app speaks two languages: Thai and English. Switch in the settings panel; defaults to your Mac’s language.">หน้าตาแอปมี 2 ภาษา ไทยและอังกฤษ — สลับในแผงตั้งค่า ค่าเริ่มต้นตามภาษาเครื่อง</p>
+      <details>
+        <summary><span data-th="รายละเอียด" data-en="Details">รายละเอียด</span><span aria-hidden="true">＋</span></summary>
+        <ul>
+          <li data-th="แผงตั้งค่า แถว “ภาษาแอป · Language” มี 3 ตัวเลือก: ไทย · English · ตามเครื่อง" data-en="In the panel, the “Language · ภาษา” row has three choices: ไทย, English and System.">แผงตั้งค่า แถว “ภาษาแอป · Language” มี 3 ตัวเลือก: ไทย · English · ตามเครื่อง</li>
+          <li data-th="เปลี่ยนเฉพาะตัวหนังสือในแอป ไม่เปลี่ยนภาษาที่พูด (หมวด 04) หรือภาษาที่แปล (หมวด 07)" data-en="It changes the app’s own text only — not the spoken language (04) or the translation (07).">เปลี่ยนเฉพาะตัวหนังสือในแอป ไม่เปลี่ยนภาษาที่พูด (หมวด 04) หรือภาษาที่แปล (หมวด 07)</li>
+        </ul>
+        <p class="feature-note" data-th="ภาพหน้าจอในเว็บนี้สลับตามภาษาที่คุณอ่านอยู่ — หน้าไทยเป็นแอปภาษาไทย หน้าอังกฤษเป็นแอปภาษาอังกฤษ" data-en="The screenshots on this site follow the language you are reading: the Thai page shows the Thai app, the English page shows the English app.">ภาพหน้าจอในเว็บนี้สลับตามภาษาที่คุณอ่านอยู่ — หน้าไทยเป็นแอปภาษาไทย หน้าอังกฤษเป็นแอปภาษาอังกฤษ</p>
+      </details>
+    </article>
+  </div>
+
+  <div class="capsule-showcase">
+    <div class="showcase-top">
+      <span class="eyebrow"><span class="dot"></span> ON SCREEN</span>
+      <h3 data-th="แคปซูลเดียว บอกทุกจังหวะ" data-en="One capsule. Every state.">แคปซูลเดียว บอกทุกจังหวะ</h3>
+      <p data-th="ระหว่างพูด มีเพียงแคปซูลเล็ก ๆ ที่กลางล่างของจอ พูดจบแล้วหายไปเอง" data-en="While you speak there is only a small capsule at the bottom centre of the screen. It leaves when you are done.">ระหว่างพูด มีเพียงแคปซูลเล็ก ๆ ที่กลางล่างของจอ พูดจบแล้วหายไปเอง</p>
+    </div>
+    <div class="capsule-grid">
+      <figure>
+        <div class="capsule-shot"><img src="assets/capsule-start-th.webp" data-src-th="assets/capsule-start-th.webp" data-src-en="assets/capsule-start-en.webp" width="260" height="70" data-size-th="260 70" data-size-en="274 71" alt="แคปซูลตอนเริ่มพูด มีเส้นคลื่น ตัวจับเวลา และไอคอนแอปปลายทาง" data-alt-th="แคปซูลตอนเริ่มพูด มีเส้นคลื่น ตัวจับเวลา และไอคอนแอปปลายทาง" data-alt-en="The capsule as you start: a waveform, a timer and the destination app&#x27;s icon"></div>
+        <figcaption><b data-th="เริ่มพูด" data-en="Starting">เริ่มพูด</b><span data-th="เส้นคลื่น ตัวจับเวลา และไอคอนของแอปปลายทาง" data-en="A waveform, a timer and the destination app&#x27;s icon.">เส้นคลื่น ตัวจับเวลา และไอคอนของแอปปลายทาง</span></figcaption>
+      </figure>
+      <figure>
+        <div class="capsule-shot"><img src="assets/capsule-listening-th.webp" data-src-th="assets/capsule-listening-th.webp" data-src-en="assets/capsule-listening-en.webp" width="512" height="71" data-size-th="512 71" data-size-en="598 71" alt="แคปซูลตอนกำลังฟัง ข้อความขึ้นตามเสียงพูด" data-alt-th="แคปซูลตอนกำลังฟัง ข้อความขึ้นตามเสียงพูด" data-alt-en="The capsule while listening, with text appearing as it is spoken"></div>
+        <figcaption><b data-th="กำลังฟัง" data-en="Listening">กำลังฟัง</b><span data-th="ตัวหนังสือขึ้นให้เห็นระหว่างพูด ปิดได้ในแผง" data-en="Text appears as you speak. You can turn this off in the panel.">ตัวหนังสือขึ้นให้เห็นระหว่างพูด ปิดได้ในแผง</span></figcaption>
+      </figure>
+      <figure>
+        <div class="capsule-shot"><img src="assets/capsule-sent-th.webp" data-src-th="assets/capsule-sent-th.webp" data-src-en="assets/capsule-sent-en.webp" width="408" height="70" data-size-th="408 70" data-size-en="501 71" alt="แคปซูลตอนส่งแล้ว มีเครื่องหมาย Enter" data-alt-th="แคปซูลตอนส่งแล้ว มีเครื่องหมาย Enter" data-alt-en="The capsule after sending, with an Enter mark"></div>
+        <figcaption><b data-th="ส่งแล้ว" data-en="Sent">ส่งแล้ว</b><span data-th="ข้อความลงช่อง มีเครื่องหมาย Enter เมื่อสั่ง &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt;" data-en="The text is placed. An Enter mark shows when you said &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt;.">ข้อความลงช่อง มีเครื่องหมาย Enter เมื่อสั่ง <span class="nw">“ส่งเลย”</span></span></figcaption>
+      </figure>
+      <figure>
+        <div class="capsule-shot"><img src="assets/capsule-alert-th.webp" data-src-th="assets/capsule-alert-th.webp" data-src-en="assets/capsule-alert-en.webp" width="267" height="59" data-size-th="267 59" data-size-en="401 59" alt="แคปซูลแจ้งเตือนว่าไม่ได้ยินเสียง" data-alt-th="แคปซูลแจ้งเตือนว่าไม่ได้ยินเสียง" data-alt-en="The capsule saying it could not hear you"></div>
+        <figcaption><b data-th="แจ้งเตือน" data-en="Alert">แจ้งเตือน</b><span data-th="ไม่ได้ยินเสียง ก็บอกตรง ๆ แทนที่จะเดาคำลงไป" data-en="When it cannot hear you, it says so instead of guessing.">ไม่ได้ยินเสียง ก็บอกตรง ๆ แทนที่จะเดาคำลงไป</span></figcaption>
+      </figure>
+    </div>
+    <span class="image-note" data-th="ภาพจากหน้าจอจริงของแอป" data-en="Images from the app&#x27;s real screens.">ภาพจากหน้าจอจริงของแอป</span>
+  </div>
+</section>
+
+<!-- ═════════ PRIVACY ═════════ -->
+<div class="backdrop backdrop-c">
+<section class="section ruled" id="privacy">
+  <div class="section-heading">
+    <span class="eyebrow"><span class="dot"></span> PRIVACY</span>
+    <h2 data-th="เสียงของคุณ.&lt;br&gt;&lt;em&gt;อยู่ใน Mac ของคุณ.&lt;/em&gt;" data-en="Your voice.&lt;br&gt;&lt;em&gt;Stays on your Mac.&lt;/em&gt;">เสียงของคุณ.<br><em>อยู่ใน Mac ของคุณ.</em></h2>
+    <p data-th="PUDD ถอดเสียงในเครื่อง ไม่ส่งเสียงหรือข้อความของคุณไปให้ผู้พัฒนาหรือบุคคลอื่น" data-en="PUDD transcribes on your Mac. Your audio and your text are not sent to the developer or to anyone else.">PUDD ถอดเสียงในเครื่อง ไม่ส่งเสียงหรือข้อความของคุณไปให้ผู้พัฒนาหรือบุคคลอื่น</p>
+  </div>
+  <div class="privacy-grid">
+    <article>
+      <span class="item-no">01</span>
+      <h3 data-th="ถอดเสียงในเครื่อง" data-en="Transcribed on device">ถอดเสียงในเครื่อง</h3>
+      <p data-th="เสียงที่พูดกลายเป็นข้อความบน Mac ของคุณเอง เสียงไม่ออกจากเครื่อง ถ้าเปิดแปลก่อนวาง ข้อความก็ถูกแปลในเครื่อง · ชุดภาษาสำหรับแปลถูกโหลดโดย macOS เอง ไม่ใช่โค้ดของ PUDD" data-en="Your speech becomes text on your own Mac, and the audio does not leave it. With translation on, the text is translated on your Mac too. Translation language packs are installed by macOS itself, not by PUDD’s code.">เสียงที่พูดกลายเป็นข้อความบน Mac ของคุณเอง เสียงไม่ออกจากเครื่อง ถ้าเปิดแปลก่อนวาง ข้อความก็ถูกแปลในเครื่อง · ชุดภาษาสำหรับแปลถูกโหลดโดย macOS เอง ไม่ใช่โค้ดของ PUDD</p>
+    </article>
+    <article>
+      <span class="item-no">02</span>
+      <h3 data-th="ไม่มีบัญชี ไม่มีตัวติดตาม" data-en="No account. No trackers.">ไม่มีบัญชี ไม่มีตัวติดตาม</h3>
+      <p data-th="ไม่ต้องสมัครสมาชิก ไม่มีระบบวิเคราะห์การใช้งาน ไม่มีรายงานข้อผิดพลาดส่งกลับ ไม่มีชุดโค้ดของบุคคลภายนอก" data-en="No sign-up. No usage analytics, no crash reports sent back, no third-party SDKs.">ไม่ต้องสมัครสมาชิก ไม่มีระบบวิเคราะห์การใช้งาน ไม่มีรายงานข้อผิดพลาดส่งกลับ ไม่มีชุดโค้ดของบุคคลภายนอก</p>
+    </article>
+    <article>
+      <span class="item-no">03</span>
+      <h3 data-th="ประวัติอยู่กับคุณ" data-en="History stays with you">ประวัติอยู่กับคุณ</h3>
+      <p data-th="ข้อความที่ถอดล่าสุด สูงสุด 300 รายการ เก็บไว้ใน Mac ของคุณเท่านั้น แบบไม่เข้ารหัส เพื่อให้กดคัดลอกกลับมาใช้ได้จากแผง และอยู่จนกว่าคุณจะลบเอง · ถ้าเปิดแปลก่อนวาง จะเก็บข้อความที่แปลแล้ว" data-en="Up to 300 recent transcripts are kept on your Mac only, unencrypted, so you can copy them again from the panel. They stay until you delete them. With translation on, the translated text is what is kept.">ข้อความที่ถอดล่าสุด สูงสุด 300 รายการ เก็บไว้ใน Mac ของคุณเท่านั้น แบบไม่เข้ารหัส เพื่อให้กดคัดลอกกลับมาใช้ได้จากแผง และอยู่จนกว่าคุณจะลบเอง · ถ้าเปิดแปลก่อนวาง จะเก็บข้อความที่แปลแล้ว</p>
+    </article>
+    <article>
+      <span class="item-no">04</span>
+      <h3 data-th="แป้นพิมพ์และคลิปบอร์ด" data-en="Keyboard and clipboard">แป้นพิมพ์และคลิปบอร์ด</h3>
+      <p data-th="PUDD ดูเฉพาะปุ่มลัดที่ใช้เริ่มและหยุดพูด ไม่บันทึกตัวอักษรที่คุณพิมพ์ ตอนวางข้อความจะใช้คลิปบอร์ดชั่วครู่แล้วคืนของเดิมให้ และดูตัวอักษรหน้าเคอร์เซอร์เพื่อเว้นวรรคให้ถูก โดยไม่เก็บและไม่ส่งต่อ" data-en="PUDD watches only the shortcut keys that start and stop dictation. It does not record what you type. To place text it borrows the clipboard briefly and then restores it, and it looks at the character before your cursor to space the text correctly — without keeping or sending it.">PUDD ดูเฉพาะปุ่มลัดที่ใช้เริ่มและหยุดพูด ไม่บันทึกตัวอักษรที่คุณพิมพ์ ตอนวางข้อความจะใช้คลิปบอร์ดชั่วครู่แล้วคืนของเดิมให้ และดูตัวอักษรหน้าเคอร์เซอร์เพื่อเว้นวรรคให้ถูก โดยไม่เก็บและไม่ส่งต่อ</p>
+    </article>
+  </div>
+  <a class="text-link" href="privacy.html" data-page="privacy.html" data-th="อ่านนโยบายความเป็นส่วนตัวฉบับเต็ม ↗" data-en="Read the full privacy policy ↗">อ่านนโยบายความเป็นส่วนตัวฉบับเต็ม ↗</a>
+</section>
+</div>
+
+<!-- ═════════ PANEL ═════════ -->
+<section class="section ruled" id="panel">
+  <div class="section-heading">
+    <span class="eyebrow"><span class="dot"></span> THE PANEL</span>
+    <h2 data-th="ทุกสวิตช์.&lt;br&gt;&lt;em&gt;อยู่ในแผงเดียว.&lt;/em&gt;" data-en="Every switch.&lt;br&gt;&lt;em&gt;One panel.&lt;/em&gt;">ทุกสวิตช์.<br><em>อยู่ในแผงเดียว.</em></h2>
+    <p data-th="คลิกโลโก้ PUDD บนแถบเมนู แผงนี้จะเปิดขึ้น เห็นสถานะ ตัวเลขของวันนี้ ประโยคล่าสุด และสวิตช์ทั้งหมด เป็นภาษาไทยหรืออังกฤษตามที่เลือก" data-en="Click the PUDD logo in the menu bar and this panel opens: status, today’s numbers, recent sentences and every switch — in Thai or English, as you choose.">คลิกโลโก้ PUDD บนแถบเมนู แผงนี้จะเปิดขึ้น เห็นสถานะ ตัวเลขของวันนี้ ประโยคล่าสุด และสวิตช์ทั้งหมด เป็นภาษาไทยหรืออังกฤษตามที่เลือก</p>
+  </div>
+  <div class="panel-layout">
+    <figure class="panel-visual">
+      <img src="assets/panel-th.webp" data-src-th="assets/panel-th.webp" data-src-en="assets/panel-en.webp" width="740" height="2212" alt="แผงตั้งค่าของ PUDD แสดงสถานะ สถิติวันนี้ ประโยคล่าสุด และสวิตช์ทั้งหมด" data-alt-th="แผงตั้งค่าของ PUDD แสดงสถานะ สถิติวันนี้ ประโยคล่าสุด และสวิตช์ทั้งหมด" data-alt-en="The PUDD panel showing status, today&#x27;s numbers, recent sentences and all switches">
+      <figcaption data-th="แผงตั้งค่าจริงของแอป v1.0.70 · แถบด้านบนคือสถานะทดลองใช้" data-en="The app’s actual panel, v1.0.70. The bar at the top shows the trial status.">แผงตั้งค่าจริงของแอป v1.0.70 · แถบด้านบนคือสถานะทดลองใช้</figcaption>
+    </figure>
+    <div class="panel-copy">
+      <div class="switch-list">
+        <article>
+          <div class="switch-top"><h3 data-th="กด Enter ส่งให้ทุกครั้ง" data-en="Press Enter after every paste">กด Enter ส่งให้ทุกครั้ง</h3><span class="state" data-th="เริ่มต้น ปิด" data-en="Default off">เริ่มต้น ปิด</span></div>
+          <p data-th="วางข้อความแล้วกด Enter ต่อให้เสมอ" data-en="Always press Enter after the text is placed.">วางข้อความแล้วกด Enter ต่อให้เสมอ</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="พูด &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; = กด Enter" data-en="End with “send” = press Enter">พูด <span class="nw">“ส่งเลย”</span> = กด Enter</h3><span class="state on" data-th="เริ่มต้น เปิด" data-en="Default on">เริ่มต้น เปิด</span></div>
+          <p data-th="กด Enter เฉพาะเมื่อคุณพูดคำสั่งนี้ท้ายประโยค" data-en="Enter is pressed only when you end with this phrase.">กด Enter เฉพาะเมื่อคุณพูดคำสั่งนี้ท้ายประโยค</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="ตัดคำ อืม · เอ่อ" data-en="Remove “um” and “uh”">ตัดคำ อืม · เอ่อ</h3><span class="state on" data-th="เริ่มต้น เปิด" data-en="Default on">เริ่มต้น เปิด</span></div>
+          <p data-th="ตัดคำติดปากที่ยืนเดี่ยวออกก่อนวาง" data-en="Standalone fillers are removed before placing.">ตัดคำติดปากที่ยืนเดี่ยวออกก่อนวาง</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="โชว์ตัวหนังสือระหว่างพูด" data-en="Show text while speaking">โชว์ตัวหนังสือระหว่างพูด</h3><span class="state on" data-th="เริ่มต้น เปิด" data-en="Default on">เริ่มต้น เปิด</span></div>
+          <p data-th="ให้ข้อความขึ้นในแคปซูลขณะที่คุณพูด" data-en="Text appears in the capsule as you speak.">ให้ข้อความขึ้นในแคปซูลขณะที่คุณพูด</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="โหมดแม่นยำ" data-en="Large model (precision)">โหมดแม่นยำ</h3></div>
+          <p data-th="ถอดรอบสุดท้ายด้วยโมเดลที่ใหญ่กว่า ใช้เวลานานขึ้น สวิตช์นี้มีเมื่อเครื่องมีโมเดลใหญ่" data-en="The final pass uses a larger model and takes longer. This switch appears when the larger model is on your Mac.">ถอดรอบสุดท้ายด้วยโมเดลที่ใหญ่กว่า ใช้เวลานานขึ้น สวิตช์นี้มีเมื่อเครื่องมีโมเดลใหญ่</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="แตะ ⌃ ซ้าย 1 ที = ปลุก" data-en="Tap left ⌃ to start">แตะ ⌃ ซ้าย 1 ที = ปลุก</h3><span class="state" data-th="เริ่มต้น ปิด" data-en="Default off">เริ่มต้น ปิด</span></div>
+          <p data-th="แตะ Control ซ้ายแล้วพูดได้เลย หยุดพูดสักครู่ข้อความลงให้เอง" data-en="Tap left Control and speak. Pause briefly and the text is placed.">แตะ Control ซ้ายแล้วพูดได้เลย หยุดพูดสักครู่ข้อความลงให้เอง</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="เรียกชื่อ “พูด” ปลุก" data-en="Wake word “พูด”">เรียกชื่อ “พูด” ปลุก</h3><span class="state" data-th="เริ่มต้น ปิด" data-en="Default off">เริ่มต้น ปิด</span></div>
+          <p data-th="เริ่มพูดด้วยการเรียกชื่อ เมื่อเปิด ไมโครโฟนจะฟังตลอดเวลา" data-en="Start by calling its name. While on, the microphone listens continuously.">เริ่มพูดด้วยการเรียกชื่อ เมื่อเปิด ไมโครโฟนจะฟังตลอดเวลา</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="ส่งไปที่" data-en="Send to">ส่งไปที่</h3></div>
+          <p data-th="ให้ข้อความลงตามเคอร์เซอร์ หรือไปลงแอปที่เลือกไว้เสมอ แสดงเฉพาะแอปที่ติดตั้งอยู่ในเครื่อง" data-en="Place text at the cursor, or always into an app you choose. Only apps installed on your Mac are listed.">ให้ข้อความลงตามเคอร์เซอร์ หรือไปลงแอปที่เลือกไว้เสมอ แสดงเฉพาะแอปที่ติดตั้งอยู่ในเครื่อง</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="ภาษาที่พูด" data-en="Spoken language">ภาษาที่พูด</h3><span class="state on" data-th="เริ่มต้น ไทย" data-en="Default Thai">เริ่มต้น ไทย</span></div>
+          <p data-th="ไทย อังกฤษ ญี่ปุ่น จีน เกาหลี" data-en="Thai, English, Japanese, Chinese, Korean.">ไทย อังกฤษ ญี่ปุ่น จีน เกาหลี</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="แปลก่อนวาง เป็นภาษา" data-en="Translate before pasting">แปลก่อนวาง เป็นภาษา</h3><span class="state" data-th="เริ่มต้น ไม่แปล" data-en="Default off">เริ่มต้น ไม่แปล</span></div>
+          <p data-th="พูดไทย วางเป็นอังกฤษ จีน ญี่ปุ่น หรือเกาหลี · พูดอังกฤษ วางเป็นไทย · ต้อง macOS 26 ขึ้นไป" data-en="Thai to English, Chinese, Japanese or Korean · English to Thai · needs macOS 26 or later.">พูดไทย วางเป็นอังกฤษ จีน ญี่ปุ่น หรือเกาหลี · พูดอังกฤษ วางเป็นไทย · ต้อง macOS 26 ขึ้นไป</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="เปิดเองตอนเปิดเครื่อง" data-en="Open at login">เปิดเองตอนเปิดเครื่อง</h3></div>
+          <p data-th="ให้ PUDD พร้อมใช้ตั้งแต่เปิด Mac" data-en="PUDD is ready from the moment your Mac starts.">ให้ PUDD พร้อมใช้ตั้งแต่เปิด Mac</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="ภาษาแอป · Language" data-en="Language · ภาษา">ภาษาแอป · Language</h3><span class="state on" data-th="เริ่มต้น ตามเครื่อง" data-en="Default System">เริ่มต้น ตามเครื่อง</span></div>
+          <p data-th="ตัวหนังสือในแอป: ไทย · English · ตามภาษาเครื่อง" data-en="The app’s own text: ไทย, English, or your Mac’s language.">ตัวหนังสือในแอป: ไทย · English · ตามภาษาเครื่อง</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="ปุ่มพูด" data-en="Talk key">ปุ่มพูด</h3><span class="state on" data-th="เริ่มต้น ⌥ ขวา" data-en="Default right ⌥">เริ่มต้น ⌥ ขวา</span></div>
+          <p data-th="แตะ ⌃ ซ้าย หรือกดค้าง ⌥ Option ขวา / ⌘ Command ขวา" data-en="Tap left ⌃, or hold right ⌥ Option / right ⌘ Command.">แตะ ⌃ ซ้าย หรือกดค้าง ⌥ Option ขวา / ⌘ Command ขวา</p>
+        </article>
+      </div>
+      <p class="panel-foot" data-th="ท้ายแผงมี “คำศัพท์ของฉัน” สำหรับใส่ชื่อเฉพาะ และ “วิธีใช้” สำหรับเปิดหน้าแนะนำอีกครั้ง · คลิกประโยคล่าสุดเพื่อคัดลอก" data-en="At the foot of the panel: “My words” for names you use, and “How to use” to reopen the welcome screen. Click a recent sentence to copy it.">ท้ายแผงมี “คำศัพท์ของฉัน” สำหรับใส่ชื่อเฉพาะ และ “วิธีใช้” สำหรับเปิดหน้าแนะนำอีกครั้ง · คลิกประโยคล่าสุดเพื่อคัดลอก</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ PRICE + BUY (ขายตรงทาง LINE) ═════════ -->
+<section class="section ruled" id="buy">
+  <div class="section-heading">
+    <span class="eyebrow"><span class="dot"></span> PRICE / BUY</span>
+    <h2 data-th="ราคาเดียว.&lt;br&gt;&lt;em&gt;จ่ายครั้งเดียว.&lt;/em&gt;" data-en="One price.&lt;br&gt;&lt;em&gt;Pay once.&lt;/em&gt;">ราคาเดียว.<br><em>จ่ายครั้งเดียว.</em></h2>
+    <p data-th="ซื้อตรงกับผู้พัฒนาทาง LINE ได้แล้ววันนี้ ลองใช้ 7 วันก่อนก็ได้ ไม่ต้องสมัครสมาชิก" data-en="Buy directly from the developer on LINE today. Try it for 7 days first if you like. No subscription.">ซื้อตรงกับผู้พัฒนาทาง LINE ได้แล้ววันนี้ ลองใช้ 7 วันก่อนก็ได้ ไม่ต้องสมัครสมาชิก</p>
+  </div>
+  <div class="buy-layout">
+    <div class="price-card">
+      <span class="price-label" data-th="PUDD · ราคาช่วงเปิดตัว" data-en="PUDD · launch price">PUDD · ราคาช่วงเปิดตัว</span>
+      <p class="price"><span class="price-cur">฿</span>390</p>
+      <p class="price-sub" data-th="จ่ายครั้งเดียว · อัปเดตฟรี" data-en="Pay once · free updates">จ่ายครั้งเดียว · อัปเดตฟรี</p>
+      <ul class="price-list">
+        <li data-th="ใช้ได้ 1 เครื่อง &lt;small&gt;รหัสเปิดใช้ผูกกับ Mac เครื่องนั้น&lt;/small&gt;" data-en="For 1 Mac &lt;small&gt;The activation code is tied to that Mac&lt;/small&gt;">ใช้ได้ 1 เครื่อง <small>รหัสเปิดใช้ผูกกับ Mac เครื่องนั้น</small></li>
+        <li data-th="อัปเดตฟรี" data-en="Free updates">อัปเดตฟรี</li>
+        <li data-th="ทดลองใช้ 7 วันก่อนซื้อ &lt;small&gt;เต็มความสามารถ นับจากเปิดแอปครั้งแรก&lt;/small&gt;" data-en="7-day trial before you buy &lt;small&gt;Every feature, counted from the first launch&lt;/small&gt;">ทดลองใช้ 7 วันก่อนซื้อ <small>เต็มความสามารถ นับจากเปิดแอปครั้งแรก</small></li>
+        <li data-th="ถอดเสียงในเครื่อง &lt;small&gt;ไม่มีบัญชี ไม่มีค่ารายเดือน&lt;/small&gt;" data-en="Transcribed on your Mac &lt;small&gt;No account, no monthly fee&lt;/small&gt;">ถอดเสียงในเครื่อง <small>ไม่มีบัญชี ไม่มีค่ารายเดือน</small></li>
+      </ul>
+      <div class="price-actions">
+        <a class="contact-button" href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer" data-buy><span data-th="ซื้อ ฿390 · ทัก LINE" data-en="Buy ฿390 · Message on LINE">ซื้อ ฿390 · ทัก LINE</span><b aria-hidden="true">↗</b></a>
+        <a class="ghost" href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer" data-trial><span data-th="ขอรุ่นทดลอง 7 วัน" data-en="Ask for the 7-day trial">ขอรุ่นทดลอง 7 วัน</span><b aria-hidden="true">↗</b></a>
+      </div>
+      <p class="price-foot" data-th="ทัก LINE เพื่อสั่งซื้อ แล้วผู้พัฒนาจะแจ้งช่องทางชำระเงิน" data-en="Message on LINE to order, and the developer will tell you how to pay.">ทัก LINE เพื่อสั่งซื้อ แล้วผู้พัฒนาจะแจ้งช่องทางชำระเงิน</p>
+    </div>
+    <div class="buy-steps-wrap">
+      <h3 data-th="ซื้อและเปิดใช้ใน 4 ขั้น" data-en="Buy and activate in 4 steps">ซื้อและเปิดใช้ใน 4 ขั้น</h3>
+      <ol class="buy-steps">
+        <li>
+          <span class="item-no">01</span>
+          <h4 data-th="ขอรุ่นทดลอง หรือซื้อ ทาง LINE" data-en="Ask for the trial, or buy, on LINE">ขอรุ่นทดลอง หรือซื้อ ทาง LINE</h4>
+          <p data-th="ผู้พัฒนาส่งไฟล์ติดตั้ง (ราว 4 MB) พร้อมวิธีเปิดครั้งแรกให้ทาง LINE · ซื้อเลยก็ได้ หรือลองครบ 7 วันก่อนค่อยซื้อ" data-en="The developer sends the installer (about 4 MB) with first-launch instructions on LINE. Buy now, or try it for the full 7 days first.">ผู้พัฒนาส่งไฟล์ติดตั้ง (ราว 4 MB) พร้อมวิธีเปิดครั้งแรกให้ทาง LINE · ซื้อเลยก็ได้ หรือลองครบ 7 วันก่อนค่อยซื้อ</p>
+        </li>
+        <li>
+          <span class="item-no">02</span>
+          <h4 data-th="ติดตั้ง แล้วดาวน์โหลดโมเดลเสียงครั้งแรก" data-en="Install, then download the voice model once">ติดตั้ง แล้วดาวน์โหลดโมเดลเสียงครั้งแรก</h4>
+          <p data-th="ลาก PUDD ไปไว้ใน Applications เปิดตามวิธีที่ได้รับ แล้วกด “ดาวน์โหลด” ในหน้าต้อนรับครั้งเดียว (574 MB ต้องต่อเน็ตตอนนั้น)" data-en="Drag PUDD into Applications, open it as instructed, then press “ดาวน์โหลด” (Download) on the welcome screen once — 574 MB, internet needed for that step.">ลาก PUDD ไปไว้ใน Applications เปิดตามวิธีที่ได้รับ แล้วกด “ดาวน์โหลด” ในหน้าต้อนรับครั้งเดียว (574 MB ต้องต่อเน็ตตอนนั้น)</p>
+        </li>
+        <li>
+          <span class="item-no">03</span>
+          <h4 data-th="ส่ง “รหัสเครื่อง” ให้ผู้พัฒนา" data-en="Send your “machine code” to the developer">ส่ง “รหัสเครื่อง” ให้ผู้พัฒนา</h4>
+          <p data-th="เมื่อชำระเงินแล้ว เปิดแผงตั้งค่า กด “ใส่รหัส” ที่แถบทดลองใช้ แล้วกดคัดลอกรหัสเครื่อง (หน้าตาแบบ &lt;code&gt;xxxx-xxxx-xxxx&lt;/code&gt;) ส่งทาง LINE" data-en="Once you have paid, open the panel, press “Enter key” on the trial bar (“ใส่รหัส” in the Thai app), copy the machine code (it looks like &lt;code&gt;xxxx-xxxx-xxxx&lt;/code&gt;) and send it on LINE.">เมื่อชำระเงินแล้ว เปิดแผงตั้งค่า กด “ใส่รหัส” ที่แถบทดลองใช้ แล้วกดคัดลอกรหัสเครื่อง (หน้าตาแบบ <code>xxxx-xxxx-xxxx</code>) ส่งทาง LINE</p>
+        </li>
+        <li>
+          <span class="item-no">04</span>
+          <h4 data-th="วางรหัส &lt;code&gt;PUDD-…&lt;/code&gt; ในแผงตั้งค่า" data-en="Paste the &lt;code&gt;PUDD-…&lt;/code&gt; code in the panel">วางรหัส <code>PUDD-…</code> ในแผงตั้งค่า</h4>
+          <p data-th="ผู้พัฒนาส่งรหัสเปิดใช้ที่ขึ้นต้นด้วย PUDD- กลับมา วางในช่องเดียวกันก็เสร็จ · รหัสใช้ได้กับเครื่องนั้นเครื่องเดียว" data-en="The developer sends back an activation code starting with PUDD-. Paste it in the same place and you are done. The code works on that Mac only.">ผู้พัฒนาส่งรหัสเปิดใช้ที่ขึ้นต้นด้วย PUDD- กลับมา วางในช่องเดียวกันก็เสร็จ · รหัสใช้ได้กับเครื่องนั้นเครื่องเดียว</p>
+        </li>
+      </ol>
+      <div class="buy-notes">
+        <p><b data-th="macOS จะเตือนตอนเปิดครั้งแรก" data-en="macOS warns on first launch">macOS จะเตือนตอนเปิดครั้งแรก</b><span data-th="ไฟล์ติดตั้งยังไม่ผ่านการรับรองของ Apple จึงเปิดด้วยการดับเบิลคลิกตรง ๆ ไม่ได้ ผู้พัฒนาส่งวิธีเปิดครั้งแรกให้พร้อมไฟล์" data-en="The installer has not been through Apple’s notarization yet, so a plain double-click will not open it. The developer sends first-launch steps with the file.">ไฟล์ติดตั้งยังไม่ผ่านการรับรองของ Apple จึงเปิดด้วยการดับเบิลคลิกตรง ๆ ไม่ได้ ผู้พัฒนาส่งวิธีเปิดครั้งแรกให้พร้อมไฟล์</span></p>
+        <p><b data-th="Mac App Store ตามมาทีหลัง" data-en="Mac App Store comes later">Mac App Store ตามมาทีหลัง</b><span data-th="กำลังเตรียมขึ้น Mac App Store ด้วย แต่ตอนนี้ยังไม่เปิดบนสโตร์ ซื้อได้ทาง LINE ทางเดียว" data-en="PUDD is being prepared for the Mac App Store too, but it is not there yet. For now, LINE is the only way to buy.">กำลังเตรียมขึ้น Mac App Store ด้วย แต่ตอนนี้ยังไม่เปิดบนสโตร์ ซื้อได้ทาง LINE ทางเดียว</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ REQUIREMENTS + PLAIN FACTS ═════════ -->
+<section class="section ruled" id="requirements">
+  <div class="section-heading">
+    <span class="eyebrow"><span class="dot"></span> BEFORE YOU START</span>
+    <h2 data-th="ก่อนเริ่ม.&lt;br&gt;&lt;em&gt;บอกกันตรง ๆ.&lt;/em&gt;" data-en="Before you start.&lt;br&gt;&lt;em&gt;The plain facts.&lt;/em&gt;">ก่อนเริ่ม.<br><em>บอกกันตรง ๆ.</em></h2>
+    <p data-th="สิ่งที่เครื่องต้องมี และเรื่องที่ควรรู้ก่อนตัดสินใจ" data-en="What your Mac needs, and what to know before you decide.">สิ่งที่เครื่องต้องมี และเรื่องที่ควรรู้ก่อนตัดสินใจ</p>
+  </div>
+  <div class="spec-layout">
+    <dl class="spec">
+      <div><dt data-th="เครื่อง" data-en="Computer">เครื่อง</dt><dd data-th="Mac ชิป Apple Silicon" data-en="Mac with Apple silicon">Mac ชิป Apple Silicon</dd></div>
+      <div><dt data-th="ระบบ" data-en="System">ระบบ</dt><dd data-th="macOS 13 ขึ้นไป&lt;small&gt;ทดสอบจริงบน macOS 26&lt;/small&gt;" data-en="macOS 13 or later&lt;small&gt;Tested on macOS 26&lt;/small&gt;">macOS 13 ขึ้นไป<small>ทดสอบจริงบน macOS 26</small></dd></div>
+      <div><dt data-th="การถอดเสียง" data-en="Transcription">การถอดเสียง</dt><dd data-th="ทำในเครื่อง" data-en="On device">ทำในเครื่อง</dd></div>
+      <div><dt data-th="ภาษาที่พูดได้" data-en="Spoken languages">ภาษาที่พูดได้</dt><dd data-th="ไทย อังกฤษ ญี่ปุ่น จีน เกาหลี" data-en="Thai, English, Japanese, Chinese, Korean">ไทย อังกฤษ ญี่ปุ่น จีน เกาหลี</dd></div>
+      <div><dt data-th="แปลก่อนวาง" data-en="Translate before pasting">แปลก่อนวาง</dt><dd data-th="macOS 26 ขึ้นไป&lt;small&gt;ตัวเลือก · แปลในเครื่องด้วยตัวแปลของ macOS&lt;/small&gt;" data-en="macOS 26 or later&lt;small&gt;Optional · translated on your Mac by macOS&lt;/small&gt;">macOS 26 ขึ้นไป<small>ตัวเลือก · แปลในเครื่องด้วยตัวแปลของ macOS</small></dd></div>
+      <div><dt data-th="ภาษาแอป" data-en="App language">ภาษาแอป</dt><dd data-th="ไทย และอังกฤษ&lt;small&gt;สลับในแผงตั้งค่า · ค่าเริ่มต้นตามภาษาเครื่อง&lt;/small&gt;" data-en="Thai and English&lt;small&gt;Switch in the panel · defaults to your Mac’s language&lt;/small&gt;">ไทย และอังกฤษ<small>สลับในแผงตั้งค่า · ค่าเริ่มต้นตามภาษาเครื่อง</small></dd></div>
+      <div><dt data-th="โมเดลเสียง" data-en="Voice model">โมเดลเสียง</dt><dd data-th="ดาวน์โหลด 574 MB ครั้งแรก&lt;small&gt;ต้องต่อเน็ตตอนนั้นครั้งเดียว · ตรวจความถูกต้องของไฟล์ก่อนใช้&lt;/small&gt;" data-en="574 MB download, once&lt;small&gt;Internet needed for that one step · the file is checked before use&lt;/small&gt;">ดาวน์โหลด 574 MB ครั้งแรก<small>ต้องต่อเน็ตตอนนั้นครั้งเดียว · ตรวจความถูกต้องของไฟล์ก่อนใช้</small></dd></div>
+      <div><dt data-th="พื้นที่ว่าง" data-en="Free space">พื้นที่ว่าง</dt><dd data-th="ราว 1 GB&lt;small&gt;ไฟล์ติดตั้งราว 4 MB · โมเดลเสียง 574 MB&lt;/small&gt;" data-en="About 1 GB&lt;small&gt;Installer about 4 MB · voice model 574 MB&lt;/small&gt;">ราว 1 GB<small>ไฟล์ติดตั้งราว 4 MB · โมเดลเสียง 574 MB</small></dd></div>
+      <div><dt data-th="ราคา" data-en="Price">ราคา</dt><dd data-price data-th="฿390&lt;small&gt;ราคาช่วงเปิดตัว · จ่ายครั้งเดียว · อัปเดตฟรี · ทดลองใช้ 7 วัน&lt;/small&gt;" data-en="฿390&lt;small&gt;Launch price · one-time · free updates · 7-day trial&lt;/small&gt;">฿390<small>ราคาช่วงเปิดตัว · จ่ายครั้งเดียว · อัปเดตฟรี · ทดลองใช้ 7 วัน</small></dd></div>
+    </dl>
+    <div class="permission-card">
+      <figure>
+        <img src="assets/permissions-th.webp" data-src-th="assets/permissions-th.webp" data-src-en="assets/permissions-en.webp" width="768" height="254" alt="หน้าต้อนรับของ PUDD แสดงสิทธิ์ไมโครโฟนและการช่วยการเข้าถึง" data-alt-th="หน้าต้อนรับของ PUDD แสดงสิทธิ์ไมโครโฟนและการช่วยการเข้าถึง" data-alt-en="PUDD&#x27;s welcome screen showing the Microphone and Accessibility permissions">
+        <figcaption class="image-note" data-th="ภาพจากหน้าต้อนรับจริงของแอป" data-en="From the app&#x27;s actual welcome screen.">ภาพจากหน้าต้อนรับจริงของแอป</figcaption>
+      </figure>
+      <h3 data-th="สิทธิ์สองอย่างที่ PUDD ขอ" data-en="The two permissions PUDD asks for">สิทธิ์สองอย่างที่ PUDD ขอ</h3>
+      <ul>
+        <li data-th="&lt;b&gt;ไมโครโฟน&lt;/b&gt; — เพื่อฟังเสียงตอนคุณกดปุ่มพูด" data-en="&lt;b&gt;Microphone&lt;/b&gt; — to hear you while you hold the talk key."><b>ไมโครโฟน</b> — เพื่อฟังเสียงตอนคุณกดปุ่มพูด</li>
+        <li data-th="&lt;b&gt;การช่วยการเข้าถึง&lt;/b&gt; — เพื่อวางข้อความลงช่องที่เคอร์เซอร์อยู่ กด Enter แทนคุณ และรับรู้ปุ่มลัดขณะคุณใช้แอปอื่น" data-en="&lt;b&gt;Accessibility&lt;/b&gt; — to place text where your cursor is, press Enter for you, and notice the shortcut key while you are in other apps."><b>การช่วยการเข้าถึง</b> — เพื่อวางข้อความลงช่องที่เคอร์เซอร์อยู่ กด Enter แทนคุณ และรับรู้ปุ่มลัดขณะคุณใช้แอปอื่น</li>
+        <li data-th="ถ้ายังไม่ให้สิทธิ์การช่วยการเข้าถึง PUDD จะพักข้อความไว้ในคลิปบอร์ด ให้คุณกด &lt;kbd&gt;⌘V&lt;/kbd&gt; วางเอง" data-en="Without Accessibility, PUDD leaves the text on the clipboard for you to paste with &lt;kbd&gt;⌘V&lt;/kbd&gt;.">ถ้ายังไม่ให้สิทธิ์การช่วยการเข้าถึง PUDD จะพักข้อความไว้ในคลิปบอร์ด ให้คุณกด <kbd>⌘V</kbd> วางเอง</li>
+      </ul>
+    </div>
+  </div>
+  <div class="plain-notes">
+    <p><b data-th="ไมค์ใกล้ปาก ได้ผลดีกว่า" data-en="A close microphone works better">ไมค์ใกล้ปาก ได้ผลดีกว่า</b><span data-th="ไมค์ที่อยู่ไกลหรือเสียงเบา ทำให้ถอดคำผิดได้ง่าย" data-en="A distant or quiet microphone leads to wrong words.">ไมค์ที่อยู่ไกลหรือเสียงเบา ทำให้ถอดคำผิดได้ง่าย</span></p>
+    <p><b data-th="ยังมีคำที่ถอดผิดได้" data-en="It can still get words wrong">ยังมีคำที่ถอดผิดได้</b><span data-th="อ่านทวนก่อนส่งเรื่องสำคัญทุกครั้ง" data-en="Read it back before you send anything important.">อ่านทวนก่อนส่งเรื่องสำคัญทุกครั้ง</span></p>
+    <p><b data-th="มีจังหวะรอสั้น ๆ" data-en="There is a short wait">มีจังหวะรอสั้น ๆ</b><span data-th="พูดจบแล้วต้องรอถอดเสียงก่อนข้อความลง ยิ่งพูดยาวยิ่งใช้เวลา" data-en="After you finish, transcription takes a moment before the text lands. Longer speech takes longer.">พูดจบแล้วต้องรอถอดเสียงก่อนข้อความลง ยิ่งพูดยาวยิ่งใช้เวลา</span></p>
+    <p><b data-th="บางช่องยังใช้ไม่ได้" data-en="Some fields will not work">บางช่องยังใช้ไม่ได้</b><span data-th="ช่องรหัสผ่าน และแอปที่ปิดการวาง อาจไม่รับข้อความ" data-en="Password fields and apps that block pasting may not accept the text.">ช่องรหัสผ่าน และแอปที่ปิดการวาง อาจไม่รับข้อความ</span></p>
+    <p><b data-th="เฉพาะ Mac ชิป Apple Silicon" data-en="Apple silicon Macs only">เฉพาะ Mac ชิป Apple Silicon</b><span data-th="Mac ชิป Intel ใช้ไม่ได้" data-en="Intel Macs are not supported.">Mac ชิป Intel ใช้ไม่ได้</span></p>
+    <p><b data-th="macOS จะเตือนตอนเปิดครั้งแรก" data-en="macOS warns on first launch">macOS จะเตือนตอนเปิดครั้งแรก</b><span data-th="ไฟล์ติดตั้งยังไม่ผ่านการรับรองของ Apple ผู้พัฒนาส่งวิธีเปิดครั้งแรกให้พร้อมไฟล์ทาง LINE" data-en="The installer is not yet notarized by Apple. The developer sends first-launch steps with the file on LINE.">ไฟล์ติดตั้งยังไม่ผ่านการรับรองของ Apple ผู้พัฒนาส่งวิธีเปิดครั้งแรกให้พร้อมไฟล์ทาง LINE</span></p>
+  </div>
+</section>
+
+<!-- ═════════ FAQ ═════════ -->
+<section class="section ruled faq-section" id="faq">
+  <div class="section-heading">
+    <span class="eyebrow"><span class="dot"></span> GOOD TO KNOW</span>
+    <h2 data-th="สงสัยตรงไหน.&lt;br&gt;&lt;em&gt;ตอบไว้ตรงนี้.&lt;/em&gt;" data-en="Wondering?&lt;br&gt;&lt;em&gt;Answered here.&lt;/em&gt;">สงสัยตรงไหน.<br><em>ตอบไว้ตรงนี้.</em></h2>
+  </div>
+  <div class="faq">
+    <details>
+      <summary data-th="PUDD คืออะไร" data-en="What is PUDD?">PUDD คืออะไร</summary>
+      <p data-th="แอปแถบเมนูบน Mac สำหรับพูดแทนพิมพ์ กดปุ่มค้าง พูด แล้วปล่อย เสียงกลายเป็นข้อความลงช่องที่เคอร์เซอร์อยู่ ชื่ออ่านว่า “พูด”" data-en="A menu bar app for Mac that lets you speak instead of typing. Hold a key, speak, let go, and your speech becomes text where your cursor is. The name is said like the Thai word “พูด” — to speak.">แอปแถบเมนูบน Mac สำหรับพูดแทนพิมพ์ กดปุ่มค้าง พูด แล้วปล่อย เสียงกลายเป็นข้อความลงช่องที่เคอร์เซอร์อยู่ ชื่ออ่านว่า “พูด”</p>
+    </details>
+    <details>
+      <summary data-th="เสียงที่พูดถูกส่งออกไปที่ไหนไหม" data-en="Is my voice sent anywhere?">เสียงที่พูดถูกส่งออกไปที่ไหนไหม</summary>
+      <p data-th="ไม่ PUDD ถอดเสียงในเครื่อง เสียงไม่ออกจาก Mac ของคุณ และไม่มีข้อมูลส่งกลับมาที่ผู้พัฒนา ถ้าเปิดแปลก่อนวาง ข้อความก็ถูกแปลในเครื่องด้วยตัวแปลของ macOS ส่วนชุดภาษาสำหรับแปลถูกโหลดโดย macOS เอง ไม่ใช่โค้ดของ PUDD" data-en="No. PUDD transcribes on device. The audio does not leave your Mac, and nothing is sent back to the developer. With translation on, the text is translated on your Mac by macOS, and the language packs are installed by macOS itself, not by PUDD’s code.">ไม่ PUDD ถอดเสียงในเครื่อง เสียงไม่ออกจาก Mac ของคุณ และไม่มีข้อมูลส่งกลับมาที่ผู้พัฒนา ถ้าเปิดแปลก่อนวาง ข้อความก็ถูกแปลในเครื่องด้วยตัวแปลของ macOS ส่วนชุดภาษาสำหรับแปลถูกโหลดโดย macOS เอง ไม่ใช่โค้ดของ PUDD</p>
+    </details>
+    <details>
+      <summary data-th="ใช้กับแอปไหนได้บ้าง" data-en="Which apps does it work with?">ใช้กับแอปไหนได้บ้าง</summary>
+      <p data-th="PUDD วางข้อความลงช่องที่เคอร์เซอร์อยู่ ทดสอบแล้วกับ Chrome, LINE และ TextEdit ส่วนช่องรหัสผ่าน และแอปที่ปิดการวาง อาจใช้ไม่ได้" data-en="PUDD places text in the field where your cursor is. It has been tested with Chrome, LINE and TextEdit. Password fields and apps that block pasting may not work.">PUDD วางข้อความลงช่องที่เคอร์เซอร์อยู่ ทดสอบแล้วกับ Chrome, LINE และ TextEdit ส่วนช่องรหัสผ่าน และแอปที่ปิดการวาง อาจใช้ไม่ได้</p>
+    </details>
+    <details>
+      <summary data-th="ทำไมต้องขอสิทธิ์ไมโครโฟนและการช่วยการเข้าถึง" data-en="Why does it need Microphone and Accessibility access?">ทำไมต้องขอสิทธิ์ไมโครโฟนและการช่วยการเข้าถึง</summary>
+      <p data-th="ไมโครโฟนใช้ฟังเสียงตอนคุณกดปุ่มพูด ส่วนการช่วยการเข้าถึงใช้เพื่อวางข้อความลงช่อง กด Enter แทนคุณ และรับรู้ปุ่มลัดขณะคุณใช้แอปอื่น PUDD ไม่บันทึกตัวอักษรที่คุณพิมพ์" data-en="The microphone hears you while you hold the talk key. Accessibility lets PUDD place the text, press Enter for you and notice the shortcut key while you are in other apps. PUDD does not record what you type.">ไมโครโฟนใช้ฟังเสียงตอนคุณกดปุ่มพูด ส่วนการช่วยการเข้าถึงใช้เพื่อวางข้อความลงช่อง กด Enter แทนคุณ และรับรู้ปุ่มลัดขณะคุณใช้แอปอื่น PUDD ไม่บันทึกตัวอักษรที่คุณพิมพ์</p>
+    </details>
+    <details>
+      <summary data-th="ถอดผิดบ้างไหม" data-en="Does it make mistakes?">ถอดผิดบ้างไหม</summary>
+      <p data-th="มีได้ ไมค์ใกล้ปากช่วยได้มาก และควรอ่านทวนก่อนส่ง ชื่อเฉพาะที่ใช้บ่อย ใส่ไว้ใน “คำศัพท์ของฉัน” ท้ายแผงได้" data-en="It can. A microphone close to your mouth helps a lot, and it is worth reading the text back before sending. Names you use often can go into “My words” at the foot of the panel.">มีได้ ไมค์ใกล้ปากช่วยได้มาก และควรอ่านทวนก่อนส่ง ชื่อเฉพาะที่ใช้บ่อย ใส่ไว้ใน “คำศัพท์ของฉัน” ท้ายแผงได้</p>
+    </details>
+    <details>
+      <summary data-th="พูดได้นานแค่ไหน" data-en="How long can I speak?">พูดได้นานแค่ไหน</summary>
+      <p data-th="แตะปุ่มพูดสั้น ๆ เพื่อล็อก แล้วพูดต่อเนื่องได้ PUDD ถอดเป็นท่อนแล้วต่อเป็นข้อความเดียวตอนจบ โหมดล็อกหยุดเองเมื่อครบ 20 นาที" data-en="Tap the talk key briefly to lock, then keep speaking. PUDD transcribes in passages and joins them at the end. Locked mode stops by itself at 20 minutes.">แตะปุ่มพูดสั้น ๆ เพื่อล็อก แล้วพูดต่อเนื่องได้ PUDD ถอดเป็นท่อนแล้วต่อเป็นข้อความเดียวตอนจบ โหมดล็อกหยุดเองเมื่อครบ 20 นาที</p>
+    </details>
+    <details>
+      <summary data-th="ไม่อยากให้กด Enter เอง ต้องทำอย่างไร" data-en="What if I don&#x27;t want it to press Enter?">ไม่อยากให้กด Enter เอง ต้องทำอย่างไร</summary>
+      <p data-th="ค่าเริ่มต้น PUDD กด Enter เฉพาะเมื่อคุณพูด &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt; ท้ายประโยค ถ้าไม่ต้องการ ปิดสวิตช์นี้ได้ในแผง" data-en="By default PUDD presses Enter only when you end with &lt;span class=&quot;nw&quot;&gt;“ส่งเลย”&lt;/span&gt;. If you would rather it never did, turn that switch off in the panel.">ค่าเริ่มต้น PUDD กด Enter เฉพาะเมื่อคุณพูด <span class="nw">“ส่งเลย”</span> ท้ายประโยค ถ้าไม่ต้องการ ปิดสวิตช์นี้ได้ในแผง</p>
+    </details>
+    <details>
+      <summary data-th="รองรับภาษาอะไรบ้าง" data-en="Which languages are supported?">รองรับภาษาอะไรบ้าง</summary>
+      <p data-th="มี 3 เรื่องแยกกัน — &lt;b&gt;ภาษาแอป&lt;/b&gt;: หน้าตาแอปมี 2 ภาษา ไทยและอังกฤษ สลับในแผง ค่าเริ่มต้นตามภาษาเครื่อง · &lt;b&gt;ภาษาที่พูด&lt;/b&gt;: เลือกได้ 5 ภาษา ไทย อังกฤษ ญี่ปุ่น จีน เกาหลี (ค่าเริ่มต้นไทย) ภาษาจีนและเกาหลียังไม่ได้ทดสอบกับเสียงจริงมากเท่าไทยและอังกฤษ · &lt;b&gt;แปลก่อนวาง&lt;/b&gt;: พูดไทยวางเป็นอังกฤษ จีน ญี่ปุ่น หรือเกาหลีได้ และพูดอังกฤษวางเป็นไทยได้ (ต้อง macOS 26 ขึ้นไป)" data-en="Three separate things. &lt;b&gt;App language&lt;/b&gt;: the app speaks two languages, Thai and English; switch in the panel, it defaults to your Mac’s language. &lt;b&gt;Spoken language&lt;/b&gt;: choose from 5 — Thai, English, Japanese, Chinese and Korean (Thai by default); Chinese and Korean have not been tested with real voices as much as Thai and English. &lt;b&gt;Translate before pasting&lt;/b&gt;: speak Thai and paste English, Chinese, Japanese or Korean, or speak English and paste Thai (macOS 26 or later).">มี 3 เรื่องแยกกัน — <b>ภาษาแอป</b>: หน้าตาแอปมี 2 ภาษา ไทยและอังกฤษ สลับในแผง ค่าเริ่มต้นตามภาษาเครื่อง · <b>ภาษาที่พูด</b>: เลือกได้ 5 ภาษา ไทย อังกฤษ ญี่ปุ่น จีน เกาหลี (ค่าเริ่มต้นไทย) ภาษาจีนและเกาหลียังไม่ได้ทดสอบกับเสียงจริงมากเท่าไทยและอังกฤษ · <b>แปลก่อนวาง</b>: พูดไทยวางเป็นอังกฤษ จีน ญี่ปุ่น หรือเกาหลีได้ และพูดอังกฤษวางเป็นไทยได้ (ต้อง macOS 26 ขึ้นไป)</p>
+    </details>
+    <details>
+      <summary data-th="ใช้กับ Mac รุ่นไหนได้" data-en="Which Macs can run it?">ใช้กับ Mac รุ่นไหนได้</summary>
+      <p data-th="Mac ชิป Apple Silicon ที่ใช้ macOS 13 ขึ้นไป (ทดสอบจริงบน macOS 26) ส่วนฟีเจอร์แปลก่อนวางต้อง macOS 26 ขึ้นไป บน macOS 13–25 ใช้พูดแทนพิมพ์ได้ตามปกติ แต่ไม่มีแปล · Mac ชิป Intel ใช้ไม่ได้" data-en="Macs with Apple silicon running macOS 13 or later (tested on macOS 26). Translate before pasting needs macOS 26 or later; on macOS 13–25 dictation works as usual, without translation. Intel Macs are not supported.">Mac ชิป Apple Silicon ที่ใช้ macOS 13 ขึ้นไป (ทดสอบจริงบน macOS 26) ส่วนฟีเจอร์แปลก่อนวางต้อง macOS 26 ขึ้นไป บน macOS 13–25 ใช้พูดแทนพิมพ์ได้ตามปกติ แต่ไม่มีแปล · Mac ชิป Intel ใช้ไม่ได้</p>
+    </details>
+    <details>
+      <summary data-th="ราคาเท่าไร ซื้อได้ที่ไหน" data-en="How much is it, and where do I buy it?">ราคาเท่าไร ซื้อได้ที่ไหน</summary>
+      <p data-price data-th="ราคา ฿390 ช่วงเปิดตัว จ่ายครั้งเดียว อัปเดตฟรี ใช้ได้ 1 เครื่อง ซื้อตรงกับผู้พัฒนาได้แล้ววันนี้ ทัก LINE เพื่อสั่งซื้อ แล้วผู้พัฒนาจะแจ้งช่องทางชำระเงิน จะขอรุ่นทดลอง 7 วันไปลองก่อนก็ได้" data-en="฿390 at the launch price — pay once, free updates, for one Mac. You can buy it directly from the developer today: message on LINE to order and you will be told how to pay. You can also ask for the 7-day trial first.">ราคา ฿390 ช่วงเปิดตัว จ่ายครั้งเดียว อัปเดตฟรี ใช้ได้ 1 เครื่อง ซื้อตรงกับผู้พัฒนาได้แล้ววันนี้ ทัก LINE เพื่อสั่งซื้อ แล้วผู้พัฒนาจะแจ้งช่องทางชำระเงิน จะขอรุ่นทดลอง 7 วันไปลองก่อนก็ได้</p>
+    </details>
+    <details>
+      <summary data-th="รหัสเปิดใช้ทำงานยังไง ย้ายเครื่องได้ไหม" data-en="How does the activation code work? Can I move it to another Mac?">รหัสเปิดใช้ทำงานยังไง ย้ายเครื่องได้ไหม</summary>
+      <p data-th="1 รหัส ใช้ได้ 1 เครื่อง คุณคัดลอก “รหัสเครื่อง” จากแผงตั้งค่าส่งให้ผู้พัฒนาทาง LINE แล้วได้รหัสที่ขึ้นต้นด้วย PUDD- กลับมาวางในช่องเดียวกัน แอปตรวจรหัสในเครื่อง ไม่ต้องต่อเน็ต รหัสนี้ใช้กับเครื่องอื่นไม่ได้ · ถ้าเปลี่ยนเครื่องหรือมีปัญหากับรหัส ทักมาคุยกันทาง LINE" data-en="One code works on one Mac. You copy the “machine code” from the panel, send it to the developer on LINE, and get back a code starting with PUDD- to paste in the same place. The app checks the code on your Mac, with no internet needed. The code will not work on another Mac. If you change Macs or have trouble with your code, message on LINE and we can talk it through.">1 รหัส ใช้ได้ 1 เครื่อง คุณคัดลอก “รหัสเครื่อง” จากแผงตั้งค่าส่งให้ผู้พัฒนาทาง LINE แล้วได้รหัสที่ขึ้นต้นด้วย PUDD- กลับมาวางในช่องเดียวกัน แอปตรวจรหัสในเครื่อง ไม่ต้องต่อเน็ต รหัสนี้ใช้กับเครื่องอื่นไม่ได้ · ถ้าเปลี่ยนเครื่องหรือมีปัญหากับรหัส ทักมาคุยกันทาง LINE</p>
+    </details>
+    <details>
+      <summary data-th="ทำไมต้องดาวน์โหลดโมเดลเสียง 574 MB" data-en="Why is there a 574 MB voice model to download?">ทำไมต้องดาวน์โหลดโมเดลเสียง 574 MB</summary>
+      <p data-th="โมเดลเสียงคือไฟล์ที่ใช้ถอดเสียงในเครื่องของคุณ แยกออกจากไฟล์ติดตั้งเพื่อให้ไฟล์ที่ส่งกันทาง LINE เล็ก (ราว 4 MB) กด “ดาวน์โหลด” ในหน้าต้อนรับครั้งเดียว ต้องต่อเน็ตตอนนั้น แอปตรวจความถูกต้องของไฟล์ก่อนใช้ การดาวน์โหลดเป็นการรับไฟล์เข้าเครื่อง ไม่ได้ส่งเสียงหรือข้อความของคุณออกไป หลังจากนั้นถอดเสียงได้โดยไม่ต้องใช้เน็ต" data-en="The voice model is the file that does the transcription on your Mac. It is kept out of the installer so the file sent on LINE stays small (about 4 MB). Press “ดาวน์โหลด” (Download) on the welcome screen once, with an internet connection. The app checks the file before using it. The download only brings a file to your Mac; it does not send your voice or text anywhere. After that, transcription works without the internet.">โมเดลเสียงคือไฟล์ที่ใช้ถอดเสียงในเครื่องของคุณ แยกออกจากไฟล์ติดตั้งเพื่อให้ไฟล์ที่ส่งกันทาง LINE เล็ก (ราว 4 MB) กด “ดาวน์โหลด” ในหน้าต้อนรับครั้งเดียว ต้องต่อเน็ตตอนนั้น แอปตรวจความถูกต้องของไฟล์ก่อนใช้ การดาวน์โหลดเป็นการรับไฟล์เข้าเครื่อง ไม่ได้ส่งเสียงหรือข้อความของคุณออกไป หลังจากนั้นถอดเสียงได้โดยไม่ต้องใช้เน็ต</p>
+    </details>
+    <details>
+      <summary data-th="เปิดแอปไม่ได้ / macOS ขึ้นเตือน" data-en="The app won’t open, or macOS shows a warning">เปิดแอปไม่ได้ / macOS ขึ้นเตือน</summary>
+      <p data-th="ตอนนี้ไฟล์ติดตั้งยังไม่ผ่านการรับรองของ Apple macOS จึงเตือนและไม่ยอมเปิดด้วยการดับเบิลคลิกตรง ๆ ในครั้งแรก ผู้พัฒนาส่งวิธีเปิดครั้งแรกให้พร้อมไฟล์ทาง LINE ทำตามนั้นครั้งเดียว ครั้งต่อไปเปิดได้ตามปกติ ถ้ายังติด ทักมาได้เลย" data-en="The installer has not been notarized by Apple yet, so the first time, macOS warns you and will not open it with a plain double-click. The developer sends first-launch steps with the file on LINE. Follow them once and it opens normally after that. If you are still stuck, just message on LINE.">ตอนนี้ไฟล์ติดตั้งยังไม่ผ่านการรับรองของ Apple macOS จึงเตือนและไม่ยอมเปิดด้วยการดับเบิลคลิกตรง ๆ ในครั้งแรก ผู้พัฒนาส่งวิธีเปิดครั้งแรกให้พร้อมไฟล์ทาง LINE ทำตามนั้นครั้งเดียว ครั้งต่อไปเปิดได้ตามปกติ ถ้ายังติด ทักมาได้เลย</p>
+    </details>
+    <details>
+      <summary data-th="จะขึ้น Mac App Store ไหม" data-en="Will it be on the Mac App Store?">จะขึ้น Mac App Store ไหม</summary>
+      <p data-th="เตรียมไว้ แต่ยังไม่เปิด ตอนนี้ซื้อได้ทาง LINE ทางเดียว" data-en="It is being prepared, but it is not there yet. For now, LINE is the only way to buy.">เตรียมไว้ แต่ยังไม่เปิด ตอนนี้ซื้อได้ทาง LINE ทางเดียว</p>
+    </details>
+  </div>
+</section>
+
+<!-- ═════════ CONTACT ═════════ -->
+<div class="backdrop backdrop-b">
+<section class="section ruled contact-section" id="contact" aria-labelledby="contact-title">
+  <div class="contact-copy">
+    <span class="eyebrow"><span class="dot"></span> DIRECT / LINE</span>
+    <h2 id="contact-title" data-th="พร้อมใช้แล้ว?&lt;br&gt;&lt;em&gt;ทักไลน์ได้เลย.&lt;/em&gt;" data-en="Ready to start?&lt;br&gt;&lt;em&gt;Message me on LINE.&lt;/em&gt;">พร้อมใช้แล้ว?<br><em>ทักไลน์ได้เลย.</em></h2>
+    <p data-th="ซื้อ ฿390 หรือขอรุ่นทดลอง 7 วัน ทักไลน์มาได้เลย ผู้พัฒนาส่งไฟล์ติดตั้งพร้อมวิธีเปิดครั้งแรกให้ และแจ้งช่องทางชำระเงินเมื่อสั่งซื้อ" data-en="Buy for ฿390, or ask for the 7-day trial — just message on LINE. The developer sends the installer with first-launch steps, and tells you how to pay when you order.">ซื้อ ฿390 หรือขอรุ่นทดลอง 7 วัน ทักไลน์มาได้เลย ผู้พัฒนาส่งไฟล์ติดตั้งพร้อมวิธีเปิดครั้งแรกให้ และแจ้งช่องทางชำระเงินเมื่อสั่งซื้อ</p>
+    <p class="contact-note" data-th="มีคำถามเรื่องการใช้งานหรือความเป็นส่วนตัว ถามมาได้ในช่องทางเดียวกัน" data-en="Questions about how it works or about privacy are welcome in the same place.">มีคำถามเรื่องการใช้งานหรือความเป็นส่วนตัว ถามมาได้ในช่องทางเดียวกัน</p>
+  </div>
+  <div class="contact-card">
+    <img src="assets/mark-glow.webp" alt="" aria-hidden="true" width="484" height="600">
+    <div class="contact-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 16h7c2.2 0 2.6-7 5-7s3 14 5.4 14 2.4-7 4.6-7h4"/></svg></div>
+    <span class="contact-label" data-th="คุยกับผู้พัฒนาโดยตรง" data-en="Talk to the developer directly">คุยกับผู้พัฒนาโดยตรง</span>
+    <strong>LINE · chongdol</strong>
+    <a class="contact-button" href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer" data-buy><span data-th="ซื้อ ฿390 · ทัก LINE" data-en="Buy ฿390 · Message on LINE">ซื้อ ฿390 · ทัก LINE</span><b aria-hidden="true">↗</b></a>
+    <p class="contact-small" data-th="ราคาช่วงเปิดตัว · จ่ายครั้งเดียว · อัปเดตฟรี" data-en="Launch price · one-time · free updates">ราคาช่วงเปิดตัว · จ่ายครั้งเดียว · อัปเดตฟรี</p>
+  </div>
+</section>
+
+<!-- โลโก้เต็มชุดแบบภาพ final: P · PUDD · พูด · คำโปรย -->
+<div class="signature">
+  <img src="assets/lockup.webp" width="800" height="1080" alt="PUDD พูด — YOUR VOICE CAN CONTROL">
+</div>
+</div>
+
+<footer class="site-footer">
+  <p data-th="PUDD (พูดแทนพิมพ์) · แอปแถบเมนูสำหรับ Mac ชิป Apple Silicon · ฿390 ช่วงเปิดตัว ซื้อตรงกับผู้พัฒนาทาง LINE" data-en="PUDD · a menu bar app for Macs with Apple silicon · ฿390 launch price, sold directly by the developer on LINE.">PUDD (พูดแทนพิมพ์) · แอปแถบเมนูสำหรับ Mac ชิป Apple Silicon · ฿390 ช่วงเปิดตัว ซื้อตรงกับผู้พัฒนาทาง LINE</p>
+  <div class="footer-links">
+    <a href="privacy.html" data-page="privacy.html" data-th="นโยบายความเป็นส่วนตัว" data-en="Privacy policy">นโยบายความเป็นส่วนตัว</a>
+    <a href="support.html" data-page="support.html" data-th="ช่วยเหลือ" data-en="Support">ช่วยเหลือ</a>
+    <a href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer">LINE · chongdol</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Chongdol</span>
+    <span class="tag">YOUR VOICE CAN CONTROL</span>
+    <a href="#top" data-th="กลับด้านบน ↑" data-en="Back to top ↑">กลับด้านบน ↑</a>
+  </div>
+  <p class="legal" data-th="Mac, macOS และ App Store เป็นเครื่องหมายการค้าของ Apple Inc. ชื่อแอปอื่นที่กล่าวถึงเป็นของเจ้าของแต่ละราย" data-en="Mac, macOS and App Store are trademarks of Apple Inc. Other app names mentioned belong to their respective owners.">Mac, macOS และ App Store เป็นเครื่องหมายการค้าของ Apple Inc. ชื่อแอปอื่นที่กล่าวถึงเป็นของเจ้าของแต่ละราย</p>
+</footer>
+</main>
+
+<a class="floating-contact" href="https://line.me/ti/p/~chongdol" target="_blank" rel="noopener noreferrer"><span data-th="ทักไลน์" data-en="LINE">ทักไลน์</span><b aria-hidden="true">↗</b></a>
+<script src="app.js"></script>
+</body>
+</html>
