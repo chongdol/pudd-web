@@ -99,7 +99,7 @@
 <tr><td>ไฟล์เสียงดิบ + ข้อความ (<code>recordings/</code>)</td><td>แอปมีความสามารถเก็บเสียงดิบล่าสุด 40 ไฟล์ <strong>เฉพาะเมื่อเปิดผ่านการตั้งค่าขั้นสูงเท่านั้น (ปิดอยู่สำหรับผู้ใช้ใหม่)</strong></td><td>ล่าสุด 40 ไฟล์</td></tr>
 <tr><td>คำศัพท์ของฉัน (<code>คำศัพท์.txt</code>) และชื่อเรียก (<code>ชื่อเรียก.txt</code>)</td><td>ไฟล์ข้อความที่คุณแก้เอง ใช้เป็นข้อมูลป้อนให้ตัวถอดเสียง</td><td>จนกว่าคุณจะลบ</td></tr>
 <tr><td>การตั้งค่าของแอป</td><td>สวิตช์/ปุ่มที่เลือก รวมถึง "ภาษาที่พูด" และ "ภาษาที่แปลเป็น" เก็บในค่ากำหนดของระบบ (UserDefaults)</td><td>จนกว่าคุณจะลบแอป/ล้างค่า</td></tr>
-<tr><td>ไฟล์โมเดลเสียง (<code>models/</code>)</td><td>ไฟล์โมเดลถอดเสียงที่ดาวน์โหลดครั้งแรก (574 MB) เป็นข้อมูลของโมเดลล้วน ไม่มีข้อมูลของคุณ</td><td>จนกว่าคุณจะลบ</td></tr>
+<tr><td>ไฟล์โมเดลเสียง (<code>models/</code>)</td><td>ไฟล์โมเดลถอดเสียงที่ดาวน์โหลดครั้งแรก (3.1 GB) เป็นข้อมูลของโมเดลล้วน ไม่มีข้อมูลของคุณ</td><td>จนกว่าคุณจะลบ</td></tr>
 <tr><td>สถานะทดลองใช้ และรหัสเปิดใช้</td><td>วันเริ่มทดลอง/วันล่าสุดที่เปิดแอป (ใช้นับ 3 วัน) และรหัสเปิดใช้ที่คุณวาง เก็บในเครื่องหลายตำแหน่ง (ในโฟลเดอร์ของแอปและค่ากำหนดของระบบ) · "รหัสเครื่อง" คำนวณสดจากหมายเลขประจำเครื่อง Mac แล้วย่อด้วยการแฮช (ย้อนกลับเป็นหมายเลขเดิมไม่ได้) ไม่มีชื่อ อีเมล หรือข้อมูลติดต่อ</td><td>จนกว่าคุณจะลบ</td></tr>
 </tbody></table></div>
 <p>ตำแหน่งไฟล์: โฟลเดอร์ <code>Application Support/PudSang/</code> ของแอป</p>
@@ -134,7 +134,7 @@
 <section id="th-download">
 <h2>9. การดาวน์โหลดโมเดลเสียง</h2>
 <ul>
-<li>ตัวถอดเสียงฝังมากับแอป แต่ไฟล์โมเดลเสียง <strong>ไม่ได้รวมอยู่ในไฟล์ติดตั้ง</strong> · เมื่อคุณกด "ดาวน์โหลด" ในหน้าต้อนรับ แอปดาวน์โหลดไฟล์ <code>ggml-large-v3-turbo-q5_0.bin</code> (574 MB) ผ่าน HTTPS จาก <strong>huggingface.co</strong> (คลัง <code>ggerganov/whisper.cpp</code> ของโครงการโอเพนซอร์ส whisper.cpp) ครั้งเดียว</li>
+<li>ตัวถอดเสียงฝังมากับแอป แต่ไฟล์โมเดลเสียง <strong>ไม่ได้รวมอยู่ในไฟล์ติดตั้ง</strong> · เมื่อคุณกด "ดาวน์โหลด" ในหน้าต้อนรับ แอปดาวน์โหลดไฟล์ <code>ggml-large-v3.bin</code> (3.1 GB) ผ่าน HTTPS จาก <strong>huggingface.co</strong> (คลัง <code>ggerganov/whisper.cpp</code> ของโครงการโอเพนซอร์ส whisper.cpp) ครั้งเดียว</li>
 <li>แอปตรวจขนาดและลายนิ้วมือ SHA-256 ของไฟล์ให้ตรงกับค่าที่ฝังในแอปก่อนใช้ ถ้าไม่ตรงจะลบทิ้งและให้ลองใหม่</li>
 <li>การดาวน์โหลดเป็นการ <strong>รับไฟล์เข้าเครื่อง</strong> แอปไม่ได้ส่งเสียง ข้อความ หรือข้อมูลบัญชีใดของคุณไป · อย่างไรก็ตาม เซิร์ฟเวอร์ของ Hugging Face (และเครือข่ายส่งไฟล์ที่ใช้) อาจเห็นที่อยู่ IP และข้อมูลทางเทคนิคของคำขอตามปกติของการดาวน์โหลดไฟล์ ซึ่งอยู่ภายใต้นโยบายของ Hugging Face · ผู้พัฒนาไม่ได้รับข้อมูลนี้</li>
 <li>หลังดาวน์โหลดเสร็จ ถอดเสียงได้โดยไม่ต้องใช้อินเทอร์เน็ต</li>
@@ -223,7 +223,7 @@
 <tr><td>Raw audio + text (<code>recordings/</code>)</td><td>The app has a capability to keep the latest 40 raw recordings <strong>only if enabled through an advanced setting (off for new users)</strong>.</td><td>Latest 40 files</td></tr>
 <tr><td>My Words (<code>คำศัพท์.txt</code>) and wake names (<code>ชื่อเรียก.txt</code>)</td><td>Text files you edit yourself, used as input hints for the speech engine.</td><td>Until you delete them</td></tr>
 <tr><td>App settings</td><td>Your switches and choices, including the spoken language and the translation language, stored in macOS preferences (UserDefaults).</td><td>Until you delete the app or reset preferences</td></tr>
-<tr><td>Speech model file (<code>models/</code>)</td><td>The speech model downloaded on first use (574 MB). Model data only; it contains nothing about you.</td><td>Until you delete it</td></tr>
+<tr><td>Speech model file (<code>models/</code>)</td><td>The speech model downloaded on first use (3.1 GB). Model data only; it contains nothing about you.</td><td>Until you delete it</td></tr>
 <tr><td>Trial status and activation code</td><td>The trial start date and the last date the app was opened (to count the 3 days), and the activation code you pasted, stored in several places on your Mac (the app's folder and macOS preferences). The “machine code” is computed on the fly from your Mac's hardware identifier and hashed (it cannot be turned back into the original identifier); it contains no name, email or contact details.</td><td>Until you delete them</td></tr>
 </tbody></table></div>
 <p>File location: the app's <code>Application Support/PudSang/</code> folder.</p>
@@ -258,7 +258,7 @@
 <section id="en-download">
 <h2>9. Speech model download</h2>
 <ul>
-<li>The speech engine is bundled in the app, but the speech model file is <strong>not included in the installer</strong>. When you press “ดาวน์โหลด” (Download) on the welcome screen, the app downloads <code>ggml-large-v3-turbo-q5_0.bin</code> (574 MB) once, over HTTPS, from <strong>huggingface.co</strong> (the <code>ggerganov/whisper.cpp</code> repository of the open-source whisper.cpp project).</li>
+<li>The speech engine is bundled in the app, but the speech model file is <strong>not included in the installer</strong>. When you press “ดาวน์โหลด” (Download) on the welcome screen, the app downloads <code>ggml-large-v3.bin</code> (3.1 GB) once, over HTTPS, from <strong>huggingface.co</strong> (the <code>ggerganov/whisper.cpp</code> repository of the open-source whisper.cpp project).</li>
 <li>Before using it, the app checks the file's size and SHA-256 fingerprint against values built into the app. If they do not match, the file is deleted and you can try again.</li>
 <li>The download <strong>brings a file onto your Mac</strong>. The app does not send your voice, text or any account details. As with any file download, Hugging Face's servers (and any delivery network they use) may see your IP address and technical request details, under Hugging Face's own policies. The developer does not receive this information.</li>
 <li>After the download, transcription works without an internet connection.</li>

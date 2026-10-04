@@ -448,3 +448,11 @@ h1 em,h2 em{font-style:normal;color:var(--sky);background:linear-gradient(110deg
   .demo-pick button{padding:0 14px;font-size:13px}
   .demo-video{border-radius:12px}
 }
+
+/* WHAT'S NEW — ภาพหน้าจอรุ่นใหม่ */
+.new-shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px;align-items:start}
+.new-shots figure{margin:0;border:1px solid var(--line-blue);border-radius:22px;overflow:hidden;background:#05080f}
+.new-shots img{width:100%;height:auto;display:block}
+.new-shots figcaption{padding:14px 18px 16px;border-top:1px solid #ffffff12;font-size:13px;line-height:1.7;color:var(--muted)}
+.new-shots figcaption b{display:block;color:#fff;font-weight:500;font-size:15px}
+@media(max-width:760px){.new-shots{grid-template-columns:1fr}}
