@@ -398,8 +398,8 @@
   </div>
   <div class="panel-layout">
     <figure class="panel-visual">
-      <img src="assets/panel-th.webp" data-src-th="assets/panel-th.webp" data-src-en="assets/panel-en.webp" width="740" height="2212" alt="แผงตั้งค่าของ PUDD แสดงสถานะ สถิติวันนี้ ประโยคล่าสุด และสวิตช์ทั้งหมด" data-alt-th="แผงตั้งค่าของ PUDD แสดงสถานะ สถิติวันนี้ ประโยคล่าสุด และสวิตช์ทั้งหมด" data-alt-en="The PUDD panel showing status, today&#x27;s numbers, recent sentences and all switches">
-      <figcaption data-th="แผงตั้งค่าจริงของแอป v1.0.70 · แถบด้านบนคือสถานะทดลองใช้" data-en="The app’s actual panel, v1.0.70. The bar at the top shows the trial status.">แผงตั้งค่าจริงของแอป v1.0.70 · แถบด้านบนคือสถานะทดลองใช้</figcaption>
+      <img src="assets/panel-v118-th.webp" data-src-th="assets/panel-v118-th.webp" data-src-en="assets/panel-v118-en.webp" width="680" height="3120" alt="แผงตั้งค่าของ PUDD แสดงสถานะ สถิติวันนี้ ประโยคล่าสุด และสวิตช์ทั้งหมด" data-alt-th="แผงตั้งค่าของ PUDD แสดงสถานะ สถิติวันนี้ ประโยคล่าสุด และสวิตช์ทั้งหมด" data-alt-en="The PUDD panel showing status, today&#x27;s numbers, recent sentences and all switches">
+      <figcaption data-th="แผงตั้งค่าจริงของแอป v1.0.118 · ประโยคในภาพเป็นตัวอย่าง · แถบด้านบนคือสถานะทดลองใช้" data-en="The app’s actual panel, v1.0.118, with sample sentences. The bar at the top shows the trial status.">แผงตั้งค่าจริงของแอป v1.0.118 · ประโยคในภาพเป็นตัวอย่าง · แถบด้านบนคือสถานะทดลองใช้</figcaption>
     </figure>
     <div class="panel-copy">
       <div class="switch-list">
@@ -420,11 +420,15 @@
           <p data-th="ให้ข้อความขึ้นในแคปซูลขณะที่คุณพูด" data-en="Text appears in the capsule as you speak.">ให้ข้อความขึ้นในแคปซูลขณะที่คุณพูด</p>
         </article>
         <article>
-          <div class="switch-top"><h3 data-th="โหมดแม่นยำ" data-en="Large model (precision)">โหมดแม่นยำ</h3></div>
-          <p data-th="ถอดรอบสุดท้ายด้วยโมเดลที่ใหญ่กว่า ใช้เวลานานขึ้น สวิตช์นี้มีเมื่อเครื่องมีโมเดลใหญ่" data-en="The final pass uses a larger model and takes longer. This switch appears when the larger model is on your Mac.">ถอดรอบสุดท้ายด้วยโมเดลที่ใหญ่กว่า ใช้เวลานานขึ้น สวิตช์นี้มีเมื่อเครื่องมีโมเดลใหญ่</p>
+          <div class="switch-top"><h3 data-th="ทับศัพท์เป็นอังกฤษ" data-en="Thai-spelled English words → English">ทับศัพท์เป็นอังกฤษ</h3><span class="state on" data-th="เริ่มต้น เปิด" data-en="Default on">เริ่มต้น เปิด</span></div>
+          <p data-th="คำอังกฤษที่ถอดออกมาเป็นตัวไทย เช่น พรอมต์ จะถูกเขียนเป็น prompt" data-en="English words that come out in Thai script are written in English, e.g. prompt.">คำอังกฤษที่ถอดออกมาเป็นตัวไทย เช่น พรอมต์ จะถูกเขียนเป็น prompt</p>
         </article>
         <article>
-          <div class="switch-top"><h3 data-th="แตะ ⌃ ซ้าย 1 ที = ปลุก" data-en="Tap left ⌃ to start">แตะ ⌃ ซ้าย 1 ที = ปลุก</h3><span class="state" data-th="เริ่มต้น ปิด" data-en="Default off">เริ่มต้น ปิด</span></div>
+          <div class="switch-top"><h3 data-th="ประหยัด RAM: พักเมื่อว่าง 30 วินาที" data-en="Save RAM: release after 30 idle seconds">ประหยัด RAM: พักเมื่อว่าง 30 วินาที</h3><span class="state" data-th="เริ่มต้น ปิด" data-en="Default off">เริ่มต้น ปิด</span></div>
+          <p data-th="ปกติพักโมเดลเมื่อว่าง 90 วินาที เปิดสวิตช์นี้เพื่อพักเร็วขึ้น โมเดลโหลดกลับเมื่อเริ่มพูด" data-en="The model is normally released after 90 idle seconds. Turn this on to release it sooner. It reloads when you speak.">ปกติพักโมเดลเมื่อว่าง 90 วินาที เปิดสวิตช์นี้เพื่อพักเร็วขึ้น โมเดลโหลดกลับเมื่อเริ่มพูด</p>
+        </article>
+        <article>
+          <div class="switch-top"><h3 data-th="แตะ ⌃ ซ้าย 1 ที = ปลุก" data-en="Tap left ⌃ to start">แตะ ⌃ ซ้าย 1 ที = ปลุก</h3><span class="state on" data-th="เริ่มต้น เปิด" data-en="Default on">เริ่มต้น เปิด</span></div>
           <p data-th="แตะ Control ซ้ายแล้วพูดได้เลย หยุดพูดสักครู่ข้อความลงให้เอง" data-en="Tap left Control and speak. Pause briefly and the text is placed.">แตะ Control ซ้ายแล้วพูดได้เลย หยุดพูดสักครู่ข้อความลงให้เอง</p>
         </article>
         <article>
@@ -452,7 +456,7 @@
           <p data-th="ตัวหนังสือในแอป: ไทย · English · ตามภาษาเครื่อง" data-en="The app’s own text: ไทย, English, or your Mac’s language.">ตัวหนังสือในแอป: ไทย · English · ตามภาษาเครื่อง</p>
         </article>
         <article>
-          <div class="switch-top"><h3 data-th="ปุ่มพูด" data-en="Talk key">ปุ่มพูด</h3><span class="state on" data-th="เริ่มต้น ⌥ ขวา" data-en="Default right ⌥">เริ่มต้น ⌥ ขวา</span></div>
+          <div class="switch-top"><h3 data-th="ปุ่มพูด" data-en="Talk key">ปุ่มพูด</h3><span class="state on" data-th="เริ่มต้น ⌃ ซ้าย + ⌥ ขวา" data-en="Default left ⌃ + right ⌥">เริ่มต้น ⌃ ซ้าย + ⌥ ขวา</span></div>
           <p data-th="แตะ ⌃ ซ้าย หรือกดค้าง ⌥ Option ขวา / ⌘ Command ขวา" data-en="Tap left ⌃, or hold right ⌥ Option / right ⌘ Command.">แตะ ⌃ ซ้าย หรือกดค้าง ⌥ Option ขวา / ⌘ Command ขวา</p>
         </article>
       </div>
