@@ -71,8 +71,8 @@
     picks.forEach(pick => pick.addEventListener('click', () => {
       picks.forEach(p => p.setAttribute('aria-pressed', String(p === pick)));
       beats = pick.dataset.beats.split(',').map(Number);
-      film.poster = 'assets/demo-' + pick.dataset.clip + '-v1.jpg';
-      film.src = 'assets/demo-' + pick.dataset.clip + '-v1.mp4';
+      film.poster = 'assets/demo-' + pick.dataset.clip + '-v2.jpg';
+      film.src = 'assets/demo-' + pick.dataset.clip + '-v2.mp4';
       if (!still) run();
     }));
     steps.forEach((step, i) => {
